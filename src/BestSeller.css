@@ -1,3 +1,10 @@
 .seller{
     margin-left: 6% !important;
 }
+.container-line {
+  border: none;
+  height: 2px;              
+  background-color: #7a7778; 
+  margin: 0 auto;  
+  width: 81%;             
+}

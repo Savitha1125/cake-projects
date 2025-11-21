@@ -7,7 +7,7 @@ export default function BestSeller(){
   <div className="container d-flex justify-content-between align-items-center">
     <h1 className="fw-bold mt-5 ms-5 seller">Bestsellers</h1>
   </div>
-     <hr className="mt-0" />
+     <hr className="container-line" />
 </div>
 
   );
