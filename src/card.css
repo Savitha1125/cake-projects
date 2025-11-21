@@ -1,0 +1,21 @@
+.cake-card {
+  min-width: 308px;     
+  border: 1px solid #ccc; 
+  border-radius: 15px;  
+}
+.cake-img {
+  width: 100%;
+  height: 250px;     
+  object-fit: cover; 
+  gap:10px 
+}
+.card-title { 
+margin-bottom: 0.25rem; 
+} 
+.card-text { 
+margin-bottom: 0;
+}
+.cake h2, .cake h3 {
+  overflow: hidden;
+  height: some-value;
+}

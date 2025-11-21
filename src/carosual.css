@@ -1,0 +1,54 @@
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color:whitesmoke; /* pink color */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.custom-arrow {
+  font-size: 20px;
+  color: #000000; 
+  background-color: rgba(255, 255, 255, 0.8); 
+  border-radius: 50px !important;
+  padding: 13px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease;
+  height: 40px;
+  width: 20%;
+}
+.carousel-indicators [data-bs-target] {
+  width: 7px;             
+  height: 1px;
+  border-radius: 50%;      
+  background-color: #141313;
+  transition: all 0.4s ease; 
+  margin: 0 5px;           
+  border: none;
+  padding: 4px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*  Active dot → white */
+.carousel-indicators .active {
+  background-color: #fff;     
+  width:100% !important;         
+  height:2px;       
+  border-radius: 20px / 65px; 
+  transition: all 0.4s ease; 
+  
+}
+ .carousel-indicators {
+  background: rgba(128, 128, 128, 0.8);
+  border-radius: 20px;
+  padding: 5px 16px;
+  width: 75px;
+  margin: auto;
+  margin-bottom: 12px;
+}
+.carousel-wrapper{
+  width:99%;
+}

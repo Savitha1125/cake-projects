@@ -1,0 +1,299 @@
+.container h5 {
+  position: relative;
+  top: 15px;
+  right: 2% !important;
+  font-weight: normal;
+}
+
+.home {
+  position: relative;
+  right: 2%;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.icon {
+  font-size: 7px;
+  margin-left: 8px;
+}
+
+.cakes {
+  position: absolute;
+  left: 5%;
+  top: 1px;
+}
+
+.box {
+  margin-left: 2px;
+  background-color: lch(90.39% 0.72 18.61);
+  padding: -5px 10px 0px 5px;
+  width: 92vw;
+  transform: translateX(-10px);
+  font-weight: bold;
+  margin-top: 15px;
+
+}
+
+/* Full-page Blur Overlay */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/*  Popup Box */
+.popup-box {
+  position: relative;
+  background: #fff;
+  padding: 25px 35px;
+  width: 25%;
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  animation: slideUp 0.3s ease;
+}
+.close-btn {
+  position: absolute;
+  right: 12px;     
+  left:50%;     
+  top:-30px;
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  font-weight: bold;
+  color: #000;            /* 👈 make visible */
+  cursor: pointer;
+  z-index: 10000;         /* 👈 keep on top */
+  transition: color 0.3s ease;
+}
+/* ✨ Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.react-datepicker {
+  border: none !important;
+  width: 100%;
+}
+
+
+.popup-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.custom-calendar {
+  font-family: 'Roboto', sans-serif;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.custom-day {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin: 2px;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: #8000ff !important; 
+  color: #fff !important;              
+  border-radius: 50%;                  
+}
+
+.react-datepicker__day {
+  margin: 5px !important;    
+  width: 30px !important;   
+  height: 30px !important;
+  line-height: 35px !important;
+  text-align: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.react-datepicker__month {
+   display: flex;
+  flex-direction: column;
+  align-items: center !important; /* Center the whole grid */
+  margin-left: -17px !important; 
+}
+
+.react-datepicker__day--selected:hover,
+.react-datepicker__day--keyboard-selected:hover {
+  background-color: #6a00cc !important; 
+}
+.react-datepicker__day--today {
+  border: 1px solid #8000ff !important;  
+  border-radius: 50%;
+  color: #000 !important;
+}
+.react-datepicker__day--disabled {
+  color: #ccc !important;
+  pointer-events: none;
+}
+
+.react-datepicker__header {
+  background-color: #fff;
+  border-bottom: none;
+}
+.reset-btn {
+  background-color: #f27777;
+  width:30%;
+  padding: 3px;
+  border-radius: none !important;
+  margin-right: 15px;
+}
+.ok-btn {
+  background-color: #5de18d;
+  width:30%;
+}
+.reset-btn,.ok-btn :hover{
+  background-color: none;
+}
+.cal{
+  margin: auto;
+  position: relative;
+  bottom:   30px;
+  right:80px
+}
+.date{
+  font-size: 12px;
+}
+.select{
+  position: absolute;
+  top:22px;
+  left:28px;
+  font-size: 14px;
+  white-space: nowrap;
+  font-weight: 400;
+}
+.react-datepicker__navigation {
+  line-height: 1.7rem;
+  border: none !important;
+}
+
+.react-datepicker__navigation--previous,
+.react-datepicker__navigation--next {
+  top:-20px !important;     
+  right:16px;       
+  transform: scale(1.4);          
+  filter: brightness(0.6);        
+  cursor: pointer;
+}
+.react-datepicker__current-month {
+  position: relative;
+  top: -18px; 
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.custom-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.custom-select select {
+  appearance: none; 
+  background: transparent;
+  border: none; 
+  font-size: 13px;
+  cursor: pointer;
+  outline: none;
+  padding-right: 20px; 
+}
+.filter-box {
+  position: relative;         /* container for absolute positioning */
+  width: 100px;               /* adjust size as needed */
+  height: 40px;
+  background-color: #f8f8f8;  /* box background */
+  border: 1px solid #ccc;     
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;   
+}
+
+.filter {
+  font-weight: 600;
+  color: #333;
+  position: relative;
+  bottom:40px;
+  right: 37%;
+  float: inline-end;
+  font-weight: 300;
+  font-size: 14px;
+}
+label{
+  position: relative;
+  bottom: 50px;
+  right: 28%;
+  float: inline-end;
+  font-size: 12px;
+  font-weight: 800;
+}
+.dropdown-icon{
+  position: relative;
+  right: 43%;
+  top:-10px
+} 
+select{
+  border: none;
+  outline: none;
+}
+#priceFilter{
+  position: relative;
+  bottom: 30px;
+  right: 19%;
+  float: inline-end;
+  font-weight: normal;
+  color: rgb(14, 99, 14);
+  background-color:transparent !important;
+  -webkit-appearance: none; /* for Chrome/Safari */
+  -moz-appearance: none;    /* for Firefox */
+  appearance: none;
+}
+.select-wrapper::after {
+  content: "▼";       /* arrow character */
+  position: absolute;
+  right: 24%;
+  top: 35%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: black;       /* arrow color */
+  pointer-events: none;
+  z-index: 2;         
+}
+option{
+  color: black;
+}
