@@ -10,8 +10,9 @@ import PhotoCakes from "./PhotoCakes";
 import PinataCakes from "./PinataCakes";
 import PullMeUpCakes from "./PullMeUpCakes";
 import KidsCakes from "./KidsCakes";
-
+import NextPage from "./NextPage";
 import ContainerOne from "./ContainerOne";
+import BestSeller from "./BestSeller";
 export default function MainLayout() {
   const location = useLocation();
 
@@ -25,6 +26,7 @@ export default function MainLayout() {
           <Product />
           <ContainerOne/>
           <Card/>
+          <BestSeller/>
         </>
       }
 
@@ -38,6 +40,7 @@ export default function MainLayout() {
         <Route path="/pinata-cakes" element={<PinataCakes />} />
         <Route path="/pull-me-up-cakes" element={<PullMeUpCakes />} />
         <Route path="/kids-cakes" element={<KidsCakes />} /> 
+        <Route path="/next-page" element={<NextPage/>}/>
       </Routes>
     </>
   );

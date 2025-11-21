@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import img from "./assets/kid-cake.avif";
 import img1 from "./assets/deal-desktop.avif";
 import img2 from "./assets/rose.avif";
@@ -9,9 +10,13 @@ import img6 from "./assets/chocolate.avif";
 import img7 from "./assets/accessories-d.avif";
 import img8 from "./assets/cash.avif";
 import "./Containerone.css";
-import Card from './Card';
 
 export default function ContainerOne() {
+  const navigate = useNavigate();
+  const handleClick = () => {
+      navigate("/next-page");  
+  };
+
   return (
     <>
       <div className="containerone">
@@ -34,9 +39,17 @@ export default function ContainerOne() {
         </div>
       </div>
 
-      {/* Next component OUTSIDE */}
-      <div className="container next-section">
-        <img src={img8} className="cash" alt="Cash" />
+      {/* Next component */}
+      <div className="container next-section" style={{ textAlign: "center", marginTop: "50px" }}>
+        <img
+          src={img8}
+          className="cash"
+          alt="Cash"
+          onClick={handleClick}
+          style={{
+          cursor: "pointer",
+          }}
+        />
       </div>
     </>
   );

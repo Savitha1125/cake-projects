@@ -14,6 +14,7 @@ margin-bottom: 0.25rem;
 } 
 .card-text { 
 margin-bottom: 0;
+font-size: 14px;
 }
 .cake h2, .cake h3 {
   overflow: hidden;
