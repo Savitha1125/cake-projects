@@ -1,10 +1,38 @@
 .seller{
-    margin-left: 6% !important;
+    margin-left: 5% !important;
 }
 .container-line {
   border: none;
   height: 2px;              
   background-color: #7a7778; 
   margin: 0 auto;  
-  width: 81%;             
+  width: 85%;             
+}
+.best-container {
+  background-color: #fff5f8; /* soft light pink */
+  border-radius: 18px;
+  margin: auto;
+  width: 91%;
+  padding: 20px 0;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.05);
+  margin-top: 60px;
+}
+.active-tab {
+  background-color: #000;
+  color: white;
+  position: relative;
+}
+
+/* Triangle */
+.active-tab::after {
+  content: "";
+  position: absolute;
+  bottom: -10px; /* moves triangle below */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #000; /* triangle color */
 }

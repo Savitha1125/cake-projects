@@ -11,16 +11,7 @@ export default function Cakes() {
    const handleDateChange = (date) => {
     setSelectedDate(date);
   };
-   
-  //   const [priceFilter, setPriceFilter] = useState("All Products");
-  //    const priceRanges = [
-  //   "All Products",
-  //   "7.34 and Below",
-  //   "7.35 - 14.69",
-  //   "14.70 - 22.04",
-  //   "22.05 - 36.74",
-  //   "36.75 and Above",
-  // ];
+  
 
   return (
     <>

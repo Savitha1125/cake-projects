@@ -31,7 +31,7 @@ export default function Card() {
         <div className="row justify-content-center g-4">
 
           {/* Card 1 */}
-          <div className="col-lg-3 col-md-4 col-sm-6 col-12 col-xl-3 px-md-4 px-lg-3">
+          <div className="col-lg-3 col-md-6 col-sm-6 col-12 col-xl-3 px-md-4 px-lg-3">
             <Link to="/photo-cakes" className="text-decoration-none">
               <div className="card cake-card">
                 <img src={img} alt="Photo Cakes" className="cake-img img-fluid mx-auto d-block" />
@@ -44,7 +44,7 @@ export default function Card() {
           </div>
 
           {/* Card 2 */}
-          <div className="col-lg-3 col-md-4 col-sm-6 col-12 col-xl-3 px-md-4 px-lg-3">
+          <div className="col-lg-3 col-md-6 col-sm-6 col-12 col-xl-3 px-md-4 px-lg-3">
             <Link to="/pinata-cakes" className="text-decoration-none">
               <div className="card cake-card">
                 <img src={img1} alt="Pinata Cakes" className="cake-img img-fluid mx-auto d-block" />
@@ -57,7 +57,7 @@ export default function Card() {
           </div>
 
           {/* Card 3 */}
-          <div className="col-lg-3 col-md-4 col-sm-6 col-12 col-xl-3 px-md-4 px-lg-3">
+          <div className="col-lg-3 col-md-6 col-sm-6 col-12 col-xl-3 px-md-4 px-lg-3">
             <Link to="/pull-me-up-cakes" className="text-decoration-none">
               <div className="card cake-card">
                 <img src={img2} alt="Pull Me Up Cakes" className="cake-img img-fluid mx-auto d-block" />
@@ -70,7 +70,7 @@ export default function Card() {
           </div>
 
           {/* Card 4 */}
-          <div className="col-lg-3 col-md-4 col-sm-6 col-12 col-xl-3 px-md-4 px-lg-3">
+          <div className="col-lg-3 col-md-6 col-sm-6 col-12 col-xl-3 px-md-4 px-lg-3">
             <Link to="/kids-cakes" className="text-decoration-none">
               <div className="card cake-card">
                 <img src={img3} alt="Kids Cakes" className="cake-img img-fluid mx-auto d-block" />
