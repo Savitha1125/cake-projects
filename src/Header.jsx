@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
-import './index.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { useNavigate } from 'react-router-dom';
-import img1 from './assets/in.png'; 
-import Detail from './Detail';
-
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
+import Detail from "./Detail.jsx";
+import {
+  FaSearch,
+  FaMapMarkerAlt,
+  FaPencilAlt,
+  FaUser,
+  FaHeart,
+  FaShoppingCart,
+} from "react-icons/fa";
 export default function Header() {
   const [showPartnerTooltip, setShowPartnerTooltip] = useState(false);
   const [showCurrencyTooltip, setShowCurrencyTooltip] = useState(false);
@@ -12,140 +18,143 @@ export default function Header() {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const navigate = useNavigate();
   const [showPopup, setShowPopup] = useState(false);
-    const [showTooltip,setShowTooltip]=useState(false);
-    const [showWishlist, setShowWishlist] = useState(false);
-    const [showCart, setShowCart] = useState(false);
-    const [isFocused, setIsFocused] = useState(false);
+  const [showTooltip,setShowTooltip]=useState(false);
+  const [showWishlist, setShowWishlist] = useState(false);
+  const [showCart, setShowCart] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
   
-   
   const currencies = [
-    { code: 'AUD', name: 'Australian Dollar' },
-    { code: 'AED', name: 'United Arab Emirates Dirham' },
-    { code: 'SGD', name: 'Singapore Dollar' },
-    { code: 'QAR', name: 'Qatari Rial' },
-    { code: 'EUR', name: 'Euro' },
-    { code: 'GBP', name: 'British Pound Sterling' },
-    { code: 'MYR', name: 'Malaysian Ringgit' },
-    { code: 'USD', name: 'United States Dollar' },
-    { code: 'CAD', name: 'Canadian Dollar' },
-    { code: 'NZD', name: 'New Zealand Dollar' },
-    { code: 'INR', name: 'Indian Rupee' },
-    { code: 'THB', name: 'Thai Baht' }
-  ];
+  { code: "AUD", name: "Australian Dollar" },
+  { code: "AED", name: "UAE Dirham" },
+  { code: "SGD", name: "Singapore Dollar" },
+  { code: "QAR", name: "Qatari Rial" },
+  { code: "EUR", name: "Euro" },
+  { code: "GBP", name: "British Pound" },
+  { code: "MYR", name: "Malaysian Ringgit" },
+  { code: "USD", name: "US Dollar" },
+  { code: "CAD", name: "Canadian Dollar" },
+  { code: "NZD", name: "New Zealand Dollar" },
+  { code: "INR", name: "Indian Rupee" },
+  { code: "THB", name: "Thai Baht" },
+];
+
 
   return (
     <>
-    <div className='header-top container-fluid'>
-      <div className="detail d-flex justify-content-end gap-3 ">
-        <div>Help |</div>
+      {/* ================= TOP LINK BAR ================= */}
+      <header className="top-links">
+        <div className="container-fluid">
+          <div className="row py-2 small d-flex justify-content-end">
+            <div className="col-auto">
+              <a href="#" className="text-decoration-none text-dark me-4">
+                Help |
+              </a>
 
-        {/* Currency Tooltip */}
-        <div
-          className="tooltip-container"
-          onMouseEnter={() => setShowCurrencyTooltip(true)}
-          onMouseLeave={() => setShowCurrencyTooltip(false)}
-        >
-          Currency - <span style={{ fontWeight: 'bold' }}>{selectedCurrency}</span> |
-          {showCurrencyTooltip && (
-            <div className="tooltip-single-box1">
-              {currencies.map((cur) => (
-                <div
-                  key={cur.code}
-                  className="currency-item"
-                  onClick={() => setSelectedCurrency(cur.code)}
-                >
-                  {cur.code} - {cur.name}
-                </div>
-              ))}
+              <span
+                className="text-dark me-4 position-relative currency-trigger"
+                onMouseEnter={() => setShowCurrencyTooltip(true)}
+                onMouseLeave={() => setShowCurrencyTooltip(false)}
+              >
+                Currency: <strong>{selectedCurrency}</strong> |
+                {showCurrencyTooltip && (
+                  <div className="tooltip-box">
+                    {currencies.map((cur) => (
+                      <div
+                        key={cur.code}
+                        onClick={() => setSelectedCurrency(cur.code)}
+                        className="tooltip-item"
+                      >
+                        {cur.code} - {cur.name}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </span>
+
+              {/* Partner Tooltip */}
+              <span
+                className="text-dark me-4 position-relative"
+                onMouseEnter={() => setShowPartnerTooltip(true)}
+                onMouseLeave={() => setShowPartnerTooltip(false)}
+              >
+                Partner With Us |
+                {showPartnerTooltip && (
+                  <div className="tooltip-box">
+                    <div onClick={() => navigate("/vendor")}>
+                      Become a Vendor
+                    </div>
+                    <div onClick={() => navigate("/franchise")}>
+                      Become a Franchise
+                    </div>
+                  </div>
+                )}
+              </span>
+
+              <a href="#" className="text-decoration-none text-dark">
+                Track Order |
+              </a>
             </div>
-          )}
-        </div>
-
-        <div>Corporate Gifts |</div>
-
-        {/* Partner With Us Tooltip */}
-        <div
-          className="tooltip-container"
-          onMouseEnter={() => setShowPartnerTooltip(true)}
-          onMouseLeave={() => setShowPartnerTooltip(false)}
-        >
-          Partner With Us |
-          {showPartnerTooltip && (
-    <div className="tooltip-single-box">
-      <div
-        onClick={() => {
-          navigate('/vendor');
-          setShowPartnerTooltip(false); // hide tooltip after navigation
-        }}
-      >
-        Become a Vendor
-      </div>
-      <div
-        onClick={() => {
-          navigate('/franchise');
-          setShowPartnerTooltip(false);
-        }}
-      >
-        Become a Franchise
-        </div>
-        </div>
-          )}
           </div>
-          
-        <div className="me-5">Track Order</div>
-      </div>
-
-      <div className="header-second d-flex flex-wrap align-items-center">
-        <div className="logo">
-          <img src="https://assets.winni.in/groot/2023/03/09/winni-logo/svgtopng-full-cp.png" alt="winni" style={{ height: "34px",
-             marginTop: "33px", width: "144px", marginLeft: "30px",cursor:"pointer" }} 
-             onClick={()=>window.location.href="/"}/>
         </div>
-        {/* SearchBox */}
- <div className="d-flex flex-column flex-md-row align-items-center justify-content-between col-12 col-md-4 ms-5 mt-3">
-  
-  <div className="search-bar flex-grow-1 me-md-3 w-100 w-md-50">
-    <input
-      className="text"
-      type="text"
-      placeholder="Search 5000+ flowers, cakes, gifts etc"
-      onFocus={() => setShowSuggestions(true)}
-      onBlur={() => setShowSuggestions(false)}
-    />
-    <i className="fi fi-br-search"></i>
+      </header>
 
-    {showSuggestions && (
-      <div className="search-tooltip">
-        <h6 className="search-item">
-          Trending Shortcut
-          <hr />
-        </h6>
-        <div className="sub-menu">Cakes</div>
-        <div className="sub-menu1">Flowers</div>
-        <div className="sub-menu2">Gifts</div>
-        <div className="sub-menu00">Combos</div>
-        <div className="sub-menu01">Chocolates</div>
-        <div className="sub-menu02">Birthday Gifts</div>
-        <div className="sub-menu3">Personalized Gifts</div>
-        <div className="sub-menu001">Anniversary Gifts</div>
-      </div>
-    )}
-  </div>
-    <div
-  className="location-box w-md-35 mt-4 mt-md-0 ms-md-auto d-flex align-items-center justify-content-between"
-  onClick={() => setShowPopup(true)}
->
-    <img src={img1} alt="India Flag" className="flag" />
-    <span className="country-code">IND</span>
-    <div className="vertical-line"></div>
-    <i className="fa-solid fa-location-dot ms-2"></i>
-    <span className="choose-text ms-2">Choose Delivery Location</span>
-    <i className="fa-solid fa-pen pencil"></i>
-  </div>
+      {/* ================= MAIN HEADER ================= */}
+      <div className="container-fluid">
+        <div className="header-row">
+          <div className="logo">
+            <img
+              src="https://assets.winni.in/groot/2023/03/09/winni-logo/svgtopng-full-cp.png"
+              alt="Logo"
+              onClick={() => navigate("/")}
+            />
+          </div>
 
-</div>
+          {/* SEARCH BOX */}
+          <div className="search-box position-relative">
+            <input
+              type="text"
+              placeholder="Search 5000+ flowers, cakes, gifts etc"
+              onFocus={() => setShowSuggestions(true)}
+              onBlur={() => setShowSuggestions(false)}
+            />
+            <FaSearch className="search-icon" />
 
-          {showPopup && (
+            {showSuggestions && (
+              <div className="search-tooltip">
+                <h6 className="search-item">
+                  Trending Shortcut
+                  <hr />
+                </h6>
+                <div className="sub-menu">Cakes</div>
+                <div className="sub-menu1">Flowers</div>
+                <div className="sub-menu2">Gifts</div>
+                <div className="sub-menu00">Combos</div>
+                <div className="sub-menu01">Chocolates</div>
+                <div className="sub-menu02">Birthday Gifts</div>
+                <div className="sub-menu3">Personalized Gifts</div>
+                <div className="sub-menu001">Anniversary Gifts</div>
+              </div>
+            )}
+          </div>
+
+          {/* LOCATION POPUP */}
+          <div
+            className="location-box"
+            onClick={() => setShowPopup(true)}
+          >
+            <div className="location-flag-section">
+              <img src="https://flagcdn.com/in.svg" alt="Flag" />
+              <span>IND</span>
+            </div>
+            <div className="location-divider"></div>
+            <div className="location-text-section">
+              <FaMapMarkerAlt />
+              <span>Choose Delivery Location</span>
+              <FaPencilAlt className="edit-icon" />
+            </div>
+          </div>
+
+           {showPopup && (
             <div className="popup-overlay" onClick={() => setShowPopup(false)}>
               <div className="popup-box" onClick={(e) => e.stopPropagation()}>
                 <div className="popup-header">
@@ -208,52 +217,53 @@ export default function Header() {
             </div>
           )}
           
-            <div className="icons-right ms-5">
-          <div
-            className="icon-user"
+          <div className="header-icons">
+          {/* Hover User Tooltip */}
+            <div className="icon-user"
             onMouseEnter={() => setShowTooltip(true)}
             onMouseLeave={() => setShowTooltip(false)}
-          >
-            <i className="fi fi-ss-user"></i>
-    
-            {showTooltip && (
-              <div className="tooltip-user-box">
-                <h4>Welcome</h4>
-                <p className="order">To access account and manage orders</p>
-                <button className="btn btn-outline-dark px-0 py-0">Signup/Login</button>
-                <p className="show">My Winni<br/>
-                    My Orders<br/>
-                    My Address Book<br/>
-                    My Wallet<br/>
-                   </p>
-              </div>
-            )}
+            style={{ position: "relative" }}>
+          <FaUser />
+
+          {showTooltip && (
+          <div className="tooltip-user-box">
+          <h4>Welcome</h4>
+          <p className="order">To access account and manage orders</p>
+          <button className="btn btn-outline-dark px-0 py-0">Signup/Login</button>
+          <p className="show">
+          My Winni<br />
+          My Orders<br />
+          My Address Book<br />
+          My Wallet<br />
+          </p>
+        </div>
+        )}
+        </div>
+
+              <div className="icon-wrapper"
+              onMouseEnter={() => setShowWishlist(true)}
+              onMouseLeave={() => setShowWishlist(false)}
+              onClick={() => navigate('/wishlist')}>
+              <FaHeart />
+               {showWishlist && (
+                <div className="tooltip-wishlist">Wishlist
+                </div>
+              )}
+              <span className="badge bg-danger icon-badge">0</span>
             </div>
-          <div className="icon-heart me-5"
-           onMouseEnter={() => setShowWishlist(true)}
-      onMouseLeave={() => setShowWishlist(false)}
-      onClick={() => navigate('/wishlist')}>
-    
-            <i className="fi fi-ss-heart">
-    
-            </i>
-           {showWishlist && (
-        <div className="tooltip-wishlist">
-          Wishlist
-        </div>
-      )}
+            <div className="icon-wrapper"
+             onMouseEnter={() => setShowCart(true)}
+              onMouseLeave={() => setShowCart(false)}
+              onClick={() => navigate("/cart")}>
+              <FaShoppingCart />
+              {showCart && <div className="tooltip-cart">Cart</div>}
+              <span className="badge bg-danger icon-badge">0</span>
+            </div>
           </div>
-          <div className="icon2"
-          onMouseEnter={() => setShowCart(true)}
-                onMouseLeave={() => setShowCart(false)}
-                onClick={() => navigate("/cart")}>
-            <i className="fi fi-ss-shopping-cart"></i>
-            {showCart && <div className="tooltip-cart">Cart</div>}
-              </div>
         </div>
       </div>
-      </div>
-      <Detail/>
+
+      <Detail />
     </>
   );
 }

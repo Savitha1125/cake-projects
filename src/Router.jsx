@@ -1,5 +1,4 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import Header from "./Header";
 import VendorForm from "./Vendor";
 import Franchise from "./Franchise";
 import Carosual from "./Carosual"; 
@@ -18,8 +17,7 @@ export default function MainLayout() {
 
   return (
     <>
-      <Header />
-
+  
       {location.pathname === "/" &&
         <>
           <Carosual />
