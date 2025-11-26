@@ -16,7 +16,7 @@ export default function Flower() {
         <h2 className='fw-bold'>Flowers</h2>
         <h3 className='fw-normal'>Petals of Happiness</h3>
         {/* View All Button */}
-        <Link to="/cakes" className='text-decoration-none text-dark float-end mb-5'
+        <Link to="/flowers" className='text-decoration-none text-dark float-end mb-5'
           style={{
           position: "absolute",
           right: "60px",
