@@ -9,21 +9,10 @@ import {
   FaPencilAlt,
   FaUser,
   FaHeart,
-  FaShoppingCart,
+  FaShoppingCart
 } from "react-icons/fa";
-export default function Header() {
-  const [showPartnerTooltip, setShowPartnerTooltip] = useState(false);
-  const [showCurrencyTooltip, setShowCurrencyTooltip] = useState(false);
-  const [selectedCurrency, setSelectedCurrency] = useState('QAR');
-  const [showSuggestions, setShowSuggestions] = useState(false);
-  const navigate = useNavigate();
-  const [showPopup, setShowPopup] = useState(false);
-  const [showTooltip,setShowTooltip]=useState(false);
-  const [showWishlist, setShowWishlist] = useState(false);
-  const [showCart, setShowCart] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
-  
-  const currencies = [
+
+const currencies = [
   { code: "AUD", name: "Australian Dollar" },
   { code: "AED", name: "UAE Dirham" },
   { code: "SGD", name: "Singapore Dollar" },
@@ -35,9 +24,21 @@ export default function Header() {
   { code: "CAD", name: "Canadian Dollar" },
   { code: "NZD", name: "New Zealand Dollar" },
   { code: "INR", name: "Indian Rupee" },
-  { code: "THB", name: "Thai Baht" },
+  { code: "THB", name: "Thai Baht" }
 ];
 
+export default function Header() {
+  const navigate = useNavigate();
+
+  const [selectedCurrency, setSelectedCurrency] = useState("QAR");
+  const [showCurrencyTooltip, setShowCurrencyTooltip] = useState(false);
+  const [showPartnerTooltip, setShowPartnerTooltip] = useState(false);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [showTooltip,setShowTooltip]=useState(false);
+  const [showWishlist, setShowWishlist] = useState(false);
+  const [showCart, setShowCart] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
 
   return (
     <>
@@ -50,6 +51,7 @@ export default function Header() {
                 Help |
               </a>
 
+              {/* Currency Tooltip */}
               <span
                 className="text-dark me-4 position-relative currency-trigger"
                 onMouseEnter={() => setShowCurrencyTooltip(true)}
@@ -70,8 +72,10 @@ export default function Header() {
                   </div>
                 )}
               </span>
-
-              {/* Partner Tooltip */}
+                <a href="#" className="text-decoration-none text-dark me-4">
+                Corporate gifts |
+              </a>
+              {/* Partner Dropdown */}
               <span
                 className="text-dark me-4 position-relative"
                 onMouseEnter={() => setShowPartnerTooltip(true)}
@@ -98,7 +102,7 @@ export default function Header() {
         </div>
       </header>
 
-      {/* ================= MAIN HEADER ================= */}
+      {/* ================= MAIN HEADER ROW ================= */}
       <div className="container-fluid">
         <div className="header-row">
           <div className="logo">
@@ -109,7 +113,6 @@ export default function Header() {
             />
           </div>
 
-          {/* SEARCH BOX */}
           <div className="search-box position-relative">
             <input
               type="text"
@@ -120,24 +123,22 @@ export default function Header() {
             <FaSearch className="search-icon" />
 
             {showSuggestions && (
-              <div className="search-tooltip">
-                <h6 className="search-item">
-                  Trending Shortcut
-                  <hr />
+              <div className="search-suggestions shadow-sm">
+                <h6>
+                  Trending Shortcut <hr />
                 </h6>
-                <div className="sub-menu">Cakes</div>
-                <div className="sub-menu1">Flowers</div>
-                <div className="sub-menu2">Gifts</div>
-                <div className="sub-menu00">Combos</div>
-                <div className="sub-menu01">Chocolates</div>
-                <div className="sub-menu02">Birthday Gifts</div>
-                <div className="sub-menu3">Personalized Gifts</div>
-                <div className="sub-menu001">Anniversary Gifts</div>
+                <div className="shortcut">Cakes</div>
+                <div className="shortcut">Flowers</div>
+                <div className="shortcut">Gifts</div>
+                <div className="shortcut">Combos</div>
+                <div className="shortcut">Chocolates</div>
+                <div className="shortcut">Birthday Gifts</div>
+                <div className="shortcut">Personalized Gifts</div>
+                <div className="shortcut">Anniversary Gifts</div>
               </div>
             )}
           </div>
-
-          {/* LOCATION POPUP */}
+             {/* LOCATION POPUP */}
           <div
             className="location-box"
             onClick={() => setShowPopup(true)}
@@ -262,6 +263,7 @@ export default function Header() {
           </div>
         </div>
       </div>
+  
 
       <Detail />
     </>

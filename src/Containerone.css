@@ -24,7 +24,7 @@
 }
 .image-block {
   width: 32%;
-  margin-bottom: 25px;       /* SAME GAP BELOW EACH IMAGE */
+  margin-bottom: 25px;       
 }
 /* Your same positions - desktop only */
 .image-block.plant img,

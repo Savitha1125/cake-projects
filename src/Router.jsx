@@ -12,6 +12,7 @@ import KidsCakes from "./KidsCakes";
 import NextPage from "./NextPage";
 import ContainerOne from "./ContainerOne";
 import BestSeller from "./BestSeller";
+import Flower from "./Flower"
 export default function MainLayout() {
   const location = useLocation();
 
@@ -25,6 +26,7 @@ export default function MainLayout() {
           <ContainerOne/>
           <Card/>
           <BestSeller/>
+          <Flower/>
         </>
       }
 
