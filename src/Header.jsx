@@ -151,7 +151,7 @@ export default function Header() {
             <div className="location-text-section">
               <FaMapMarkerAlt />
               <span>Choose Delivery Location</span>
-              <FaPencilAlt className="edit-icon" />
+              <FaPencilAlt className="edit-icon ms-5" />
             </div>
           </div>
 
@@ -241,7 +241,7 @@ export default function Header() {
         )}
         </div>
 
-              <div className="icon-wrapper"
+              <div className="icon-wrapper me-3"
               onMouseEnter={() => setShowWishlist(true)}
               onMouseLeave={() => setShowWishlist(false)}
               onClick={() => navigate('/wishlist')}>
@@ -250,7 +250,7 @@ export default function Header() {
                 <div className="tooltip-wishlist">Wishlist
                 </div>
               )}
-              <span className="badge bg-danger icon-badge">0</span>
+              <span className="badge icon-badge text-center">0</span>
             </div>
             <div className="icon-wrapper"
              onMouseEnter={() => setShowCart(true)}
@@ -258,7 +258,7 @@ export default function Header() {
               onClick={() => navigate("/cart")}>
               <FaShoppingCart />
               {showCart && <div className="tooltip-cart">Cart</div>}
-              <span className="badge bg-danger icon-badge">0</span>
+              <span className="badge icon-badge text-center">0</span>
             </div>
           </div>
         </div>

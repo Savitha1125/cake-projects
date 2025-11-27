@@ -8,16 +8,8 @@ body {
     margin: 0;
     padding: 0;
 }
-/* .header-row{
-  position: fixed; 
-  top: 0;            
-  left: 0;           
-  width: 100%;       
-  z-index: 999;      
-  background-color: #fff; 
-} */
 
-/* .top-links,
+.top-links,
 .header-row {
   position: fixed;
   width: 100%;
@@ -29,15 +21,15 @@ body {
   top: 0;
 }
 .header-row {
-  top: 25px; 
+  top: 30px; 
 }
 body {
   padding-top: 100px;
-} */
+} 
 
 /* Hide top links on small mobiles */
 @media(max-width: 576px) {
-    .top-links { display: none !important; }
+    /* .top-links { display: none !important; } */
 }
 
 
@@ -60,11 +52,11 @@ body {
 /* ========================================================= */
 
 .logo img {
-    height: 40px;
+    height: 35px;
     width: auto;
     cursor: pointer;
-    /* position: relative;
-    top:20px !important */
+    position: relative;
+    left:20px !important 
 }
 
 /* Mobile logo */
@@ -79,7 +71,7 @@ body {
 
 .search-box {
     flex: 1;
-    max-width: 480px;
+    max-width: 470px;
     position: relative;
     /* top:20px !important */
 }
@@ -117,10 +109,10 @@ body {
     height: 50px;
     cursor: pointer;
     overflow: hidden;
-    max-width: 350px;
+    max-width: 370px !important;
     width: 100%;
     /* position: relative;
-    top:20px !important */
+    right:3% !important;  */
 }
 
 /* LEFT – FLAG AREA */
@@ -186,26 +178,36 @@ body {
     display: flex;
     align-items: center;
     gap: 18px;
+    font-size: 25px;
     /* position: relative;
     top:20px */
 }
 
 .header-icons i {
-    font-size: 20px;
+    font-size: 20px !important;
     cursor: pointer;
 }
 
 .icon-wrapper {
     position: relative;
-    right:9px
+    right:19px;
+    border-radius: 50%;
 }
 
 .icon-badge {
     position: absolute;
-    top: -6px;
-    right: 1px;
+    top: -10px;
+    right: -19px;
     font-size: 10px;
-    padding: 2px 5px;
+    width: 29px;        /* fixed width */
+    height: 29px;       /* fixed height */
+    display: flex;      /* center the number */
+    align-items: center;
+    justify-content: center;
+    border-radius: 80% !important; 
+    background-color:#ff1493;
+    color: white;
+    font-weight: bold;
 }
 
 
@@ -214,7 +216,7 @@ body {
 /* ========================================================= */
 
 /* MOBILE VIEW (≤576px) */
-@media (max-width: 576px) {
+@media (max-width: 768px) {
 
     /* ELEMENTS STACK IN COLUMN */
     .header-row {
@@ -230,7 +232,9 @@ body {
         width: 100% !important;
         max-width: 100% !important;
     }
-
+    .location-box{
+      left: 0px !important;
+    }
     /* Fix location text */
     .location-text-section span {
         font-size: 13px;
@@ -244,6 +248,14 @@ body {
         gap: 25px;
     }
 }
+/* ========================================================= */
+/* ======================= Laptop view ======================= */
+/* @media (min-width:1024px){
+  .location-box{
+    max-width: 400px;
+    left:10px
+  }
+} */
 /* Tooltip */
 .tooltip-box {
   position: absolute;

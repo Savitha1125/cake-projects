@@ -3,6 +3,9 @@
   border: 1px solid #ccc; 
   border-radius: 15px;  
 }
+.text{
+  text-align: center !important;
+}
 .cake-img {
   width: 100%;
   height: 250px;     
@@ -16,7 +19,15 @@ margin-bottom: 0.25rem;
 margin-bottom: 0;
 font-size: 14px;
 }
-.cake h2, .cake h3 {
-  overflow: hidden;
-  height: some-value;
+@media  (max-width:576px) {
+  .button{
+    position: relative;
+    left:75%;
+    width: 100px;
+    white-space: nowrap;
+  }
+  .cake-card{
+    margin-left: 18%;
+  }
+  
 }

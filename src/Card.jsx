@@ -16,7 +16,7 @@ export default function Card() {
         <h2 className='fw-bold'>Cakes</h2>
         <h3 className='fw-normal'>Dreamy cakes for every occasion</h3>
         {/* View All Button */}
-        <Link to="/cakes" className='text-decoration-none text-dark float-end mb-5'
+        <Link to="/cakes" className='text-decoration-none text-dark float-end mb-5 button'
           style={{
           position: "absolute",
           right: "60px",

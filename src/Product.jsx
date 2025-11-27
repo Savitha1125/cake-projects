@@ -11,7 +11,6 @@ import img6 from "./assets/gifts.avif";
 import img7 from "./assets/personalised.avif";
 import img8 from "./assets/global.webp";
 import './product.css';
-import ContainerOne from "./ContainerOne";
 
 export default function Product() {
   const navigate = useNavigate();  

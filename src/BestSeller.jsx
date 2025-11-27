@@ -157,10 +157,10 @@ export default function BestSeller() {
               return (
                 <div
                   key={index}
-                  className="card cake-card"
+                  className="card cake-cards"
                   style={{ minWidth: `${cardWidth}px` }}
                 >
-                  <img src={item.img} alt={item.name} className="cake-img img-fluid" />
+                  <img src={item.img} alt={item.name} className="cake-imges img-fluid" />
 
                   <div className="card-body">
                     <h6 className="card-title fw-bold">{item.name}</h6>

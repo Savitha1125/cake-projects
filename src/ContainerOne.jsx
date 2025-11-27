@@ -20,7 +20,7 @@ export default function ContainerOne() {
   return (
     <>
       <div className="containerone">
-        <h1 className='mt-5 text-center'>Must Have</h1>
+        <h1 className='mt-5 text-center must'>Must Have</h1>
 
         {/* First row */}
         <div className='container'>

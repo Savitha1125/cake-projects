@@ -32,8 +32,8 @@
 
 /* Product Name Styling */
 .product-item p {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: bold;
   color: #333;
   margin-top: 8px;
   text-transform: capitalize;
@@ -48,6 +48,7 @@
   .product-img {
     width: 90px;
     height: 100px;
+   
   }
 }
 
@@ -71,14 +72,18 @@
 @media (max-width: 480px) {
   .product-inline {
     grid-template-columns: repeat(2, 1fr);
-    gap: 6px;
+    gap: 15px;
   }
   .product-img {
-    width: 100px;
-    height: 115px;
+    width: 190px;
+    height: 119px;
     object-fit: cover;
+    position: relative;
+    left:34%
   }
   .product-item p {
     font-size: 16px;
+    position: relative;
+    left: 45%;
   }
 }

@@ -28,7 +28,7 @@
   color: white;
   position: relative;
 }
-.cake-img {
+.cake-imges {
   object-fit: cover;
   
 }
@@ -124,6 +124,7 @@
 
 .arrow-left1 {
   left: 0;
+  z-index: 10;  
 }
 
 .arrow-right1 {
@@ -155,5 +156,18 @@
 
   .view-all-btn {
     font-size: 10px !important;
+  }
+  .best-container{
+    width:95% !important;
+    margin-left: 50px !important;
+  }
+  .cake-imges{
+    height: 200px !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    object-fit: cover !important;
+  }
+  .cake-cards{
+    margin-right: 15px !important;
   }
 }
