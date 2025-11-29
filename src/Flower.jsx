@@ -2,13 +2,19 @@ import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./card.css";
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import img from "./assets/images/flowers-first-image.jpg" ;
 import img1 from "./assets/images/basket-arrangement.avif";
 import img2 from "./assets/images/premium-flowers.webp";
 import img3 from "./assets/images/lillies.webp";
+import img4 from "./assets/images/banner-images.webp";
 
 export default function Flower() {
+   const navigate = useNavigate();
+   const handleClick = () => {
+      navigate("/visit-page");  
+  };
   return (
     <>
       {/* Heading */}
@@ -83,6 +89,17 @@ export default function Flower() {
           </div>
 
         </div>
+      </div>
+      <div className='container mt-5'>
+        <img
+          src={img4}
+          className="cash"
+          alt="Cash"
+          onClick={handleClick}
+          style={{
+          cursor: "pointer",
+          }}
+        />
       </div>
     </>
   );

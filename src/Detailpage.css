@@ -162,9 +162,9 @@
   position: relative;
   right:5px;
 }
-.menu-column .egg{
+.egg{
   position: relative;
-  right:10px;
+  left:60% !important;
 }
 .truf{
   position: relative;

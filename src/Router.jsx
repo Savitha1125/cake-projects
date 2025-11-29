@@ -13,6 +13,7 @@ import NextPage from "./NextPage";
 import ContainerOne from "./ContainerOne";
 import BestSeller from "./BestSeller";
 import Flower from "./Flower"
+import TextPage from "./Text-page";
 export default function MainLayout() {
   const location = useLocation();
 
@@ -27,6 +28,7 @@ export default function MainLayout() {
           <Card/>
           <BestSeller/>
           <Flower/>
+          <TextPage/>
         </>
       }
 

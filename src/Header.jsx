@@ -122,7 +122,7 @@ export default function Header() {
             />
             <FaSearch className="search-icon" />
 
-            {showSuggestions && (
+            {/* {showSuggestions && (
               <div className="search-suggestions shadow-sm">
                 <h6>
                   Trending Shortcut <hr />
@@ -136,8 +136,8 @@ export default function Header() {
                 <div className="shortcut">Personalized Gifts</div>
                 <div className="shortcut">Anniversary Gifts</div>
               </div>
-            )}
-          </div>
+            )}*/}
+          </div> 
              {/* LOCATION POPUP */}
           <div
             className="location-box"
@@ -241,7 +241,7 @@ export default function Header() {
         )}
         </div>
 
-              <div className="icon-wrapper me-3"
+              <div className="icon-wrapper me-2"
               onMouseEnter={() => setShowWishlist(true)}
               onMouseLeave={() => setShowWishlist(false)}
               onClick={() => navigate('/wishlist')}>
