@@ -121,23 +121,24 @@ export default function Header() {
               onBlur={() => setShowSuggestions(false)}
             />
             <FaSearch className="search-icon" />
-
-            {/* {showSuggestions && (
-              <div className="search-suggestions shadow-sm">
-                <h6>
-                  Trending Shortcut <hr />
-                </h6>
-                <div className="shortcut">Cakes</div>
-                <div className="shortcut">Flowers</div>
-                <div className="shortcut">Gifts</div>
-                <div className="shortcut">Combos</div>
-                <div className="shortcut">Chocolates</div>
-                <div className="shortcut">Birthday Gifts</div>
-                <div className="shortcut">Personalized Gifts</div>
-                <div className="shortcut">Anniversary Gifts</div>
-              </div>
-            )}*/}
-          </div> 
+                
+  {showSuggestions && (            
+             <div className="search-tooltip">
+        <h6 className="search-item">
+          Trending Shortcut
+          <hr />
+        </h6>
+        <div className="sub-menu">Cakes</div>
+        <div className="sub-menu1">Flowers</div>
+        <div className="sub-menu2">Gifts</div>
+        <div className="sub-menu00">Combos</div>
+        <div className="sub-menu01">Chocolates</div>
+        <div className="sub-menu02">Birthday Gifts</div>
+        <div className="sub-menu3">Personalized Gifts</div>
+        <div className="sub-menu001">Anniversary Gifts</div>
+      </div>
+    )}
+  </div>
              {/* LOCATION POPUP */}
           <div
             className="location-box"

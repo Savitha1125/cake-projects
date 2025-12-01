@@ -1,0 +1,83 @@
+.footer-row {
+  display: flex;       /* IMPORTANT */
+  align-items: flex-start;
+  gap: 30px;
+}
+.company{
+      margin-left: 55% !important;
+      white-space: nowrap;
+}
+.footer-links ul {
+  list-style: none !important;
+  padding: 0;
+  margin-left: 55% !important;
+  white-space: nowrap;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+  font-weight: lighter;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #333; /* link color */
+  font-weight: 400;
+  transition: color 0.3s;
+}
+.footer {
+  display: flex;
+  gap: 60px; /* spacing between sections */
+  flex-wrap: wrap; /* wraps on small screens */
+}
+.footer-links-container {
+  margin-top: 80px; 
+  margin-left: 8%;
+}
+
+.footer-links-container ul {
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-container ul li {
+  margin-bottom: 10px; 
+}
+
+.footer-links-container ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+.footer-divider{
+      height: 210px;
+      width: 2px;
+      background-color: #ccc;
+      margin-top: 4%;
+      margin-left: 7%;
+}
+.social-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+  margin-left: 5%;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.social-icons a {
+  font-size: 22px;
+  color: #333;
+  text-decoration: none;
+}
+.social-media-section{
+      background-color: #e6e4e4;
+      height: 60px;
+      width: 98%;
+}
