@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import img from "./assets/kid-cake.avif";
 import img1 from "./assets/deal-desktop.avif";
 import img2 from "./assets/rose.avif";
@@ -9,12 +10,20 @@ import img5 from "./assets/frame.avif";
 import img6 from "./assets/chocolate.avif";
 import img7 from "./assets/accessories-d.avif";
 import img8 from "./assets/cash.avif";
+
 import "./Containerone.css";
 
 export default function ContainerOne() {
   const navigate = useNavigate();
+  const [isFlipped, setIsFlipped] = useState(false);
+
   const handleClick = () => {
-      navigate("/next-page");  
+    setIsFlipped(true);
+
+    // reset animation class so it can play again
+    setTimeout(() => setIsFlipped(false), 1200);
+
+    navigate("/next-page");
   };
 
   return (
@@ -39,16 +48,14 @@ export default function ContainerOne() {
         </div>
       </div>
 
-      {/* Next component */}
+      {/* Cash Image */}
       <div className="container next-section" style={{ textAlign: "center", marginTop: "50px" }}>
         <img
           src={img8}
-          className="cash"
           alt="Cash"
+          className={`cash ${isFlipped ? "flipX" : ""}`}
           onClick={handleClick}
-          style={{
-          cursor: "pointer",
-          }}
+          style={{ cursor: "pointer" }}
         />
       </div>
     </>

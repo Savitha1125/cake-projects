@@ -133,6 +133,21 @@
 .container .cash{
   width: 100% !important;
 }
+/* =============== FLIP ANIMATION =============== */
+/* FLIP ANIMATION */
+@keyframes flipX {
+  0% {
+    transform: perspective(500px) rotateX(0deg);
+  }
+  100% {
+    transform: perspective(500px) rotateX(360deg);
+  }
+}
+
+.flipX {
+  animation: flipX 1.2s ease-in-out;
+}
+
 @media(max-width:576px) {
   .container .cash{
     width: 100% !important;
