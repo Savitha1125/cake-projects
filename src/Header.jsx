@@ -221,7 +221,7 @@ export default function Header() {
           
           <div className="header-icons">
           {/* Hover User Tooltip */}
-            <div className="icon-user"
+            <div className="icon-user icon-wrapper"
             onMouseEnter={() => setShowTooltip(true)}
             onMouseLeave={() => setShowTooltip(false)}
             style={{ position: "relative" }}>
@@ -264,9 +264,9 @@ export default function Header() {
           </div>
         </div>
       </div>
+      <Detail />
   
 
-      <Detail />
     </>
   );
 }

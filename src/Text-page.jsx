@@ -8,7 +8,7 @@ export default function TextPage() {
 
   const shortText = (
     <>
-      <h4 className='fw-normal text-center mt-5'>Winni - India’s No. 1 Brand for Online Delivery of Cakes, Flowers, And Gifts</h4>
+      <h4 className='fw-normal text-center mt-5 winni'>Winni - India’s No. 1 Brand for Online Delivery of Cakes, Flowers, And Gifts</h4>
       Winni is India’s Number 1 gifting brand with unique gifts for all occasions and relations.
       An e-commerce company that helps you celebrate relations and special occasions like birthdays
       and anniversaries by sending{" "}
@@ -133,9 +133,9 @@ export default function TextPage() {
   return (
     <>
     <div className="main-wrapper">
-      <p className="texts">
+      <div className="texts">
         {expanded ? fullText : shortText}
-      </p>
+      </div>
 
       <span
         className="read-toggle-btn"
@@ -146,78 +146,82 @@ export default function TextPage() {
       </span>
     </div>
     <div>
-      <h4 className='text-center fw-bold mt-5'>Recommended latest reads from our Blog</h4>
-        <div className="blog-row">
+    <h4 className='text-center fw-bold mt-5 winni'>
+  Recommended latest reads from our Blog
+</h4>
 
-        {/* Item 1 */}
-        <div className="blog-item">
-          <Link to="new-page" className="blog-link">
-            Housewarming Gifts: Your Gift Says Something When<br/>
-            Starting a New Life</Link><br/>
-            <p className='blogs mt-3'>
-            There’s a soothing silence and freshness inside a brand-new home. Not empty, exactly, 
-            waiting for people to walk around, for boxes all over the place, for the first cup of tea made in the kitchen that’s not quite finished.
-            Anyone who has ever moved into a new home knows this feeling very well, that mix …</p>
-          
-        </div>
+<div className="blog-row">
 
-        {/* Item 2 */}
-        <div className="blog-item">
-          <Link to="new-page" className="blog-link">
-            Thanksgiving - The Festival of Gratitude</Link><br/>
-            <p className='blogs mt-2'>
-              The​‍​‌‍​‍‌​‍​‌‍​‍‌ family that sits together after a long hectic day, sharing tiny victories, giving each other loving smiles, or laughing over something silly, has something very comforting to it. Such little moments are 
-              what keep reminding us how gratitude is an enormously powerful thing. Thanksgiving, which was initially a harvest festival, is now regarded as …
-            </p>
-        </div>
+  {/* Item 1 */}
+  <div className="blog-item">
+    <Link to="new-page" className="blog-link">
+      Housewarming Gifts: Your Gift Says Something When
+      <span className="blog-subline">Starting a New Life</span>
+    </Link>
+    <p className='blogs mt-3'>
+      There’s a soothing silence and freshness inside a brand-new home. Not empty, exactly, waiting for people to walk around, for boxes all over the place, 
+      for the first cup of tea made in the kitchen that’s not quite finished. Anyone who has ever moved into a new home knows this feeling very well, that mix …
+    </p>
+  </div>
 
-        {/* Item 3 */}
-        <div className="blog-item ">
-          <Link to="new-page" className="blog-link">
-            Treat Yourself: Top Self-Gifts You Can Order Online In India<br/>
-            Right Now
-          </Link>
-          <p className='bloger mt-2'>
-            There is something quite revolutionary happening around the world, as you can see a refreshing shift in how men and women are celebrating success and self worth with self gifts. With the rise 
-            in independent incomes and people preferring to live solo or prioritize personal joy, gifting is becoming a beautiful way to honor yourself. …
-          </p>
-        </div>
-      </div>
-    </div>
+  {/* Item 2 */}
+  <div className="blog-item">
+    <Link to="new-page" className="blog-link">
+      Thanksgiving - The Festival of Gratitude
+    </Link>
+    <p className='blogs mt-2'>
+      The​‍​‌‍​‍‌​‍​‌‍​‍‌ family that sits together after a long hectic day, sharing tiny victories, giving each other loving smiles, or laughing over something silly, has something very comforting to it. 
+      Such little moments are what keep reminding us how gratitude is an enormously powerful thing. Thanksgiving, which was initially a harvest festival, is now regarded as …
+    </p>
+  </div>
 
-    <div class="footer-image-for-corporate-desktop backgroundDesktop">
-  <div class="row footer-highlights">
+  {/* Item 3 */}
+  <div className="blog-item">
+    <Link to="new-page" className="blog-link">
+      Treat Yourself: Top Self-Gifts You Can Order Online In India
+      <span className="blog-subline">Right Now</span>
+    </Link>
+    <p className='bloger mt-2'>
+      There is something quite revolutionary happening around the world, as you can see a refreshing shift in how men and women are celebrating success and 
+      self worth with self gifts. With the rise in independent incomes and people preferring to live solo or prioritize personal joy, gifting is becoming a beautiful way to honor yourself. …
+    </p>
+  </div>
+
+</div>
+</div>
+    <div className="footer-image-for-corporate-desktop backgroundDesktop">
+  <div className="row footer-highlights">
     
 
-    <div class="col s12 m12 l4 highlight valign-wrapper">
-      <div class="iconContainer">
-        <img class="responsive-img ms-5 " alt="happy-delivery-icon" src="https://assets.winni.in/groot/2023/07/19/desktop/happy-delivery.png"></img>
+    <div className="col s12 m12 l4 highlight valign-wrapper">
+      <div className="iconContainer">
+        <img className="responsive-img ms-5 " alt="happy-delivery-icon" src="https://assets.winni.in/groot/2023/07/19/desktop/happy-delivery.png"></img>
       </div>
-      <div class="text-container">
-        <div class="title">700+ Cities</div>
-        <div class="sub-title">Happily Delivering</div>
+      <div className="text-container">
+        <div className="title">700+ Cities</div>
+        <div className="sub-title">Happily Delivering</div>
       </div>
-      <div class="vertical-line hide-on-small"></div>
+      <div className="vertical-line hide-on-small"></div>
     </div>
     
-    <div class="col s12 m12 l4 highlight valign-wrapper">
-      <div class="iconContainer">
-        <img class="responsive-img" alt="secure-payment" src="https://assets.winni.in/groot/2023/07/19/desktop/secure-payment.png"></img>
+    <div className="col s12 m12 l4 highlight valign-wrapper">
+      <div className="iconContainer">
+        <img className="responsive-img" alt="secure-payment" src="https://assets.winni.in/groot/2023/07/19/desktop/secure-payment.png"></img>
       </div>
-      <div class="text-container">
-        <div class="title">100% Secure Payments</div>
-        <div class="sub-title">All Major Credit & Debit Cards Accepted</div>
+      <div className="text-container">
+        <div className="title">100% Secure Payments</div>
+        <div className="sub-title">All Major Credit & Debit Cards Accepted</div>
       </div>
     </div>
 
    
-    <div class="col s12 m12 l4 highlight valign-wrapper">
-      <div class="iconContainer">
-        <img class="responsive-img" alt="customer-across" src="https://assets.winni.in/groot/2023/07/19/desktop/customer-across-the-world.png"></img>
+    <div className="col s12 m12 l4 highlight valign-wrapper">
+      <div className="iconContainer">
+        <img className="responsive-img" alt="customer-across" src="https://assets.winni.in/groot/2023/07/19/desktop/customer-across-the-world.png"></img>
       </div>
-      <div class="text-container">
-        <div class="title">20,000,000</div>
-        <div class="sub-title">Customers Across The World</div>
+      <div className="text-container">
+        <div className="title">20,000,000</div>
+        <div className="sub-title">Customers Across The World</div>
       </div>
     </div>
 

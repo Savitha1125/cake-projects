@@ -3,9 +3,13 @@
   align-items: flex-start;
   gap: 30px;
 }
+.footer-section {
+  flex: 1 1 200px; 
+  min-height: 150px;
+}
 .company{
-      margin-left: 55% !important;
-      white-space: nowrap;
+    margin-left: 55% !important;
+    white-space: nowrap;
 }
 .footer-links ul {
   list-style: none !important;
@@ -78,6 +82,53 @@
 }
 .social-media-section{
       background-color: #e6e4e4;
-      height: 60px;
       width: 98%;
+}
+@media (max-width: 576px) {
+
+  /* Remove big gaps */
+  .footer {
+    flex-direction: column;
+    gap: 10px !important;
+    padding: 0 10px;
+  }
+
+  /* Each section full width */
+  .footer-section {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Remove huge left shifts */
+  .company {
+    margin-left: 40% !important;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  .footer-links ul {
+    margin-left: 0 !important;
+  }
+  .footer-divider {
+    display: none;
+  }
+  .footer-links-container {
+    margin-top: 10px !important;
+    margin-left: 0 !important;
+    width: 100%;
+  }
+
+  /* Reduce link gap */
+  .footer-links li,.footer-links-container li {
+    margin-bottom: 3px !important;
+    margin-left: 45%;
+    width: 100%;
+  }
+}
+.reserve{
+  margin-left: 5% !important;
+}
+.google-app{
+  width: 12%;
 }

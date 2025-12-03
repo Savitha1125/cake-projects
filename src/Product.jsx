@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Image } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useNavigate } from "react-router-dom";  // <-- import useNavigate
+import { useNavigate } from "react-router-dom";  
 import img1 from "./assets/cake.webp";
 import img2 from "./assets/flowers.avif";
 import img3 from "./assets/combos.webp";

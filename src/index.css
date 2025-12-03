@@ -4,7 +4,6 @@
 
 body {
     font-family: "Roboto", sans-serif;
-    background: white;
     margin: 0;
     padding: 0;
 }
@@ -16,6 +15,7 @@ body {
   left: 0;
   background: white;
   z-index: 9999;
+  
 }
 .top-links {
   top: 0;
@@ -30,6 +30,9 @@ body {
 /* Hide top links on small mobiles */
 @media(max-width: 576px) {
     /* .top-links { display: none !important; } */
+    body {
+  padding-top: 280px;
+} 
 }
 
 
@@ -215,39 +218,97 @@ body {
 /* ======================= RESPONSIVE ======================= */
 /* ========================================================= */
 
-/* MOBILE VIEW (≤576px) */
-@media (max-width: 768px) {
+/* ======================= MOBILE VIEW (≤576px) ======================= */
+@media (max-width: 576px) {
 
-    /* ELEMENTS STACK IN COLUMN */
-    .header-row {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 15px;
-    }
+  /* Header stacked layout */
+  .header-row {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+  }
 
-    /* 100% WIDTH FOR SEARCH + LOCATION BOX */
-    .search-box,
-    .location-box {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-    .location-box{
-      left: 0px !important;
-    }
-    /* Fix location text */
-    .location-text-section span {
-        font-size: 13px;
-        max-width: 100%;
-    }
-
-    /* Keep icons in one row */
-    .header-icons {
-        width: 100%;
-        justify-content: center;
-        gap: 25px;
-    }
+  /* Logo centered */
+ .logo img {
+  position: absolute;  /* or relative depending on your layout */
+  top: 75px;              /* adjust if needed */
+  right: 15%;
+  transform: translateY(-48px);
 }
+
+
+  /* Search full width */
+  .search-box {
+      width: 100% !important;
+      max-width: 90% !important;
+      margin-top: 13px;
+  }
+
+  /* Location box full width */
+  .location-box {
+      width: 100% !important;
+      max-width: 90% !important;
+      right: 0 !important;
+      left: 0 !important;
+      margin-top: 10px;
+  }
+
+  /* Icons row centered */
+  .header-icons {
+      width: 100%;
+      justify-content: center;
+      gap: 28px !important;
+      position: static !important;
+      order: -1;  
+      margin-bottom: 10px; 
+  }
+
+  .icon-wrapper {
+      left: 29% !important;
+  }
+}
+
+
+/* ======================= TABLET (577px - 768px) ======================= */
+@media (min-width:577px) and (max-width:768px) {
+
+  .header-row {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+  }
+
+  .search-box,
+  .location-box {
+      width: 100% !important;
+      max-width: 90% !important;
+  }
+  .location-box{
+    margin-left: 44px;
+  }
+  .logo img {
+  position: absolute;  /* or relative depending on your layout */
+  top: 75px;              /* adjust if needed */
+  right: 15%;
+  transform: translateY(-48px);
+  }
+
+  .header-icons {
+      width: 100%;
+      justify-content: center;
+      gap: 30px;
+      position: static !important;
+      order: -1;  
+      margin-bottom: 10px;
+  }
+
+  .icon-wrapper {
+      left: 29% !important;
+  }
+}
+
 /* ========================================================= */
 /* ======================= Laptop view ======================= */
  @media (min-width:1024px){

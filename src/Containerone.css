@@ -72,12 +72,16 @@
     left:5%;
   }
   .image-block img {
-    height: 250px !important;
+    height: 350px !important;
     object-fit: contain !important;
   }
   .image-block.plant img,
   .image-block.frame img {
       bottom: 15px !important;
+}
+.image-block.bottle img{
+  height: 500px;
+  object-fit: contain;
 }
   .image-block.small,
   .image-block.choco,
@@ -99,16 +103,17 @@
     position: static !important;
     margin-bottom: 0px !important; 
     margin-right: 10px !important; 
+
   }
   .image-block img {
-    height: 200px !important;
-    object-fit: contain !important;
+    height: 340px !important;
+    object-fit: cover !important;
     position: relative;
     left:20%;
   }
   .image-block.bottle {
     position: static !important;
-    margin-bottom: 5px !important;   /* APPLY CORRECTLY */
+    margin-bottom: 5px !important;  
   }
   .image-block.small,
   .image-block.choco {

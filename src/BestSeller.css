@@ -129,6 +129,7 @@
 
 .arrow-right1 {
   right: 0;
+  z-index: 10;
 }
 /* Mobile view: Cakes top, Flowers bottom */
 @media (max-width: 576px) {
@@ -169,5 +170,11 @@
   }
   .cake-cards{
     margin-right: 15px !important;
+  }
+  .arrow-left1{
+    z-index: 10 !important;
+  }
+  .arrow-right1{
+    z-index: 10 !important;
   }
 }

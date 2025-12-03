@@ -239,3 +239,21 @@
     display: none !important; 
   }
 }
+@media (max-width: 576px) {
+
+  .detailpage {
+    height: auto !important;        /* FIX WHITE SPACE */
+    padding: 8px 10px !important;   /* Reduce padding */
+    margin-top: 5px !important;     /* Reduce gap */
+    gap: 10px !important;
+  }
+
+  .delivery-container {
+    right: 0 !important;
+    top: 5px !important;
+    width: auto !important;
+    padding: 0 !important;
+  }
+
+}
+

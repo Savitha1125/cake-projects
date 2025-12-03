@@ -1,6 +1,8 @@
 import React from 'react'
 import './footer.css';
 import { FaFacebookF, FaInstagram, FaWhatsapp, FaYoutube, FaLinkedinIn, FaTwitter  } from "react-icons/fa";
+import img from "./assets/images/google-play.webp";
+import img1 from "./assets/images/app-store.webp";
 export default function Footer() {
   return (
     <div>
@@ -91,6 +93,16 @@ export default function Footer() {
   </a>
 </div>
 </div>
+   <p className='ms-5 reserve'>© 2013 - 2025 Winni.in. All Rights Reserved</p>
+
+ { /* RIGHT SECTION */}
+  <div class="footer-right">
+    <h5 className='float-end me-5 '>Experience Winni on mobile</h5>
+    <div class="footer-apps">
+      <img src={img} alt="Google Play" className='google-app'/>
+      <img src={img1} alt="App Store" className='google-app'/>
+    </div>
+  </div>
 </div>
 </div>
   )
