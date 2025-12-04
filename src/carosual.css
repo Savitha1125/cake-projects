@@ -50,7 +50,7 @@
   margin-bottom: 12px;
 }
 .carousel-wrapper{
-  width:100%;
+  width:99%;
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
@@ -65,22 +65,23 @@
 /* Make carousel full width on small screens */
 @media screen and (max-width: 576px) {
  .carousel-wrapper {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-  }
-
-  .carousel-img {
-    width: 100vw;
-    object-fit: cover;
-    display: block;
-  }
-  /* Adjust custom arrows */
-  .custom-arrow {
-    width: 40px;     /* fixed width for small screens */
+  width: 100vw;         /* full viewport width */
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);  /* break out of container padding */
+  margin-right: calc(50% - 50vw);
+  padding: 0;
+  position: relative;
+}
+.carousel img,
+.carousel-img {
+  width: 100vw !important;    
+  max-width: 100vw;
+  height: auto;
+  object-fit: cover;         
+  display: block;
+}
+.custom-arrow {
+    width: 40px;
     height: 40px;
     padding: 10px;
     font-size: 18px;

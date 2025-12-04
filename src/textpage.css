@@ -72,18 +72,15 @@
   .blogs, .bloger {
     font-size: 14px;
   }
-  .footer-image-for-corporate-desktop {
-  position: relative;   
-  left: 0;
-  width: 100vw !important; 
-  max-width: 100vw !important;
-  margin: 0 !important;      
-  padding: 10px 0 !important; 
-  box-sizing: border-box;
-  background-color: #f2f2f2;
+.footer-image-for-corporate-desktop {
+    width: 150vw !important;  
+    margin-left: calc(50% - 50vw) !important;  
+    margin-right: calc(50% - 50vw) !important;
+    padding: 10px 0 !important;
+    background-color: #f2f2f2;
 }
 
-  .footer-highlights {
+.footer-highlights {
     flex-direction: column;         /* stack highlights vertically */
     align-items: stretch;           /* stretch full width */
     justify-content: center;
@@ -111,7 +108,7 @@
 
 
 .footer-image-for-corporate-desktop {
-  width:100%;   
+  width:98%;   
   padding: 10px;  
   margin: 0;
   background-color: #f2f2f2;

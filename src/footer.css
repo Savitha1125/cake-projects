@@ -3,64 +3,154 @@
   align-items: flex-start;
   gap: 30px;
 }
+.winni-logo img {
+  width: 180px;      /* Adjust size */
+  height: auto;
+  display: block;
+}
+
 .footer-section {
   flex: 1 1 200px; 
   min-height: 150px;
 }
 .company{
-    margin-left: 55% !important;
+    margin-left:6% !important;
     white-space: nowrap;
 }
-.footer-links ul {
-  list-style: none !important;
-  padding: 0;
-  margin-left: 55% !important;
-  white-space: nowrap;
-}
-
-.footer-links li {
-  margin-bottom: 10px;
-  font-weight: lighter;
-}
-
-.footer-links a {
-  text-decoration: none;
-  color: #333; /* link color */
-  font-weight: 400;
-  transition: color 0.3s;
+.com{
+  margin-left: 15% !important;
 }
 .footer {
   display: flex;
   gap: 60px; /* spacing between sections */
   flex-wrap: wrap; /* wraps on small screens */
 }
-.footer-links-container {
-  margin-top: 80px; 
+.footer-links-container { 
   margin-left: 8%;
 }
 
 .footer-links-container ul {
   list-style: none; 
-  padding: 0;
   margin: 0;
 }
 
-.footer-links-container ul li {
+.footer-links-container li {
   margin-bottom: 10px; 
+  white-space: nowrap;
+  position: relative;
+  right: 40px;
 }
-
-.footer-links-container ul li a {
+.footer-links-container1 li {
+  margin-bottom: 10px; 
+  white-space: nowrap;
+  position: relative;
+  right: 10px;
+  list-style: none;
+}
+.footer-links-container ul li a,.footer-links-container1 ul li a,.link ul li a {
   text-decoration: none;
   color: #333;
   font-weight: 400;
   transition: color 0.3s;
+}
+.link ul li{
+  list-style: none;
+  margin-bottom: -48px;   
+  margin-top: 34% !important; 
+  position: relative;
+  transform: translate(-250px);
 }
 .footer-divider{
       height: 210px;
       width: 2px;
       background-color: #ccc;
       margin-top: 4%;
-      margin-left: 7%;
+      margin-left: -15%;
+}
+@media (max-width: 576px) {
+  .winni-logo img{
+   position: relative;
+   bottom: 25px !important;
+  }
+  /* Footer container: stack sections vertically */
+  .footer {
+    flex-direction: column;
+    gap: 20px !important;
+    padding: 0 10px;
+  }
+ .winni-logo{
+  height: 40px;
+  width:40px
+ }
+  .footer-section,
+  .footer-links-container,
+  .footer-links-container1,
+  .link {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  /* Headings move fully left */
+  .company {
+      transform: translate(40px);
+      position: relative;
+      bottom:60px
+  }
+  .com{
+    transform: translate(120px);
+    position: relative;
+    bottom: 30%;
+  }
+
+  /* Footer links list alignment */
+  .footer-links-container ul li
+  {
+    position: relative;
+    right: 0 !important;
+    margin-left:50% !important;
+    margin-bottom: 6px;
+    white-space: normal;  
+  }
+  .footer-links-container li{
+    position: relative;
+    bottom:60px
+  }
+ .footer-links-container1 li{
+  position: relative;
+  bottom: 55px;
+ }
+ .footer-links-container1 ul {
+    padding-left: 0 !important;  
+    margin-left: 60% !important;
+  }
+
+ .link ul li {
+  margin-left: 24%;
+  margin-bottom: 2px;
+  position: relative;
+  bottom: 60px !important;
+ }
+  /* Footer divider: hide for mobile */
+  .footer-divider {
+    display: none;
+  }
+
+  /* Special adjustments for 'link' class */
+  .link ul li {
+    margin-top: 5px !important;
+    transform: translate(70px);
+  }
+}
+@media (min-width: 577px) and (max-width: 992px)  {
+  .link ul li{
+    transform: translate(40px);
+    position: relative;
+    bottom: 85px;
+  }
+  .footer-divider{
+   margin-top:45px;
+  }
 }
 .social-wrapper {
   display: flex;
@@ -81,7 +171,7 @@
   text-decoration: none;
 }
 .social-media-section{
-      background-color: #e6e4e4;
+      background-color: #f8f5f7;
       width: 98%;
 }
 @media (max-width: 576px) {
@@ -126,9 +216,122 @@
     width: 100%;
   }
 }
+.social-icons{
+  margin-top: 12px;
+}
 .reserve{
   margin-left: 5% !important;
+  margin-bottom: 6px !important;
 }
-.google-app{
-  width: 12%;
+.footer-right {
+  display: flex;
+  align-items: center;  
+  justify-content: flex-end;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.footer-apps {
+  display: flex;
+  gap: 45px !important;  
+}
+
+.footer-apps img  {
+  height: 48px;
+  position: relative;
+  bottom: 25px; 
+}
+
+.exp {
+  margin-top: -10%;   
+  position: relative;
+  left: 6%; 
+}
+.google-app {
+  position: relative;
+  right: 145%;  
+  width:auto 
+}
+@media(max-width: 576px) {
+  /* Footer right section (h5 + apps) */
+  .footer-right {
+    flex-direction: column;     /* h5 on top, images below */
+    align-items: flex-start;
+    gap: 5px;
+    margin: 0 !important;
+    justify-content: flex-start;
+  }
+
+  .footer-apps {
+    display: flex;
+    gap: 5px !important;        /* small gap between images */
+  }
+
+  .exp {
+    font-size: 16px;
+    margin: 0 !important;
+    position: relative;
+    left: 0 !important;
+  }
+
+  .google-app {
+    height: 36px;
+    width: auto;
+    position: relative;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+  }
+
+  /* Social media section full width */
+  .social-media-section {
+    width: 150vw !important;  
+    margin-left: calc(50% - 50vw) !important;  
+    margin-right: calc(50% - 50vw) !important;
+    padding: 10px 0 !important;
+    background-color: #f8f5f7;  
+  }
+
+  .social-media-section .row,
+  .social-media-section .container,
+  .social-media-section .container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Reserve text full width */
+  .reserve {
+    margin-left: 0 !important;
+    margin-bottom: 6px !important;
+    width: 100%;
+  }
+
+  /* Social icons spacing */
+  .social-icons {
+    margin-top: 8px;
+    gap: 10px;
+  }
+}
+@media (min-width: 577px) and (max-width: 992px) {
+  .footer-right {
+    display: flex;
+    flex-direction: column; /* stack text above images */
+    align-items: flex-end; 
+    gap: 3px;   
+  }
+
+  .exp h5{
+    margin: 0 !important;   /* remove manual right margin */
+    font-size: 16px;
+    position: relative;
+    right: 7px;
+  }
+
+  .google-app {
+    margin: 0 !important;   /* remove manual top/right margins */
+    height: 34px !important;           /* adjust size if needed */
+    width: auto;
+    top:5px;
+    left:5px
+  }
 }

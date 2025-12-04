@@ -6,7 +6,7 @@ import img1 from "./assets/images/app-store.webp";
 export default function Footer() {
   return (
     <div>
-      <div className="logo mt-5 ms-5">
+      <div className="winni-logo mt-5 ms-5 ">
             <img
               src="https://assets.winni.in/groot/2023/03/09/winni-logo/svgtopng-full-cp.png"
               alt="Logo"
@@ -15,8 +15,8 @@ export default function Footer() {
       <div className="footer">
   {/* Our Company Section */}
   <div className="footer-section">
-    <h5 className="company mt-5 ms-5">Our Company</h5>
-    <div className="footer-links">
+    <h5 className="com mt-5 ms-5">Our Company</h5>
+    <div className="footer-links-container1">
       <ul className='ms-5'>
         <li><a href="/about-us">About Us</a></li>
         <li><a href="/careers">Careers</a></li>
@@ -30,7 +30,7 @@ export default function Footer() {
   {/* Quick Links Section */}
   <div className="footer-section">
     <h5 className="company mt-5">Quick Links</h5>
-    <div className="footer-links">
+    <div className="footer-links-container">
       <ul>
         <li><a href="/about-us">Wishes</a></li>
         <li><a href="/careers">Sitemap</a></li>
@@ -45,7 +45,7 @@ export default function Footer() {
 
    <div className="footer-section">
     <h5 className="company mt-5">Policy & Security</h5>
-    <div className="footer-links">
+    <div className="footer-links-container">
       <ul>
         <li><a href="/about-us">FAQ</a></li>
         <li><a href="/careers">Refund Policy</a></li>
@@ -54,7 +54,7 @@ export default function Footer() {
       </ul>
     </div>
   </div>
-  <div className='footer-links-container'>
+  <div className='link'>
  <ul>
   <li><a href="/about-us">Data Security</a></li>
   <li><a href="/careers">Cancellation Policy</a></li>
@@ -65,9 +65,9 @@ export default function Footer() {
 </div>
 <div className='social-media-section'>
 <div className="social-wrapper">
-  <h6 className="connect fw-bold">Connect With Us</h6>
+  <h6 className="connect fw-bold mt-4">Connect With Us</h6>
 
-  <div className="social-icons mb-3">
+  <div className="social-icons mb-0">
   <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
     <FaFacebookF />
   </a>
@@ -93,15 +93,28 @@ export default function Footer() {
   </a>
 </div>
 </div>
-   <p className='ms-5 reserve'>© 2013 - 2025 Winni.in. All Rights Reserved</p>
+   <p className='ms-5 reserve mt-3'>© 2013 - 2025 Winni.in. All Rights Reserved</p>
 
  { /* RIGHT SECTION */}
   <div class="footer-right">
-    <h5 className='float-end me-5 '>Experience Winni on mobile</h5>
-    <div class="footer-apps">
-      <img src={img} alt="Google Play" className='google-app'/>
-      <img src={img1} alt="App Store" className='google-app'/>
-    </div>
+    <h5 className='float-end me-5 exp'>Experience Winni on mobile</h5>
+    <div className="footer-apps">
+  <a 
+    href="https://play.google.com/store/apps/details?id=com.winni.winniapp" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    <img src={img} alt="Google Play" className="google-app" />
+  </a>
+
+  <a 
+    href="https://apps.apple.com/in/app/winni-cake/id1473804069" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    <img src={img1} alt="App Store" className="google-app" />
+  </a>
+</div>
   </div>
 </div>
 </div>

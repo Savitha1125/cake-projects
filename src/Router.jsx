@@ -15,6 +15,7 @@ import BestSeller from "./BestSeller";
 import Flower from "./Flower"
 import TextPage from "./Text-page";
 import Footer from "./Footer";
+import Help from "./Help";
 export default function MainLayout() {
   const location = useLocation();
 
@@ -31,6 +32,7 @@ export default function MainLayout() {
           <Flower/>
           <TextPage/>
           <Footer/>
+          <Help/>
         </>
       }
 
