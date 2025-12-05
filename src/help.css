@@ -1,7 +1,30 @@
 .pointer {
   cursor: pointer;
 }
-.container-fluid{
-      background-color: #f0f0f0;
-      width:95%
+.help-bar-bg {
+  width: 98%;
+  background-color: #e6e6e6; 
+}
+@media (max-width:576px) {
+.help-bar-bg{
+    width: 150vw !important;  
+    margin-left: calc(50% - 50vw) !important;  
+    margin-right: calc(50% - 50vw) !important;
+    padding: 10px 0 !important;
+    background-color: #e6e6e6;  
+}
+}
+.footer-line {
+  margin: 0 auto;          
+  max-width:90%;          
+  white-space: normal;    
+  overflow-wrap: break-word;
+  text-align: center;  
+  font-size: 15px;   
+}
+@media (max-width: 576px) {
+  .footer-line {
+   margin-left: 15%;
+   min-width: 120%;
+  }
 }

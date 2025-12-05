@@ -129,23 +129,32 @@
     left:15% !important;
   }
 }
+
 /*image*/
 .container .cash{
   width: 100% !important;
 }
-/* =============== FLIP ANIMATION =============== */
-/* FLIP ANIMATION */
-@keyframes flipX {
-  0% {
-    transform: perspective(500px) rotateX(0deg);
-  }
-  100% {
-    transform: perspective(500px) rotateX(360deg);
-  }
+.next-section {
+  perspective: 800px;
 }
 
-.flipX {
-  animation: flipX 1.2s ease-in-out;
+.cssanimation {
+  display: inline-block;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.ca__fx-flipX.active {
+  animation: flipX 1.2s linear;
+}
+
+@keyframes flipX {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
 }
 
 @media(max-width:576px) {

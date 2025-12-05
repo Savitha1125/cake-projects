@@ -105,11 +105,10 @@ export default function Header() {
       {/* ================= MAIN HEADER ROW ================= */}
       <div className="container-fluid">
         <div className="header-row">
-          <div className="logo">
+          <div className="logo" style={{ cursor: 'pointer' }} onClick={() => window.location.href="/"}>
             <img
               src="https://assets.winni.in/groot/2023/03/09/winni-logo/svgtopng-full-cp.png"
               alt="Logo"
-              onClick={() => navigate("/")}
             />
           </div>
 
@@ -152,7 +151,7 @@ export default function Header() {
             <div className="location-text-section">
               <FaMapMarkerAlt />
               <span>Choose Delivery Location</span>
-              <FaPencilAlt className="edit-icon ms-5" />
+              <FaPencilAlt className="pencil ms-5" />
             </div>
           </div>
 

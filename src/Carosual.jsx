@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
-import { useNavigate } from "react-router-dom"; // import navigate
+import { useNavigate } from "react-router-dom";
 import slide1 from "./assets/flower.jpg";
 import slide2 from "./assets/children.jpg";
 import slide3 from "./assets/cake.jpg";
@@ -10,7 +10,6 @@ import "./carosual.css";
 export default function Carosual() {
   const navigate = useNavigate();
 
-  // Add link for each slide
   const slides = [
     { src: slide1, alt: "Flowers", link: "/flowers" },
     { src: slide2, alt: "Children", link: "/children" },
@@ -19,19 +18,19 @@ export default function Carosual() {
   ];
 
   return (
-    <div className="carousel-wrapper" >
+    <div className="carousel-wrappers">
       <Carousel
         interval={2000}
         controls={true}
         indicators={true}
         pause={false}
-        prevIcon={<i className="fa-solid fa-chevron-left custom-arrow "></i>}
-        nextIcon={<i className="fa-solid fa-chevron-right custom-arrow "></i>}
+        prevIcon={<i className="fa-solid fa-chevron-left custom-arrow"></i>}
+        nextIcon={<i className="fa-solid fa-chevron-right custom-arrow"></i>}
       >
         {slides.map((slide, index) => (
           <Carousel.Item key={index}>
             <img
-              className="d-block w-100 carousel-img"
+              className="carousel-img w-100"
               src={slide.src}
               alt={slide.alt}
               style={{ cursor: "pointer" }}

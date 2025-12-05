@@ -18,15 +18,13 @@ export default function ContainerOne() {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClick = () => {
-    setIsFlipped(true);
-
-    // reset animation class so it can play again
-    setTimeout(() => setIsFlipped(false), 1200);
-
-    navigate("/next-page");
-  };
-
-  return (
+  setIsFlipped(true);      
+  setTimeout(() => {
+    navigate("/next-page"); 
+    setIsFlipped(false);   
+  }, 1200);
+};
+return (
     <>
       <div className="containerone">
         <h1 className='mt-5 text-center must'>Must Have</h1>
@@ -49,15 +47,18 @@ export default function ContainerOne() {
       </div>
 
       {/* Cash Image */}
-      <div className="container next-section" style={{ textAlign: "center", marginTop: "50px" }}>
-        <img
-          src={img8}
-          alt="Cash"
-          className={`cash ${isFlipped ? "flipX" : ""}`}
-          onClick={handleClick}
-          style={{ cursor: "pointer" }}
-        />
-      </div>
+       <div
+      className="container next-section"
+      style={{ textAlign: "center", marginTop: "50px" }}
+    >
+      <img
+        src={img8}
+        alt="Cash"
+        className={`cash cssanimation ca__fx-flipX ${isFlipped ? "active" : ""}`}
+        onClick={handleClick}
+        style={{ cursor: "pointer" }}
+      />
+    </div>
     </>
   );
 }

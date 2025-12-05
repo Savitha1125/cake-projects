@@ -6,13 +6,15 @@ export default function Help() {
   const navigate = useNavigate();
 
   return (
+    <>
+    <div className="help-bar-bg ">
     <div className="container-fluid">
 
-      <div className="row align-items-center justify-content-start">
+      <div className="row align-items-center justify-content-start ">
 
         {/* 1 - Help Center */}
         <div
-          className="col-6 col-md-2 mb-3 ms-5 d-flex align-items-center pointer"
+          className="col-6 col-md-2 mb-2 ms-5 d-flex align-items-center pointer p-3"
           onClick={() => navigate("/help-center")}
         >
           <img
@@ -74,8 +76,16 @@ export default function Help() {
           />
           <span className="ms-2">Winni In News</span>
         </div>
-
+        </div>
       </div>
     </div>
+    <div className="emails col-12">
+  <p className="text-break footer-line">
+    Company Name: Dhawala Online Solutions Private Limited | CIN: U51109KA2012PTC065653 | Regd. Office Address: 3rd Floor, PLOT. NO # 128/P2, EPIP Industrial Area Whitefield,
+    <br />
+    Sonnenahalli Village, Bangalore – 560066 | Contact no. +91 – 7829463510 | E-mail: info@winni.in
+  </p>
+</div>
+</>
   );
 }
