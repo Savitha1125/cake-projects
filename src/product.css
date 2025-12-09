@@ -42,7 +42,7 @@
 /*  Laptop — 4 per row */
 @media (max-width: 992px) {
   .product-inline {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     gap: 12px;
   }
   .product-img {
@@ -72,18 +72,18 @@
 @media (max-width: 480px) {
   .product-inline {
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 6px;
   }
   .product-img {
-    width: 190px;
+    width: 50px;
     height: 119px;
     object-fit: cover;
     position: relative;
-    left:34%
+    left:-4%
   }
   .product-item p {
     font-size: 16px;
     position: relative;
-    left: 45%;
+    left: 4%;
   }
 }

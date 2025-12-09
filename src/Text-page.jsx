@@ -206,7 +206,7 @@ export default function TextPage() {
     
     <div className="col s12 m12 l4 highlight valign-wrapper">
       <div className="iconContainer">
-        <img className="responsive-img" alt="secure-payment" src="https://assets.winni.in/groot/2023/07/19/desktop/secure-payment.png"></img>
+        <img className="responsive-img truck" alt="secure-payment" src="https://assets.winni.in/groot/2023/07/19/desktop/secure-payment.png"></img>
       </div>
       <div className="text-container">
         <div className="title">100% Secure Payments</div>

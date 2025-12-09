@@ -22,12 +22,14 @@ font-size: 14px;
 @media  (max-width:576px) {
   .button{
     position: relative;
-    left:75%;
+    left:65%;
     width: 100px;
     white-space: nowrap;
   }
-  .cake-card{
-    margin-left: 18%;
+   .cake-card {
+    width: 85% !important;
+    min-width: auto;
+    margin-left: 25px;
   }
   
 }

@@ -1,3 +1,8 @@
+#root, body, html {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color:whitesmoke; /* pink color */

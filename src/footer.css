@@ -98,7 +98,7 @@
       bottom:60px
   }
   .com{
-    transform: translate(120px);
+    transform: translate(50px);
     position: relative;
     bottom: 30%;
   }
@@ -108,7 +108,7 @@
   {
     position: relative;
     right: 0 !important;
-    margin-left:50% !important;
+    margin-left:30% !important;
     margin-bottom: 6px;
     white-space: normal;  
   }
@@ -122,11 +122,11 @@
  }
  .footer-links-container1 ul {
     padding-left: 0 !important;  
-    margin-left: 60% !important;
+    margin-left: 40% !important;
   }
 
  .link ul li {
-  margin-left: 24%;
+  margin-left: -2%;
   margin-bottom: 2px;
   position: relative;
   bottom: 60px !important;
@@ -189,10 +189,9 @@
     margin: 0 !important;
     padding: 0 !important;
   }
-
   /* Remove huge left shifts */
   .company {
-    margin-left: 40% !important;
+    margin-left: 20% !important;
     text-align: left;
     margin-bottom: 15px;
   }
@@ -285,7 +284,7 @@
 
   /* Social media section full width */
   .social-media-section {
-    width: 150vw !important;  
+    width: 100vw !important;  
     margin-left: calc(50% - 50vw) !important;  
     margin-right: calc(50% - 50vw) !important;
     padding: 10px 0 !important;
