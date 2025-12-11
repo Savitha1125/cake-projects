@@ -62,9 +62,7 @@
   width: 29%;
 }
 
-@media (max-width: 768px) {
-
-  /* All image blocks full width */
+@media (min-width: 481px) and (max-width: 1024px){
   .image-block {
     width: 100% !important;
     position: static !important;
