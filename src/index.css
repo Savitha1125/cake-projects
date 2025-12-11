@@ -14,7 +14,7 @@ body {
   width: 100%;
   left: 0;
   background: white;
-  z-index: 9999;
+  z-index: 999;
   
 }
 .top-links {
@@ -24,15 +24,18 @@ body {
   top: 30px; 
 }
 body {
-  padding-top: 100px;
+  padding-top: 100px !important;
 } 
 
 /* Hide top links on small mobiles */
 @media(max-width: 576px) {
     /* .top-links { display: none !important; } */
     body {
-  padding-top: 280px;
+  padding-top: 200px !important;
 } 
+.pencil{
+  font-size: 30px;
+}
 }
 
 

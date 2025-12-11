@@ -33,7 +33,7 @@ return (
         <div className='container'>
           <div className='image-block'><img src={img} alt="Kid Cake" /></div>
           <div className='image-block discount'><img src={img1} alt="Deal" /></div>
-          <div className='image-block'><img src={img2} alt="Rose" /></div>
+          <div className='image-block rose'><img src={img2} alt="Rose" /></div>
         </div>
 
         {/* Second row */}

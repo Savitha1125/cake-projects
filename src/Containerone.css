@@ -84,6 +84,50 @@
 
   /* Special images if you want larger height */
   .image-block.bottle img {
+    height: auto !important;  
+    right: 1px;
+  }
+
+  /* Remove bottom adjustments */
+  .image-block.plant img,
+  .image-block.frame img {
+    bottom: 7% !important;
+  }
+  .image-block.frame img{
+    right: -5px;
+  }
+ .image-block.small img{
+  position: relative;
+  top:48%;
+  right: 107%;
+ }
+ .image-block.choco img {
+  position: relative;
+  top: 48%;
+  transform: translateX(-970px);
+}
+}
+/* MOBILE: 1 per row + same gap */
+@media (max-width: 480px) {
+.image-block {
+    width: 100% !important;
+    position: static !important;
+    margin-bottom: 15px !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+  }
+
+  /* All images should be visible fully */
+  .image-block img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block;
+  }
+
+  /* Special images if you want larger height */
+  .image-block.bottle img {
     height: auto !important;   /* remove fixed 500px */
   }
 
@@ -97,37 +141,14 @@
   top:48%;
   right: 110%;
  }
- .image-block.choco img{
-  position: relative;
-  top:98%;
-  right: 190%;
+ .image-block.rose img {
+    margin-right: 50px;
  }
+ .image-block.choco img {
+  position: relative;
+  top: 48%;
+  transform: translateX(-970px);
 }
-
-/* MOBILE: 1 per row + same gap */
-@media (max-width: 480px) {
-  .image-block {
-    width: 100% !important; 
-    position: static !important;
-    margin-bottom: 0px !important; 
-    margin-right: 10px !important; 
-
-  }
-  .image-block img {
-    height: 340px !important;
-    object-fit: cover !important;
-    position: relative;
-    left:20%;
-  }
-  .image-block.bottle {
-    position: static !important;
-    margin-bottom: 5px !important;  
-  }
-  
-  .must{
-    position: relative;
-    left:15% !important;
-  }
 }
 
 /*image*/

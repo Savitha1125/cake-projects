@@ -95,7 +95,7 @@ export default function BestSeller() {
 
           {/* Flowers Tab */}
           <span
-            className={`category-text flowers-text mt-1 ms-4 fw-semibold fs-2 px-3 py-1 border border-dark rounded ${
+            className={`category-text flowers-text mt-1 ms-4 ms-md-1 fw-semibold fs-2 px-3 py-1 border border-dark rounded ${
               activeTab === "flowers" ? "active-tab" : ""
             }`}
             onClick={() =>
@@ -107,7 +107,8 @@ export default function BestSeller() {
         </div>
 
         <Link to="/cakes" className="text-decoration-none text-dark">
-          <h5 className="mt-0 me-5 fw-bold view-all-btn">VIEW ALL</h5>
+         <h5 className="mt-0 fw-bold view-all-btn ms-auto d-md-block d-sm-block text-end">VIEW ALL
+         </h5>
         </Link>
       </div>
 

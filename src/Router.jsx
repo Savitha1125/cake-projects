@@ -12,42 +12,46 @@ import KidsCakes from "./KidsCakes";
 import NextPage from "./NextPage";
 import ContainerOne from "./ContainerOne";
 import BestSeller from "./BestSeller";
-import Flower from "./Flower"
+import Flower from "./Flower";
 import TextPage from "./Text-page";
 import Footer from "./Footer";
 import Help from "./Help";
+
 export default function MainLayout() {
   const location = useLocation();
 
   return (
     <>
-  
-      {location.pathname === "/" &&
+      {/* Homepage Only Components */}
+      {location.pathname === "/" && (
         <>
           <Carosual />
           <Product />
-          <ContainerOne/>
-          <Card/>
-          <BestSeller/>
-          <Flower/>
-          <TextPage/>
-          <Footer/>
-          <Help/>
+          <ContainerOne />
+          <Card />
+          <BestSeller />
+          <Flower />
+          <TextPage />
         </>
-      }
+      )}
 
+      {/* All Routes */}
       <Routes>
         <Route path="/vendor" element={<VendorForm />} />
         <Route path="/franchise" element={<Franchise />} />
         <Route path="/carousel" element={<Carosual />} /> 
-        <Route path="/product" element={<Product/>}/>
-        <Route path="/cakes" element={<Cakes/>}/>
+        <Route path="/product" element={<Product />} />
+        <Route path="/cakes" element={<Cakes />} />
         <Route path="/photo-cakes" element={<PhotoCakes />} />
         <Route path="/pinata-cakes" element={<PinataCakes />} />
         <Route path="/pull-me-up-cakes" element={<PullMeUpCakes />} />
         <Route path="/kids-cakes" element={<KidsCakes />} /> 
-        <Route path="/next-page" element={<NextPage/>}/>
+        <Route path="/next-page" element={<NextPage />} />
       </Routes>
+
+      {/* These should be visible on ALL pages */}
+      <Footer />
+      <Help />
     </>
   );
 }
