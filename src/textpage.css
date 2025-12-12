@@ -60,7 +60,12 @@
     width: 100% !important;       /* FIX: full width */
     min-width: auto !important;
   }
-
+  .responsive-img {
+    margin-left: 10px; /* smaller margin for mobile */
+  }
+  .responsive-img1{
+    margin-left: 15px !important;
+  }
   .blog-link {
     font-size: 16px;
     position: static !important;  /* FIX */
@@ -122,11 +127,8 @@
     line-height: 1.3;
   }
 }
-
-
-
 .footer-image-for-corporate-desktop {
-  width:98%;   
+  width:100%;   
   padding: 10px;  
   margin: 0;
   background-color: #f2f2f2;

@@ -2,7 +2,7 @@
   cursor: pointer;
 }
 .help-bar-bg {
-  width: 98%;
+  width: 100%;
   background-color: #e6e6e6; 
 }
 @media (max-width:576px) {

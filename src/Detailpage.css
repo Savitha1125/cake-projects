@@ -9,7 +9,7 @@
   align-items: center;
   justify-content:flex-start; 
   white-space: nowrap; 
-  scrollbar-width: none;
+  /* scrollbar-width: none; */
   padding-right: 40px !important;
   overflow: visible; 
   position: relative; 

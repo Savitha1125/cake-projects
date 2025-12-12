@@ -32,6 +32,8 @@ export default function MainLayout() {
           <BestSeller />
           <Flower />
           <TextPage />
+          <Footer />
+          <Help />
         </>
       )}
 
@@ -48,10 +50,6 @@ export default function MainLayout() {
         <Route path="/kids-cakes" element={<KidsCakes />} /> 
         <Route path="/next-page" element={<NextPage />} />
       </Routes>
-
-      {/* These should be visible on ALL pages */}
-      <Footer />
-      <Help />
     </>
   );
 }

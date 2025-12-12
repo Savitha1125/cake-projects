@@ -11,17 +11,19 @@
 .view-all-btn{
   background-color: rgb(250, 184, 223);
   padding: 8px;
-  border-radius: 8px;
+  border-radius: 5px;
   margin-bottom: 20px;
+  margin-right: 60px;
 }
 .best-container {
-  background-color: #fff5f8; /* soft light pink */
+  background-color: #fff5f8; 
   border-radius: 18px;
   margin: auto;
-  width: 92%;
-  padding: 20px 0;
+  width: 93%;
+  padding: 21px 0;
   box-shadow: 0px 2px 8px rgba(0,0,0,0.05);
   margin-top: 60px;
+  margin-left: 4%;
 }
 .active-tab {
   background-color: #000;
@@ -137,16 +139,16 @@
     font-size: 14px !important;
     padding: 4px 10px !important;
     position: relative;
-    right: 110px;
+    right: 50px;
   }
   .flowers-text {
     position: relative;
-    right: 44%;
+    right: 20%;
   }
   .seller {
     font-size: 20px !important;
     position: relative;
-    right: 50px;
+    right: 10px;
   }
    .tab-container {
     flex-direction: column !important;
@@ -156,11 +158,13 @@
   }
 
   .view-all-btn {
-    font-size: 10px !important;
+    font-size: 12px !important;
+    width:38%;
+    text-align: center;
   }
   .best-container{
-    width:85% !important;
-    margin-left: 24px !important;
+    width:90% !important;
+    margin-left: 15px !important;
   }
   .cake-imges{
     height: 200px !important;

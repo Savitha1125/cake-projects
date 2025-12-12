@@ -19,16 +19,16 @@ export default function Card() {
         <Link to="/cakes" className='text-decoration-none text-dark float-end mb-5 button'
           style={{
           position: "absolute",
-          right: "60px",
+          right: "50px",
           transform: "translateY(-80%)",
         }}>
-         <h5 style={{ backgroundColor: "#e1e0e0ff",fontWeight:"bold",height:"40px",padding:"7px"}}>VIEW ALL</h5>
+         <h5 style={{ backgroundColor: "#e1e0e0ff",fontWeight:"bold",height:"40px",padding:"7px",borderRadius:"5px"}}>VIEW ALL</h5>
         </Link>
       </div>
 
       {/* Card Section */}
       <div className="container mt-4">
-        <div className="row justify-content-center g-4">
+        <div className="row justify-content-center g-5">
 
           {/* Card 1 */}
           <div className="col-lg-3 col-md-6 col-sm-6 col-12 col-xl-3 px-md-4 px-lg-3">

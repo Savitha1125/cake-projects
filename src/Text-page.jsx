@@ -195,7 +195,7 @@ export default function TextPage() {
 
     <div className="col s12 m12 l4 highlight valign-wrapper">
       <div className="iconContainer">
-        <img className="responsive-img ms-5 " alt="happy-delivery-icon" src="https://assets.winni.in/groot/2023/07/19/desktop/happy-delivery.png"></img>
+        <img className="responsive-img1 ms-5 " alt="happy-delivery-icon" src="https://assets.winni.in/groot/2023/07/19/desktop/happy-delivery.png"></img>
       </div>
       <div className="text-container">
         <div className="title">700+ Cities</div>
