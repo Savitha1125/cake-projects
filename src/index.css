@@ -376,7 +376,6 @@ body {
   color: rgb(236, 89, 155);
   cursor: pointer;
 }
-
 /* ================== Tooltip Suggestions ================== */
 .search-tooltip {
   position: absolute;
@@ -385,78 +384,51 @@ body {
   transform: translateX(-50%);
   background-color: #fff;
   color: #333;
-  padding: 8px 10px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  padding: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   font-size: 13px;
-  white-space: normal;
   text-align: left;
   z-index: 999;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  min-width: 404px;
   border-radius: 6px;
-  min-height: 140px;
+  width: 100%;
+  max-width: 90vw;
 }
-
-/* Tooltip header */
 .search-item {
-  font-weight: normal;
-  margin-bottom: 8px;
   display: flex;
   align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
 }
+
 .search-item::after {
   content: "";
   flex: 1;
-  margin-left: 10px;
-  height: 1px;
-  background-color: #ccc;
+  height: 2px;
+  background-color: #dad7d7;
+}
+.shortcut-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
 
-/* ================== Shortcut Suggestions ================== */
-.sub-menu,
-.sub-menu1,
-.sub-menu2,
-.sub-menu00,
-.sub-menu01,
-.sub-menu02,
-.sub-menu3,
-.sub-menu001 {
-  position: absolute;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  padding: 5px;
+@media (min-width: 576px) {
+  .shortcut-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.shortcut-item {
   font-size: 14px;
-  transition: all 0.2s ease;
-}
-
-.sub-menu:hover,
-.sub-menu1:hover,
-.sub-menu2:hover,
-.sub-menu00:hover,
-.sub-menu001:hover,
-.sub-menu02:hover,
-.sub-menu01:hover,
-.sub-menu3:hover {
-  border-color: pink;
-  background-color: #fcf0f8;
   cursor: pointer;
+  color: #000;
 }
 
-/* Positioning shortcuts */
-.sub-menu { top: 45px; left: 5%; }
-.sub-menu1 { top: 45px; left: 32%; }
-.sub-menu2 { top: 45px; left: 63%; }
-.sub-menu00 { top: 75px; left: 5%; }
-.sub-menu01 { top: 75px; left: 32%; }
-.sub-menu02 { top: 75px; left: 63%; }
-.sub-menu3 { top: 105px; left: 5%; }
-.sub-menu001 { top: 105px; left: 43%; }
-
-/* ================== Bold text inside search */
-.text {
-  font-weight: bold;
+.shortcut-item:hover {
+  color: #e74898;
 }
 .popup-overlay {
   position: fixed;
@@ -548,6 +520,8 @@ body {
   height: 18px;
   accent-color: rgb(5, 79, 5);
   cursor: pointer;
+  position: relative;
+  bottom: 79px;
 }
 
 .within {
@@ -556,6 +530,7 @@ body {
   color: #333;
   position: relative;
   left: 10px;
+  bottom: 79px;
 }
 .search-section {
   display: flex;
@@ -566,6 +541,8 @@ body {
   background: #f9f9f9;
   width:70%;
   margin: 0 auto;
+  position: relative;
+  bottom: 50px;
 }
 
 .search-section input {
@@ -580,7 +557,7 @@ body {
 .links {
   display: flex;
   justify-content: space-between;
-  margin: 10px 95px;
+  margin: 10px 95px !important;
   font-size: 17px;
 }
 
@@ -588,12 +565,13 @@ body {
   color: #5aaeea;
   text-decoration: none;
   font-weight: normal;
+  position: relative;
+  right: 40px;
+  bottom: 30px;
 }
-
-
 .login-text {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 1px;
   font-size: 17px;
 }
 .login-text a{
@@ -619,6 +597,59 @@ body {
   color: #333 !important; 
   outline: none !important;
   box-shadow: none !important;
+}
+@media screen and (max-width: 576px) {
+  .popup-box {
+    width: 90% !important;
+    padding: 25px 20px;
+    border-radius: 12px;
+  }
+  .popup-header h1{
+    font-size: 17px;
+  }
+  .popup-subtitle{
+    font-size: 15px;
+  }
+  .radio-group {
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: nowrap;
+  }
+  .location-option {
+    gap: 10px !important;
+    position: static !important;
+    left: auto !important;
+    bottom: auto !important;
+  }
+  .location-option input[type="radio"] {
+    position: static !important;
+    bottom: auto !important;
+  }
+  .glass{
+    position: relative;
+    right: 20px;
+  }
+  .within {
+    position: static !important;
+    left: auto !important;
+    bottom: auto !important;
+  }
+  .search-section {
+    width: 100%;
+    margin: 15px 0 0 0;
+    position: static !important;
+    bottom: auto !important;
+  }
+   .links {
+    margin-top: 40px !important;
+    flex-direction: row;
+    text-align: center;
+    font-size: 13px;
+  }
+  .continue-btn {
+    width: 100%;
+    margin-top: 20px;
+  }
 }
 .tooltip-user-box{
   position: absolute;

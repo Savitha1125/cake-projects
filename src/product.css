@@ -95,7 +95,7 @@
     height: 119px;
     object-fit: cover;
     position: relative;
-    left:16%
+    left: 17% !important;
   }
   .product-item p {
     font-size: 16px;

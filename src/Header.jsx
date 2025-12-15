@@ -112,32 +112,33 @@ export default function Header() {
           </div>
 
           <div className="search-box position-relative">
-            <input
-              type="text"
-              placeholder="Search 5000+ flowers, cakes, gifts etc"
-              onFocus={() => setShowSuggestions(true)}
-              onBlur={() => setShowSuggestions(false)}
-            />
-            <FaSearch className="search-icon" />
-                
-  {showSuggestions && (            
-             <div className="search-tooltip">
-        <h6 className="search-item">
-          Trending Shortcut
-          <hr />
-        </h6>
-        <div className="sub-menu">Cakes</div>
-        <div className="sub-menu1">Flowers</div>
-        <div className="sub-menu2">Gifts</div>
-        <div className="sub-menu00">Combos</div>
-        <div className="sub-menu01">Chocolates</div>
-        <div className="sub-menu02">Birthday Gifts</div>
-        <div className="sub-menu3">Personalized Gifts</div>
-        <div className="sub-menu001">Anniversary Gifts</div>
-      </div>
-    )}
+  <input
+    type="text"
+    placeholder="Search 5000+ flowers, cakes, gifts etc"
+    onFocus={() => setShowSuggestions(true)}
+    onBlur={() => setShowSuggestions(false)}
+  />
+  <FaSearch className="search-icon" />
+
+  {showSuggestions && (
+    <div className="search-tooltip">
+  <div className="search-item">
+    Trending Shortcut
   </div>
-             {/* LOCATION POPUP */}
+  <div className="shortcut-grid">
+    <div className="shortcut-item">Cakes</div>
+    <div className="shortcut-item">Flowers</div>
+    <div className="shortcut-item">Gifts</div>
+    <div className="shortcut-item">Combos</div>
+    <div className="shortcut-item">Chocolates</div>
+    <div className="shortcut-item">Birthday Gifts</div>
+    <div className="shortcut-item">Personalized Gifts</div>
+    <div className="shortcut-item">Anniversary Gifts</div>
+  </div>
+</div>
+  )}
+</div>
+    {/* LOCATION POPUP */}
           <div
             className="location-box"
             onClick={() => setShowPopup(true)}
@@ -196,16 +197,16 @@ export default function Header() {
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
           />
-          <i className="fa-solid fa-magnifying-glass"></i>
+          <i className="fa-solid fa-magnifying-glass glass"></i>
         </div>
     
                 <div className="links">
                   <a href="#">Don’t Know Pincode?</a>
                   <i
                     className="fi fi-rs-location-crosshairs"
-                    style={{ color: "#80c2f1", marginRight: "-26%", marginTop: "3px" }}
+                    style={{ color: "#80c2f1",position:"relative",bottom:"26px",left:"13px"}}
                   ></i>
-                  <span style={{ color: "#80c2f1" }}>Detect my Location</span>
+                  <span style={{ color: "#80c2f1",position:"relative",bottom:"30px",left:"20px"}}>Detect my Location</span>
                 </div>
     
                 <p className="login-text">
