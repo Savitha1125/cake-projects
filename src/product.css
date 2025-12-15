@@ -54,7 +54,20 @@
     height: 100px;
   }
 }
+@media (max-width: 1024px) {
+  .product-container {
+    display: flex;          /* parent must be flex */
+  }
 
+  .product-img {
+    min-width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-left: auto;      /* pushes the image to the right */
+    transition: transform 0.3s ease;
+  }
+}
 /*  Tablet — 2 per row */
 @media (max-width: 768px) {
   .product-inline {

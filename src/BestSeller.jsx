@@ -15,7 +15,7 @@ import cake7 from "./assets/fudge brownie cake.webp";
 
 // Flower Images
 import flower1 from "./assets/pink Flower.avif";
-import flower2 from "./assets/Blue Flower.webp";
+import flower2 from "./assets/blue-flower.webp";
 import flower3 from "./assets/orchids.avif";
 import flower4 from "./assets/wish.avif";
 import flower5 from "./assets/roses.avif";

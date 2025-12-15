@@ -25,17 +25,17 @@ export default function Cakes() {
           <span>Home</span>
           <i
             className="fi fi-br-angle-right icon"
-            style={{ margin: "0 8px" }}
+            style={{ margin: "0 8px"}}
           ></i>
           <span className="cakes">Cakes</span>
         </div>
 
-        <div className="filter-box-main">
+        <div className="content">
           <div className="box">
-            <h5 style={{ marginBottom: "10px",marginLeft:"38px" ,fontWeight:"bold"}}>Cakes{"  "}
-              <span className="fw-normal items">(397 items)</span> </h5>
+            <h5 style={{ marginBottom: "10px",marginLeft:"38px" }}>Cakes</h5>
 
             {/* Calendar + Delivery Date text */}
+            <span className="vertical-line"></span>
             <div
               className="cakes-container"
               style={{
@@ -49,11 +49,64 @@ export default function Cakes() {
               <i className="fi fi-tr-calendar-clock cal"
                  style={{ fontSize: "20px", color: "black", cursor: "pointer",display: "flex",
                   alignItems: "center",justifyContent: "center",gap: "9px"}}>
-                  <span className="date m-auto">Delivery Date</span> <span className="select">Select Delivery Date</span></i> 
-                 <i className="fi fi-br-angle-small-down dropdown-icon "></i>
+                  <span className="date">Delivery Date</span> <span className="select">Select Delivery Date</span></i> 
+                 <i className="fi fi-rr-caret-down caret-icon"></i>
             </div>
           </div>
         </div>
+
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup-box">
+            {/*  Close button */}
+            <button className="close-btn" onClick={() => setShowPopup(false)}>
+  <IoClose size={24} />
+</button>
+
+<DatePicker
+  selected={selectedDate}
+  onChange={handleDateChange}
+  inline
+  calendarClassName="custom-calendar"
+  minDate={new Date()} // disables all past dates
+/>
+
+<div className="popup-actions">
+  <button
+    className="reset-btn"
+    onClick={() => {
+      setSelectedDate(null); // clears selected date
+      setShowPopup(false);   // closes popup
+    }}
+  >
+    Reset
+  </button>
+
+  <button
+    className="ok-btn"
+    onClick={() => setShowPopup(false)} // closes popup normally
+  >
+    OK
+  </button>
+</div>
+</div>
+</div>
+    )}
+   <div className="filter-section">
+    <div className="separator">
+    <p className="filter">SGD</p></div>
+      <label>Filter By Price</label> 
+    <div className="select-wrapper">
+    <select id="priceFilter" name="priceFilter">
+    <option value="All Products">All Products</option>
+    <option value="7.34 and Below">7.34 and Below</option>
+    <option value="7.35 - 14.69">7.35 - 14.69</option>
+    <option value="14.70 - 22.04">14.70 - 22.04</option>
+    <option value="22.05 - 36.74">22.05 - 36.74</option>
+    <option value="36.75 and Above">36.75 and Above</option>
+  </select>
+  </div>
+  </div>
   </div>
     
     </>

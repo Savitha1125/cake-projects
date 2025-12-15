@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./detailpage.css";
+import "./Detailpage.css";
 import { useNavigate } from "react-router-dom";
 import img from "./assets/images/new-arrivals.avif";
 import img1 from "./assets/images/premium-cakes.avif";

@@ -1,6 +1,6 @@
 html, body, #root {
   width: 100%;
-  max-width: 100%;
+  overflow-x: clip; 
 }
 
 .carousel-control-prev-icon,
@@ -54,28 +54,21 @@ html, body, #root {
   margin: auto;
   margin-bottom: 12px;
 }
-.carousel-wrapper{
-  width:99%;
+.carousel-wrapper {
+  width: 100%;
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
 }
 .carousel img {
-  width: 100% !important;
-  max-width: 100%;
+  width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
 }
+
 /* Make carousel full width on small screens */
 @media screen and (max-width: 576px) {
- .carousel-wrappers {
-  width: 100% !important;         /* full viewport width */
-  /* max-width: 100vw; */
-  margin-left: calc(50% - 50vw);  /* break out of container padding */
-  margin-right: calc(50% - 50vw);
-  padding: 0;
-}
 .carousel img,
 .carousel-img {
   width: 150vw !important;    
