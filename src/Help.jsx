@@ -14,13 +14,14 @@ export default function Help() {
 
         {/* 1 - Help Center */}
         <div
-          className="col-6 col-md-2 mb-2 ms-5 d-flex align-items-center pointer p-3"
+          className="col-6 col-md-2 mb-2 d-flex align-items-center pointer p-3 help"
           onClick={() => navigate("/help-center")}
         >
           <img
             src="https://assets.winni.in/groot/2023/07/19/desktop/help.png"
             width="28"
             alt=""
+            
           />
           <span className="ms-2">Help Center</span>
         </div>

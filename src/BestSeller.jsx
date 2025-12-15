@@ -95,7 +95,7 @@ export default function BestSeller() {
 
           {/* Flowers Tab */}
           <span
-            className={`category-text flowers-text mt-1 ms-4 ms-md-1 fw-semibold fs-2 px-3 py-1 border border-dark rounded ${
+            className={`category-text flowers-text mt-1 ms-4 ms-md-1 fw-semibold fs-2 px-3 py-1 ${
               activeTab === "flowers" ? "active-tab" : ""
             }`}
             onClick={() =>

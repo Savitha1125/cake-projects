@@ -93,8 +93,8 @@ export default function Header() {
                 )}
               </span>
 
-              <a href="#" className="text-decoration-none text-dark">
-                Track Order |
+              <a href="#" className="text-decoration-none text-dark me-5">
+                Track Order 
               </a>
             </div>
           </div>

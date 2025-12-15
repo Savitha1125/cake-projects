@@ -33,8 +33,17 @@ body {
   padding-top: 200px !important;
 } 
 .pencil{
-  font-size: 30px;
+  font-size: 26px !important;
 }
+.top-links {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex-wrap: nowrap; /* Prevent wrap */
+    overflow-x: auto;   /* Add scroll if content too wide */
+    white-space: nowrap;
+  }
 }
 
 
@@ -195,7 +204,7 @@ body {
     top: -14px;
     right: -22px;
     font-size: 10px;
-    width: 33px;        
+    width: 29px;        
     height: 29px;      
     display: flex;     
     align-items: center;

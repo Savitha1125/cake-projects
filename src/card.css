@@ -22,9 +22,18 @@ font-size: 14px;
 @media  (max-width:576px) {
   .button{
     position: relative;
-    left:65%;
+    left:35%;
     width: 100px;
-    white-space: nowrap;
+    white-space: nowrap !important;
+    margin-top: 18px;
+  }
+  .button h5{
+    font-size: medium;
+  }
+  .dreamy{
+    font-size: 19px;
+    position: relative;
+    bottom: 10px;
   }
    .cake-card {
     width: 97% !important;

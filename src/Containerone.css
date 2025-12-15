@@ -144,9 +144,13 @@
   /* Full image width */
   .image-block img {
     width: 100% !important;
-    height: auto !important;   /* Avoid cutting */
+    height: auto !important;   
     object-fit: cover;
   }
+ .image-block.kids img{
+  position: relative;
+  left:1px
+ }
   .image-block.frame img{
     transform: translate(-19px);
   }
