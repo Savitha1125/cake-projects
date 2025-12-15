@@ -198,8 +198,8 @@ export default function TextPage() {
         <img className="responsive-img1 ms-5 " alt="happy-delivery-icon" src="https://assets.winni.in/groot/2023/07/19/desktop/happy-delivery.png"></img>
       </div>
       <div className="text-container">
-        <div className="title">700+ Cities</div>
-        <div className="sub-title">Happily Delivering</div>
+        <div className="title1">700+ Cities</div>
+        <div className="sub-title1">Happily Delivering</div>
       </div>
       <div className="vertical-line hide-on-small"></div>
     </div>

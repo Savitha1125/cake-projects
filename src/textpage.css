@@ -13,7 +13,9 @@
   font-weight: 600;
   cursor: pointer;
 }
-
+.title1{
+  font-weight: bold;
+}
 .blog-row {
   display: flex;
   justify-content: space-between;
@@ -63,10 +65,24 @@
     min-width: auto !important;
   }
   .responsive-img {
-    margin-left: 10px; 
+    width:40px !important;
+    position: relative;
+    right:20px
   }
   .responsive-img1{
-    margin-left: 15px !important;
+    width: 40px !important;
+    position: relative;
+    right:65px !important
+  }
+  .title,.sub-title{
+    position: relative;
+    right:35px;
+    white-space: nowrap;
+  }
+  .title1,.sub-title1{
+    position: relative;
+    right: 79px !important;
+    white-space: nowrap;
   }
   .blog-link {
     font-size: 16px;
