@@ -15,6 +15,13 @@
   border-bottom: none;   
   border-radius: 5px;  
 }
+.card-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: normal !important;
+}
+
 .view-all-btn{
   background-color: rgb(250, 184, 223);
   padding: 8px;

@@ -14,7 +14,7 @@ export default function Help() {
 
         {/* 1 - Help Center */}
         <div
-          className="col-6 col-md-2 mb-2 d-flex align-items-center pointer p-3 help"
+          className="col-6 col-md-2  d-flex align-items-center pointer p-3 help"
           onClick={() => navigate("/help-center")}
         >
           <img
@@ -28,7 +28,7 @@ export default function Help() {
 
         {/* 2 - Vendor Tie Ups */}
         <div
-          className="col-6 col-md-2 mb-3 d-flex align-items-center pointer"
+          className="col-6 col-md-2 d-flex align-items-center pointer"
           onClick={() => navigate("/vendor-tie-ups")}
         >
           <img
@@ -41,7 +41,7 @@ export default function Help() {
 
         {/* 3 - Corporate Order */}
         <div
-          className="col-6 col-md-2 mb-3 d-flex align-items-center pointer"
+          className="col-6 col-md-2 d-flex align-items-center pointer"
           onClick={() => navigate("/corporate-order")}
         >
           <img
@@ -54,7 +54,7 @@ export default function Help() {
 
         {/* 4 - Franchise Enquiry */}
         <div
-          className="col-6 col-md-2 mb-3 d-flex align-items-center pointer"
+          className="col-6 col-md-2 d-flex align-items-center pointer"
           onClick={() => navigate("/franchise-enquiry")}
         >
           <img
@@ -67,7 +67,7 @@ export default function Help() {
 
         {/* 5 - Winni In News */}
         <div
-          className="col-6 col-md-2 mb-3 d-flex align-items-center pointer"
+          className="col-6 col-md-2 d-flex align-items-center pointer"
           onClick={() => navigate("/winni-in-news")}
         >
           <img

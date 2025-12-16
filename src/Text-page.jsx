@@ -8,7 +8,7 @@ export default function TextPage() {
 
   const shortText = (
     <>
-      <h4 className='fw-normal text-center mt-5 winni'>Winni - India’s No. 1 Brand for Online Delivery of Cakes, Flowers, And Gifts</h4>
+      <h4 className='fw-normal text-center mt-5 winni '>Winni - India’s No. 1 Brand for Online Delivery of Cakes, Flowers, And Gifts</h4>
       Winni is India’s Number 1 gifting brand with unique gifts for all occasions and relations.
       An e-commerce company that helps you celebrate relations and special occasions like birthdays
       and anniversaries by sending{" "}
@@ -153,7 +153,7 @@ export default function TextPage() {
 <div className="blog-row">
 
   {/* Item 1 */}
-  <div className="blog-item">
+  <div className="blog-item me-3">
     <Link to="new-page" className="blog-link">
       Housewarming Gifts: Your Gift Says Something When
       <span className="blog-subline">Starting a New Life</span>

@@ -86,8 +86,6 @@ body {
 .search-box {
     flex: 1;
     max-width: 400px;
-    position: relative;
-    /* top:20px !important */
 }
 
 .search-box input {
@@ -97,8 +95,8 @@ body {
     border-radius: 6px;
     border: 1px solid #ccc;
     background: #f2f2f2;
-    font-size: 15px;
-    
+    font-size: 14px; 
+    font-weight: bold;
 }
 
 .search-icon {
@@ -330,7 +328,7 @@ body {
       max-width: 90% !important;
   }
   .location-box{
-    margin-left: 80px;
+    margin-left: 88px;
   }
   .logo img {
   position: absolute; 
@@ -340,7 +338,10 @@ body {
   }
   .pencil{
     position: relative;
-    left: 112%;
+    left: 110%;
+  }
+  .location-text-section span{
+    font-size: 14px;
   }
   .header-icons {
       width: 100%;
@@ -358,13 +359,25 @@ body {
 
 /* ========================================================= */
 /* ======================= Laptop view ======================= */
- @media (min-width:1024px){
-  .location-box{
-    max-width: 400px;
-    right:18px;
-    white-space: wrap;
+@media (min-width: 1024px) and (max-width: 1399px) {
+
+  .location-box {
+    position: relative;
+    right: 2px !important;
+    white-space: normal;
   }
-} 
+
+  .search-box {
+    position: relative;
+    left: 10px;
+  }
+
+  .header-icons {
+    position: relative;
+    left: 1px;
+  }
+}
+
 /* Tooltip */
 .tooltip-box {
   position: absolute;

@@ -60,16 +60,15 @@
   transform: translateY(370px); 
   position: relative;
   right: 32%;
-  width: 29%;
+  width: 30%;
 }
 .image-block.frame img {
-  position: relative !important;
-  left: 20px !important;
+  transform: translate(20px);
 }
 .image-block.choco {
   transform: translateY(370px); 
   position: absolute;
-  left: 62px;
+  left: 60px !important;
   width: 29%;
 }
 
@@ -103,17 +102,17 @@
     bottom: 7% !important;
   }
   .image-block.frame img{
-    right: -5px;
+    right: 12px;
   }
  .image-block.small img{
   position: relative;
   top:48%;
-  right: 107%;
+  transform: translate(-104%);
  }
  .image-block.choco img {
   position: relative;
   top: 48%;
-  transform: translateX(-970px);
+  transform: translateX(-978px);
 }
 }
 @media (min-width: 1024px) and (max-width: 1200px) {
@@ -122,6 +121,13 @@
   top: 48%;
   transform: translateX(-1282px);
 }
+}
+@media (min-width:2560px) {
+  .image-block.choco img{
+    width: 55%;
+    position: relative;
+    left:77%
+  }
 }
 @media (max-width: 576px) {
 

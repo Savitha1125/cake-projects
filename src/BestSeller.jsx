@@ -12,6 +12,9 @@ import cake4 from "./assets/cream.avif";
 import cake5 from "./assets/truffle.avif";
 import cake6 from "./assets/pinapple.jpg";
 import cake7 from "./assets/fudge brownie cake.webp";
+import cake8 from "./assets/pineapple.jpg";
+import cake9 from "./assets/belgiyum.jpg";
+import cake10 from "./assets/butterscotch.jpg";
 
 // Flower Images
 import flower1 from "./assets/pink Flower.avif";
@@ -21,6 +24,9 @@ import flower4 from "./assets/wish.avif";
 import flower5 from "./assets/roses.avif";
 import flower6 from "./assets/white flower.avif";
 import flower7 from "./assets/Rose Box.avif";
+import flower8 from "./assets/images/pure rose.avif";
+import flower9 from "./assets/images/red-rose.avif";
+import flower10 from "./assets/images/basket-flower.jpeg";
 
 export default function BestSeller() {
   const [activeTab, setActiveTab] = useState("cakes");
@@ -33,6 +39,9 @@ export default function BestSeller() {
     { img: cake5, name: "Chocolate Truffle", oldPrice: 12.83, newPrice: 8.31, rating: 4.7 },
     { img: cake6, name: "Pineapple Cake", oldPrice: 12.83, newPrice: 8.31, rating: 4.7 },
     { img: cake7, name: "Fudge Brownie Cake", oldPrice: 12.1, newPrice: 9.18, rating: 4.6 },
+    { img: cake8, name: "Delicious Pineapple Cake", oldPrice: 9.71, newPrice: 8.28, rating: 4.7 },
+    { img: cake9, name: "Belgium Chocolate Truffle Cake", oldPrice: 13.14, newPrice: 10.71, rating: 4.8},
+    { img: cake10, name: "Butterscotch Flavorsome Cake", oldPrice: 10.14, newPrice: 8.37, rating: 4.9},
   ];
 
   const flowerProducts = [
@@ -43,6 +52,9 @@ export default function BestSeller() {
     { img: flower5, name: "8 Pink Roses", oldPrice: 12.40, newPrice: 9.48, rating: 4.7 },
     { img: flower6, name: "Pretty Pink And White Carnations", oldPrice: 16.05, newPrice: 11.67, rating: 4.9 },
     { img: flower7, name: "Mesmeric Pink Roses Box", oldPrice: 12.04, newPrice: 8.75, rating: 4.9 },
+    { img: flower8, name: "Pure Affection Roses And Gerberas Bouquet", oldPrice: 13.57, newPrice: 10.71, rating: 4.6 },
+    { img: flower9, name: "10 Red Rose Flowers Bouquet", oldPrice: 11.43, newPrice: 9.28, rating: 4.7 },
+    { img: flower10, name: "Perfect Basket Arragement Of Orchids And Yellow Roses", oldPrice: 37.17, newPrice: 30.73, rating: 4.5 },
   ];
 
   const productsToShow = activeTab === "cakes" ? cakeProducts : flowerProducts;

@@ -3,6 +3,8 @@
       font-size: 15px;
       line-height: 1.6;
       width:93%;
+      position: relative;
+      left:15px;
 }
 .read-toggle-btn {
   display: block;
@@ -33,6 +35,8 @@
   font-size: 16px;
   line-height: 1.4;
   cursor: pointer;
+  position: relative;
+  right: 10px;
 }
 
 .blog-subline {
@@ -45,6 +49,8 @@
 .blogs, .bloger {
   font-size: 15px;
   width: 100%;
+  position: relative;
+  right: 10px;
 }
 .responsive-img1 {
     width: 65px !important;

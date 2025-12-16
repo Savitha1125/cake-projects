@@ -47,8 +47,8 @@ font-size: 14px;
     display: flex !important;
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
-    padding-left: 20px;        /* left gap */
-    padding-right: 50px !important;       /* right gap */
+    padding-left: 20px;       
+    padding-right: 50px !important;      
     scrollbar-width: none;
   }
 
@@ -58,7 +58,7 @@ font-size: 14px;
 
   .cake-card {
     flex: 0 0 auto;
-    min-width: 280px !important;     /* better size for 1024px */
+    min-width: 230px !important;     /* better size for 1024px */
     margin-right: 30px !important;   /* GAP between cards */
     border-radius: 15px;
   }

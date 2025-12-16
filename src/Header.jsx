@@ -111,7 +111,7 @@ export default function Header() {
             />
           </div>
 
-          <div className="search-box position-relative">
+          <div className="search-box position-relative text-secondary">
   <input
     type="text"
     placeholder="Search 5000+ flowers, cakes, gifts etc"

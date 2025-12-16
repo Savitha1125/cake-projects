@@ -54,20 +54,6 @@
     height: 100px;
   }
 }
-@media (max-width: 1024px) {
-  .product-container {
-    display: flex;          /* parent must be flex */
-  }
-
-  .product-img {
-    min-width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-left: auto;      /* pushes the image to the right */
-    transition: transform 0.3s ease;
-  }
-}
 /*  Tablet — 2 per row */
 @media (max-width: 768px) {
   .product-inline {
@@ -78,8 +64,12 @@
     width: 70px;
     height: 130px;
     object-fit: cover;
+    position: relative; 
+    left: 60px;
   }
-  .product-item p {
+  .product-item p{
+    position: relative;
+    left:55px;
     font-size: 17px;
   }
 }
@@ -103,14 +93,4 @@
     left: 4%;
   }
 }
-/* Tablet only: move product images slightly right */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .product-img {
-    position: relative; /* needed to apply right */
-    left: 60px;
-  }
-  .product-item p{
-    position: relative;
-    left:55px
-  }
-}
+
