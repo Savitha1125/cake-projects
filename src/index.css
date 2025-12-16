@@ -191,28 +191,28 @@ body {
 .icon-wrapper {
     position: relative;
     right:18px;
-    border-radius: 50%;
+    display: inline-block;
+    margin: 0 10px;
 }
 .icon-user{
   position: relative;
-  left:4px
+  left:8px
 }
-.icon-badge {
-    position: absolute;
-    top: -14px;
-    right: -22px;
-    font-size: 10px;
-    width: 29px;        
-    height: 29px;      
-    display: flex;     
-    align-items: center;
-    justify-content: center;
-    border-radius: 70% !important; 
-    background-color:#ff1493;
-    color: white;
-    font-weight: bold;
+.badge.icon-badge.text-center {
+  position: absolute;
+  bottom: 20px;
+  left: 16px;
+  background: #ff1ead;
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 
 /* ========================================================= */
 /* ======================= RESPONSIVE ======================= */
