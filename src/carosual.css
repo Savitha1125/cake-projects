@@ -73,9 +73,7 @@ html, body, #root {
 .carousel-img {
   width: 150vw !important;    
   max-width: 100vw;
-  height: auto;
-  object-fit: cover;         
-  display: block;
+ 
 }
 .custom-arrow {
     width: 40px;
