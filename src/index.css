@@ -231,8 +231,9 @@ body {
 
   /* Logo centered */
  .logo img {
-  position: absolute;  /* or relative depending on your layout */
-  top: 75px;              /* adjust if needed */
+  width: 37%;
+  position: absolute;  
+  top: 75px;             
   right: 15%;
   transform: translateY(-48px);
 }
@@ -285,25 +286,30 @@ body {
 
   .header-icons {
       gap: 6px !important;
-      right: 0px;
+      right: 10px;
       font-size: 22px;
   }
 
   .header-icons i {
       font-size: 14px !important;
+      
   }
 
   .icon-wrapper {
       right: 4px;
+      top:8px;
+      transform: translate(-19px);
   }
 
   .icon-user {
-      left: 0px;
+    position: relative;
+    left: 96px !important;
   }
 
   .icon-badge {
-      top: -11px;
-      right: -10px;
+    position: relative;
+      top: -12px;
+      right: 4px;
       width: 25px;
       height: 26px;
       font-size: 7px;
