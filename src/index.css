@@ -220,15 +220,12 @@ body {
 /* ======================= MOBILE VIEW (≤576px) ======================= */
 @media (max-width: 576px) {
 
-  /* Header stacked layout */
   .header-row {
       flex-direction: column;
       align-items: center;
       text-align: center;
       gap: 12px;
   }
-
- 
  .logo img {
   width: 40%;
   position: absolute;  
@@ -275,13 +272,12 @@ body {
   }
 
   .icon-wrapper {
-      left: 29% !important;
+      left: 27% !important;
   }
 }
 
 /* ============ SMALL MOBILE (320px) ============ */
 @media (max-width: 320px) {
-
   .header-icons {
       gap: 6px !important;
       right: 0px;
