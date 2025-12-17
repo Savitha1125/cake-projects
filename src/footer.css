@@ -215,6 +215,19 @@
     width: 100%;
   }
 }
+/* ===================== */
+/* LAPTOP / DESKTOP FIX */
+/* ===================== */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .link ul li {
+    position: static !important;
+    transform: translate(-105px);
+  }
+ .footer-divider{
+  transform: translate(30px);
+ }
+}
+
 .social-icons{
   margin-top: 12px;
 }
@@ -332,5 +345,15 @@
     width: auto;
     top:5px;
     left:5px
+  }
+}
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .exp{
+    position: relative;
+    bottom: 30px;
+    left: 26%;
+  }
+  .google-app{
+    transform: translate(180px) !important;  
   }
 }

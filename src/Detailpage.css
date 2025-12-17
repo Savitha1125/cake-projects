@@ -58,6 +58,7 @@
   padding-left: 40px; 
   float: right;
   padding: 8px;
+  pointer-events: none; 
 }
 
 .scooty {
@@ -102,6 +103,7 @@
   gap: 22px;
   font-weight: 600;
   font-size: 14px;
+  position: relative;
 }
 
 .mega-menu {
@@ -253,9 +255,15 @@
 
 .dropdown-image img {
   width: 100% !important;
+  min-width: 150px;
   height: auto !important;
   object-fit: cover;
 }
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .delivery-container{
+    display: none;
+  }
+  }
 @media (max-width: 768px) {
   .menu-left .menu-item,
   .menu-left .menu-items,

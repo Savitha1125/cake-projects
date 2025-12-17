@@ -51,26 +51,30 @@ export default function Header() {
                 Help |
               </a>
 
-              {/* Currency Tooltip */}
-              <div className="position-relative d-inline-block">
-              <span
-              className="text-dark me-4 currency-trigger"
-              onMouseEnter={() => setShowCurrencyTooltip(true)}
-              onMouseLeave={() => setShowCurrencyTooltip(false)}>
-              Currency: <strong>{selectedCurrency}</strong> |
-              {showCurrencyTooltip && (
-              <div className="tooltip-box">
-                  {currencies.map((cur) => (
-              <div key={cur.code}
-              onClick={() => setSelectedCurrency(cur.code)}
-              className="tooltip-item">
-            {cur.code} - {cur.name}
-          </div>
-            ))}
-          </div>
-          )}
-        </span>
-        </div>
+             {/* Currency Tooltip */}
+            <div
+            className="position-relative d-inline-block"
+            onMouseEnter={() => setShowCurrencyTooltip(true)}
+            onMouseLeave={() => setShowCurrencyTooltip(false)}>
+            <span className="text-dark me-4 currency-trigger">
+            Currency: <strong>{selectedCurrency}</strong> |
+            </span>
+
+          {showCurrencyTooltip && (
+          <div className="tooltip-box">
+          {currencies.map((cur) => (
+                <div
+                  key={cur.code}
+                  onClick={() => setSelectedCurrency(cur.code)}
+                  className="tooltip-item"
+                  >
+                  {cur.code} - {cur.name}
+                </div>
+                    ))}
+                </div>
+                )}
+              </div>
+
                 <a href="#" className="text-decoration-none text-dark me-4">
                 Corporate gifts |
               </a>
