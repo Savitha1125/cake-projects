@@ -24,7 +24,7 @@ export default function Cakes() {
         >
           <span>Home</span>
           <i
-            className="fi fi-br-angle-right icon"
+            className="fi fi-br-angle-right right-icon"
             style={{ margin: "0 8px"}}
           ></i>
           <span className="cakes">Cakes</span>
@@ -75,7 +75,7 @@ export default function Cakes() {
   <button
     className="reset-btn"
     onClick={() => {
-      setSelectedDate(null); // clears selected date
+      setSelectedDate(null); 
       setShowPopup(false);   // closes popup
     }}
   >
