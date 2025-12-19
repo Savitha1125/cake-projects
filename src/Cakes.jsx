@@ -49,6 +49,7 @@ export default function Cakes() {
     id="priceSelect"
     className="custom-dropdown"
     defaultValue=""
+    style={{ color: "green"}}
   >
     <option value="">All Products</option>
     <option value="1">7.34 and Below</option>
@@ -69,8 +70,8 @@ export default function Cakes() {
 </div>
       <div className="col-auto ps-3 sort">
   <div className="fw-bold filter">Sort By</div>
-  <select className="form-select form-select-sm w-auto" defaultValue="">
-    <option value="" disabled hidden >Popularity</option>
+  <select className="form-select form-select-sm w-auto custom-dropdown"style={{ color: "green"}} defaultValue="">
+    <option value="" disabled hidden style={{ color: "green" }}>Popularity</option>
     <option value="1">Popularity</option>
     <option value="1">Newest</option>
     <option value="2">Rating</option>
