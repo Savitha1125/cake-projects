@@ -1,319 +1,119 @@
-.container h5 {
-  position: relative;
-  top: 15px;
-  right: 2% !important;
-  font-weight: normal;
+.cake-delivery{
+  transform: translate(-40px);
   white-space: nowrap;
+}
+.breadcrumb-bar {
+  width: 100%;
+  padding: 10px 20px;   /* left padding only */
+}
+
+.breadcrumb-content {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  transform: translate(-25%);
+  position: relative;
+  top:25px
 }
 
 .home {
-  position: relative;
-  right: 17%;
-  top:20px;
-  font-size: 13px;
-  font-weight: 300;
-}
-
-.icon {
-  font-size: 7px;
-  margin-left: 8px;
-  margin-top: 6px !important;
+  color: #141313;
 }
 
 .cakes {
-  position: relative;
-  left: 10%;
-  top: 1px;
-}
-.box {
-  margin-left: 2px;
-  background-color: lch(90.39% 0.72 18.61);
-  padding: -5px 10px 0px 5px;
-  width: 92vw;
-  transform: translateX(-10px);
-  font-weight: bold;
-  position: relative;
-  top:130%;
-  right: 25%;
-}
-.caret-icon{
-  display: inline-block;
-  position: relative;
-  right: 45%;  
-  bottom: 5px;
-}
-/* Popup Overlay */
-.popup-overlay {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(1px);
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 9999;
-  animation: fadeIn 0.3s ease-in-out;
-  padding: 350px;
+  color: #000;
+  font-weight: 500;
 }
 
-/* Popup Box */
-.popup-box {
-  position: relative;
-  background: #fff;
-  width: 400px;       /* Desktop default */
-  max-width: 95%;
-  border-radius: 10px;
-  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.25);
-  text-align: center;
-  animation: slideUp 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.filter-bar {
+  width: 93%;
+  background-color: #f2f2f2;
+  border-radius: 6px;
+  margin-top: 15px;
+}
+.filter-bar .row > div {
+  border-right: 1px solid #ddd;
+  height: 49px;
 }
 
-/* Close Button */
-.close-btn {
-  position: relative;
-  bottom: 33px;
-  transform: translate(-130px);
-  background: transparent;
+.filter-bar .row > div:last-child {
+  border-right: none;
+}
+.custom-dropdown {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
   border: none;
-  font-size: 24px;
+  outline: none;
+  padding-right: 1.8rem;
   cursor: pointer;
-  z-index: 100;
+  color: #198754;
+}
+.custom-dropdown:focus {
+  outline: none;
+  box-shadow: none;
 }
 
-/* Datepicker inside popup */
-.react-datepicker {
-  width: 100% !important;
+.col-auto.position-relative i.fi-rr-caret-down {
+  cursor: pointer;
+  color: #333;
+  font-size: 1rem;
+  pointer-events: auto;
 }
-
-.custom-calendar {
-  width: 100%;
-  padding: 10px;
+.delivery{
+  transform: translate(160%);
+}
+.filter-price{
+  transform: translate(190%);
+}
+.sort{
+  transform: translate(320%);
+}
+.filter{
+  font-size: 13px;
+}
+.popup-box {  
+  width: 40%;        /* responsive for mobile */
+  padding: 16px;
+  background: #fff;
   border-radius: 10px;
+  position: relative;
 }
 
 .popup-actions {
   display: flex;
-  justify-content: center; /* center buttons */
-  gap: 12px;
+  justify-content: space-between;
   margin-top: 15px;
+  gap: 10px;
 }
 
-/* Common button style */
-.reset-btn,
-.ok-btn {
-  padding: 6px 14px;  
-  font-size: 13px;
-  cursor: pointer;
-  border: none;
-  min-width: 70px;     
-  max-width: 90px;
-}
-
-/* Reset */
+/* Reset button - RED */
 .reset-btn {
-  background-color: #f27777;
+  background-color: #dc3545; /* Bootstrap danger red */
   color: #fff;
-  position: relative;
-  right: 80px;
-  bottom: 10px;
-}
-
-/* OK */
-.ok-btn {
-  background-color: #5de18d;
-  color: #fff;
-  position: relative;
-  left: 80px;
-  bottom: 10px;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.react-datepicker {
-  border: none !important;
-  width: 100%;
-}
-.custom-calendar {
-  font-family: 'Roboto', sans-serif;
-  padding: 18px;
-  border-radius: 10px;
-}
-.react-datepicker__day--selected,
-.react-datepicker__day--keyboard-selected {
-  background-color: #8000ff !important; 
-  color: #fff !important;              
-  border-radius: 50%;                  
-}
-
-.react-datepicker__day {
-  margin: 5px !important;    
-  width: 30px !important;   
-  height: 30px !important;
-  line-height: 35px !important;
-  text-align: center;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-.react-datepicker__month {
-  display: flex;
-  flex-direction: column;
-  align-items: center !important; /* Center the whole grid */
-  margin-right: 20px !important; 
-}
-
-.react-datepicker__day--selected:hover,
-.react-datepicker__day--keyboard-selected:hover {
-  background-color: #6a00cc !important; 
-}
-.react-datepicker__day--today {
-  border: 1px solid #8000ff !important;  
-  border-radius: 50%;
-  color: #000 !important;
-}
-.react-datepicker__day--disabled {
-  color: #ccc !important;
-  pointer-events: none;
-}
-
-.react-datepicker__header {
-  background-color: #fff;
-  border-bottom: none;
-}
-
-.reset-btn,.ok-btn :hover{
-  background-color: none;
-}
-.cal{
-  margin: auto;
-  position: relative;
-  bottom:   30px;
-  right:80px
-}
-.date{
-  font-size: 12px;
-}
-.select{
-  position: absolute;
-  top:22px;
-  left:28px;
-  font-size: 14px;
-  white-space: nowrap;
-  font-weight: 400;
-}
-.react-datepicker__navigation {
-  line-height: 1.7rem;
-  border: none !important;
-}
-
-.react-datepicker__navigation--previous,
-.react-datepicker__navigation--next {
-  top:-20px !important;     
-  right:16px;       
-  transform: scale(1.4);          
-  filter: brightness(0.6);        
-  cursor: pointer;
-}
-.react-datepicker__current-month {
-  position: relative;
-  bottom: 39px;
+  border: none;
+  padding: 8px 8px;
+  border-radius: 5px;
   font-weight: 600;
-  font-size: 16px;
-}
-
-.custom-select {
-  position: relative;
-  display: flex;
-  align-items: center;
-  background-color: #fff;
-  padding: 5px 10px;
-  border-radius: 6px;
   cursor: pointer;
 }
 
-.custom-select select {
-  appearance: none; 
-  background: transparent;
-  border: none; 
-  font-size: 13px;
-  cursor: pointer;
-  outline: none;
-  padding-right: 20px; 
+.reset-btn:hover {
+  background-color: #bb2d3b;
 }
-/* Responsive for mobile */
-@media screen and (max-width: 576px) {
-  .container h5 {
-    font-size: 16px;
-    top: 10px;
-    right: 0;
-  }
 
-  .home {
-    right: 0;
-    top: 15px;
-    font-size: 11px;
-  }
+/* OK button - GREEN */
+.ok-btn {
+  background-color: #198754; /* Bootstrap success green */
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
 
-  .cakes {
-    left: 0;
-    top: 0;
-    font-size: 12px;
-  }
-
-  .box {
-    top: 100%;
-    right: 0;
-    width: 98vw;
-    padding: 5px;
-  }
-
-  .caret-icon {
-    right: 30%;
-    bottom: 0;
-  }
-
-    .popup-box {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .close-btn {
-    font-size: 22px;
-    top: 5px;
-    right: 5px;
-  }
-
-  .popup-actions {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .reset-btn,
-  .ok-btn {
-    width: 100%;
-  }
-
-  .custom-calendar {
-    font-size: 12px;
-    padding: 5px;
-  }
-
-  .react-datepicker__day {
-    width: 28px !important;
-    height: 28px !important;
-    line-height: 28px !important;
-  }
-
+.ok-btn:hover {
+  background-color: #157347;
 }
