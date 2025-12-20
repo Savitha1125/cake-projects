@@ -12,7 +12,7 @@ import cake4 from "./assets/cream.avif";
 import cake5 from "./assets/truffle.avif";
 import cake6 from "./assets/pinapple.jpg";
 import cake7 from "./assets/fudge brownie cake.webp";
-import cake8 from "./assets/pineapple.jpg";
+import cake8 from "./assets/images/choco.jpeg";
 import cake9 from "./assets/belgiyum.jpg";
 import cake10 from "./assets/butterscotch.jpg";
 

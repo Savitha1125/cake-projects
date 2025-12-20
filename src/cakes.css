@@ -40,7 +40,8 @@
   border-right: none;
 }
 .custom-dropdown {
-  appearance: none;
+  width: 200px !important;
+  appearance: none !important;
   -webkit-appearance: none;
   -moz-appearance: none;
   background-color: transparent;
@@ -49,7 +50,18 @@
   padding-right: 1.8rem;
   cursor: pointer;
   color: #198754;
+  background-image: none !important;
+  padding-right: 20px !important;       
 }
+.select-prefix {
+  position: absolute;
+  top: 20%;
+  left: 12px;           
+  transform: translateY(-50%);         
+  font-weight: 400;
+  pointer-events: none; 
+}
+
 .custom-dropdown:focus {
   outline: none;
   box-shadow: none;
@@ -57,66 +69,125 @@
 .custom-dropdown option {
   color: black;
 }
-
-.col-auto.position-relative i.fi-rr-caret-down {
-  cursor: pointer;
-  color: #333;
-  font-size: 1rem;
-  pointer-events: auto;
+.down-icon{
+  position: relative;
+  left: 140% !important;
+  top:20px !important;
 }
-.delivery{
-  transform: translate(160%);
-}
-.filter-price{
-  transform: translate(190%);
-}
-.sort{
-  transform: translate(320%);
+.bi-caret-down-fill{
+  position: relative;
+  top:73%;
 }
 .filter{
   font-size: 13px;
 }
-.popup-box {  
-  width: 40%;        /* responsive for mobile */
-  padding: 16px;
+/* Delivery section */
+.delivery {
+  border-left: 1px solid #dee2e6;
+  cursor: pointer;
+}
+
+/* Popup overlay */
+.date-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Popup box */
+.date-popup {
   background: #fff;
-  border-radius: 10px;
+  padding: 30px;
   position: relative;
 }
 
-.popup-actions {
+/* Close icon */
+.close-icon {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Footer buttons */
+.date-footer {
   display: flex;
   justify-content: space-between;
-  margin-top: 15px;
-  gap: 10px;
+  margin-top: 12px;
 }
 
-/* Reset button - RED */
-.reset-btn {
-  background-color: #dc3545; /* Bootstrap danger red */
-  color: #fff;
+/* Optional: calendar styling */
+.react-datepicker {
   border: none;
-  padding: 8px 8px;
-  border-radius: 5px;
-  font-weight: 600;
-  cursor: pointer;
+}
+.btn{
+  position: relative;
+  top: 10px;
+  color: white !important;
+}
+/* Selected date */
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+    background-color: purple !important; 
+    color: black !important;           
+    border-radius: 50%;                  
 }
 
-.reset-btn:hover {
-  background-color: #bb2d3b;
+/* Today's date */
+.react-datepicker__day--today {
+    color:#000 !important;                  
+}
+.react-datepicker__day:hover {
+    background-color: #9b59b6;           
+}
+.react-datepicker__month-container .react-datepicker__month {
+    background-color: transparent !important; 
 }
 
-/* OK button - GREEN */
-.ok-btn {
-  background-color: #198754; /* Bootstrap success green */
-  color: #fff;
-  border: none;
-  padding: 8px 18px;
-  border-radius: 5px;
-  font-weight: 600;
-  cursor: pointer;
+.react-datepicker__day {
+    margin: 5px !important;
+    width: 30px !important;
+    height: 30px !important;
+    line-height: 36px !important;
+    text-align: center;
+    border-radius: 50%;
+}
+.react-datepicker__navigation--previous {
+    border-right-color: black !important; 
+}
+.react-datepicker__navigation--next {
+    border-left-color: black !important;  
 }
 
-.ok-btn:hover {
-  background-color: #157347;
+@media (min-width: 992px) {
+  .delivery {
+    margin-left: 400px !important; /* increase this value for more gap */
+  }
+  .filter-price{
+    margin-left:100px;
+  }
+}
+
+/* Responsive dropdowns */
+@media (max-width: 768px) {
+  .filter-bar .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .date-popup {
+    width: 95%;
+    padding: 15px;
+  }
+}
+.cake-img1 {
+  width: 100%;
+  height: 350px;        /* same height for all */
+  object-fit: cover;   /* crops image without stretching */
+  border-radius: 8px;
 }
