@@ -308,10 +308,96 @@ body {
     font-size: 14px;      /* optional: make calendar text smaller */
   }
 }
-
-/* CAKES */
-.cake-img1 {
-  height: 350px;
-  object-fit: cover;
-  border-radius: 8px;
+.btn-outline-dark:hover,
+.btn-outline-dark:focus {
+  border: none !important;
+  box-shadow: none !important;
 }
+
+.cake-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+  position: relative;
+}
+
+.badge-seller {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: #2e9e2e;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.cake-img-wrap {
+  width: 100%;
+  height: 210px;          /* 🔑 same size */
+  overflow: hidden;
+}
+
+.cake-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* 🔑 crop + fit */
+}
+
+.cake-body {
+  padding: 10px;
+}
+
+.cake-name {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.price-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.new-price {
+  font-weight: 700;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 12px;
+}
+
+.off {
+  color: #2e9e2e;
+  font-size: 12px;
+}
+
+.rating-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.rating {
+  background: #2e9e2e;
+  color: #fff;
+  font-size: 12px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  width: 20%;
+}
+
+
+/* Mobile */
+@media (max-width: 576px) {
+  .cake-img-wrap {
+    height: 170px;
+  }
+}
+

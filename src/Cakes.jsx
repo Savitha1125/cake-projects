@@ -126,16 +126,34 @@ const images = imageData.map((img) => ({
         </div>
         </div> 
         )}
-    {/* CAKES IMAGES */}
-<div className="container py-4">
-  <div className="row g-3">
-    {images.map((img, idx) => (
-      <div className="col-6 col-sm-4 col-md-3 col-lg-3" key={idx}>
-        <img src={img.url} alt={img.alt} className="img-fluid rounded" />
+      <div className="container py-4">
+  <div className="row g-4">
+    {images.map((item, i) => (
+      <div className="col-6 col-sm-6 col-md-4 col-lg-3" key={i}>
+        <div className="cake-card">
+          <span className="badge-seller">Best Seller</span>
+
+          <div className="cake-img-wrap">
+            <img src={item.url} alt={item.alt} />
+          </div>
+
+          <div className="cake-body">
+            <p className="cake-name">{item.alt}</p>
+
+            <div className="price-row">
+              <span className="new-price">SGD 7.62</span>
+              <span className="old-price">SGD 11.22</span>
+              <span className="off">32% Off</span>
+              <span className="rating">4.7 ★</span>
+              <small className="review-text">683 Reviews</small>
+            </div>
+          </div>
+        </div>
       </div>
     ))}
   </div>
 </div>
+
 
     </>
   );

@@ -234,7 +234,7 @@ export default function Header() {
           <div className="tooltip-user-box">
           <h4>Welcome</h4>
           <p className="order">To access account and manage orders</p>
-          <button className="btn btn-outline-dark px-2 py-1">Signup/Login</button>
+          <button className="btn btn-outline-dark px-2 py-1 tooltip-login-btn">Signup/Login</button>
           <p className="show">
           My Winni<br />
           My Orders<br />

@@ -717,19 +717,22 @@ body {
   position: absolute;
   bottom: 65px;
 }
-.btn-outline-dark{
-  position: absolute;
-  font-size: 13px;
-  top: 75px;
-  width:39%;
-  color: rgb(236, 89, 155) !important;
-  border-radius: 0%;
+/* Tooltip button ONLY */
+.tooltip-login-btn {
+  position: static !important;     /* absolute remove */
+  width: 40%;
+  font-size: 12px;
+
+  color:rgb(236, 89, 155) !important;       /* black normal */
+  border: 1px solid #212529 !important;
+  background-color: transparent !important;
 }
-.btn-outline-dark:hover {
-  background-color: transparent !important;      
-  border-color: #212529 !important; 
+
+/* Hover */
+.tooltip-login-btn:hover {
   color: rgb(236, 89, 155) !important;
 }
+
 .show{
   position: absolute;
   top: 52%;
