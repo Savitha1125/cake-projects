@@ -1,0 +1,6 @@
+[
+  { "id": 1, "key": "choco", "alt": "Chocolate Cake" },
+  { "id": 2, "key": "butterscotch", "alt": "Butterscotch Cake" },
+  { "id": 3, "key": "blackforest", "alt": "Black Forest Cake" },
+  { "id": 4, "key": "pineapple", "alt": "Pineapple Cake" }
+]

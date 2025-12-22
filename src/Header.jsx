@@ -234,7 +234,7 @@ export default function Header() {
           <div className="tooltip-user-box">
           <h4>Welcome</h4>
           <p className="order">To access account and manage orders</p>
-          <button className="btn btn-outline-dark px-0 py-0">Signup/Login</button>
+          <button className="btn btn-outline-dark px-2 py-1">Signup/Login</button>
           <p className="show">
           My Winni<br />
           My Orders<br />
@@ -259,7 +259,7 @@ export default function Header() {
             <div className="icon-wrapper"
              onMouseEnter={() => setShowCart(true)}
               onMouseLeave={() => setShowCart(false)}
-              onClick={() => navigate("/cart")}>
+              onClick={() => navigate("/Cart")}>
               <FaShoppingCart />
               {showCart && <div className="tooltip-cart">Cart</div>}
               <span className="badge icon-badge text-center">0</span>

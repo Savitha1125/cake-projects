@@ -16,6 +16,7 @@ import Flower from "./Flower";
 import TextPage from "./Text-page";
 import Footer from "./Footer";
 import Help from "./Help";
+import Cart from "./Cart";
 
 export default function MainLayout() {
   const location = useLocation();
@@ -49,6 +50,7 @@ export default function MainLayout() {
         <Route path="/pull-me-up-cakes" element={<PullMeUpCakes />} />
         <Route path="/kids-cakes" element={<KidsCakes />} /> 
         <Route path="/next-page" element={<NextPage />} />
+        <Route path="/cart" element={<Cart/>}/>
       </Routes>
     </>
   );

@@ -152,7 +152,9 @@ body {
     align-items: center;
     gap: 10px;
     padding: 0px 12px;
+    font-size: 10px;
     min-width: 0;
+    white-space: nowrap !important;
 }
 
 .location-text-section i {
@@ -160,7 +162,9 @@ body {
     color: #444;
     flex-shrink: 0;
 }
-
+.pencil{
+  font-size: 12px;
+}
 .location-text-section span {
     font-weight: 600;
     font-size: 12px;
@@ -333,7 +337,7 @@ body {
   }
   .pencil{
     position: relative;
-    left: 110%;
+    left: 100%;
   }
   .location-text-section span{
     font-size: 14px;
@@ -713,7 +717,7 @@ body {
   position: absolute;
   bottom: 65px;
 }
-.btn{
+.btn-outline-dark{
   position: absolute;
   font-size: 13px;
   top: 75px;
