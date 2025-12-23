@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./cakes.css";
 import imageData from "./images.json";
+import { Link } from "react-router-dom";
 
 import choco from "./assets/images/choco.jpeg";
 import butterscotch from "./assets/butterscotch.jpg";
@@ -19,9 +20,12 @@ export default function Cakes() {
   const [sortOption, setSortOption] = useState("");
 
   const imagesMap = { choco, butterscotch, blackforest, pineapple };
+  const [wishlist, setWishlist] = useState([]);
+
 
 // Then in the component
 const images = imageData.map((img) => ({
+  key: img.key, 
   url: imagesMap[img.key],
   alt: img.alt,
 }));
@@ -127,10 +131,11 @@ const images = imageData.map((img) => ({
         </div> 
         )}
       <div className="container py-4">
-  <div className="row g-4">
+  <div className="row g-5">
     {images.map((item, i) => (
-      <div className="col-6 col-sm-6 col-md-4 col-lg-3" key={i}>
-        <div className="cake-card">
+      <div className="col-12 col-sm-12 col-md-6 col-lg-3" key={i}>
+        <Link to={`/cake/${item.key}`} className="text-decoration-none"></Link>
+        <div className="cake-card" style={{cursor:"pointer"}}>
           <span className="badge-seller">Best Seller</span>
 
           <div className="cake-img-wrap">

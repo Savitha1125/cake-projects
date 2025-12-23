@@ -4,6 +4,7 @@ import Franchise from "./Franchise";
 import Carosual from "./Carosual"; 
 import Product from "./Product";
 import Cakes from "./Cakes";
+import CakeDetail from "./CakeDetail";
 import Card from "./Card";
 import PhotoCakes from "./PhotoCakes";
 import PinataCakes from "./PinataCakes";
@@ -45,6 +46,7 @@ export default function MainLayout() {
         <Route path="/carousel" element={<Carosual />} /> 
         <Route path="/product" element={<Product />} />
         <Route path="/cakes" element={<Cakes />} />
+        <Route path="/cake/:key" element={<CakeDetail />} />
         <Route path="/photo-cakes" element={<PhotoCakes />} />
         <Route path="/pinata-cakes" element={<PinataCakes />} />
         <Route path="/pull-me-up-cakes" element={<PullMeUpCakes />} />

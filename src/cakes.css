@@ -33,7 +33,7 @@ body {
 .filter-bar {
   background: #f2f2f2;
   border-radius: 6px;
-  width: 93%;
+  width: 92%;
 }
 
 .filter {
@@ -305,7 +305,7 @@ body {
     border-radius: 50%; 
   } 
   .react-datepicker {
-    font-size: 14px;      /* optional: make calendar text smaller */
+    font-size: 14px;     
   }
 }
 .btn-outline-dark:hover,
@@ -315,11 +315,11 @@ body {
 }
 
 .cake-card {
-  background: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   overflow: hidden;
   position: relative;
+  /* transition: border 0.2s ease, box-shadow 0.2s ease; */
+  border: none !important;
 }
 
 .badge-seller {
@@ -335,41 +335,58 @@ body {
 }
 
 .cake-img-wrap {
-  width: 100%;
-  height: 210px;          /* 🔑 same size */
+  min-width:260px !important;
+  /* height: 220px;           */
   overflow: hidden;
+  transition: border 0.2s ease;
+  border: none;
 }
-
+.cake-card:hover {
+   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
 .cake-img-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;     /* 🔑 crop + fit */
+  object-fit: cover;    
 }
 
 .cake-body {
-  padding: 10px;
+  padding: 14px;
 }
 
 .cake-name {
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 6px;
+  white-space: normal;        
+  overflow: visible;       
+  word-break: break-word;  
 }
 
 .price-row {
   display: flex;
-  gap: 6px;
   align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap !important;       
+  white-space: nowrap;
+  min-width: fit-content;   
 }
-
+.row{
+  padding-left:1px;   
+  padding-right: 36px;
+}
 .new-price {
-  font-weight: 700;
+  font-weight: 400;
+  white-space: nowrap; 
+  color: black !important;
+  width: 50% !important;
 }
 
 .old-price {
   text-decoration: line-through;
   color: #999;
   font-size: 12px;
+  white-space: nowrap; 
 }
 
 .off {
@@ -393,11 +410,4 @@ body {
   width: 20%;
 }
 
-
-/* Mobile */
-@media (max-width: 576px) {
-  .cake-img-wrap {
-    height: 170px;
-  }
-}
 
