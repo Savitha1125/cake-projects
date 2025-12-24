@@ -6,7 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./cakes.css";
 import imageData from "./images.json";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useWishlist } from "./WishlistContext"; // adjust path
 
 import choco from "./assets/images/choco.jpeg";
 import butterscotch from "./assets/butterscotch.jpg";
@@ -14,21 +15,21 @@ import blackforest from "./assets/blackforest.webp";
 import pineapple from "./assets/pineapple.jpg";
 
 export default function Cakes() {
+  const navigate = useNavigate();
+  const { wishlist, toggleWishlist } = useWishlist();
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
   const [showPopup, setShowPopup] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
   const [priceOption, setPriceOption] = useState("");
   const [sortOption, setSortOption] = useState("");
-
-  const imagesMap = { choco, butterscotch, blackforest, pineapple };
-  const [wishlist, setWishlist] = useState([]);
-
-
-// Then in the component
+  
+const imagesMap = { choco, butterscotch, blackforest, pineapple };
 const images = imageData.map((img) => ({
-  key: img.key, 
+  key: img.key,
   url: imagesMap[img.key],
   alt: img.alt,
 }));
+
 
   return (
     <>
@@ -137,6 +138,27 @@ const images = imageData.map((img) => ({
         <Link to={`/cake/${item.key}`} className="text-decoration-none"></Link>
         <div className="cake-card" style={{cursor:"pointer"}}>
           <span className="badge-seller">Best Seller</span>
+               <div
+  className="wishlist-icon"
+  onClick={(e) => {
+    e.stopPropagation();
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    if (!isLoggedIn) {
+      navigate("/login");
+      return;
+    }
+
+    toggleWishlist(item.key);
+  }}
+>
+  <i
+    className={`bi ${
+      wishlist.includes(item.key)
+        ? "bi-heart-fill text-danger"
+        : "bi-heart"
+    }`}
+  ></i>
+</div>
 
           <div className="cake-img-wrap">
             <img src={item.url} alt={item.alt} />
@@ -158,8 +180,6 @@ const images = imageData.map((img) => ({
     ))}
   </div>
 </div>
-
-
     </>
   );
 }

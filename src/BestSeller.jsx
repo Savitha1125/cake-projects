@@ -6,7 +6,7 @@ import "./BestSeller.css";
 
 // Cake Images
 import cake1 from "./assets/blackforest.webp";
-import cake2 from "./assets/mini-cake.webp";
+import cake2 from "./assets/minicake.webp";
 import cake3 from "./assets/brownie.webp";
 import cake4 from "./assets/cream.avif";
 import cake5 from "./assets/truffle.avif";

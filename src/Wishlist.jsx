@@ -1,73 +1,56 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import { useWishlist } from "./WishlistContext";
+import { Navigate } from "react-router-dom";
+import imageData from "./images.json";
+
+import choco from "./assets/images/choco.jpeg";
+import butterscotch from "./assets/butterscotch.jpg";
+import blackforest from "./assets/blackforest.webp";
+import pineapple from "./assets/pineapple.jpg";
 
 export default function Wishlist() {
-  const [showPopup, setShowPopup] = useState(false);
-  const [showTooltip, setShowTooltip] = useState(false);
-  const [showWishTooltip, setShowWishTooltip] = useState(false);
+  const { wishlist, toggleWishlist } = useWishlist();
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
-  const navigate = useNavigate();
+  if (!isLoggedIn) {
+    return <Navigate to="/login" replace />;
+  }
 
-  const handleWishlistClick = () => {
-    navigate("/wishlist");
-  };
+  const imagesMap = { choco, butterscotch, blackforest, pineapple };
+
+  const wishlistItems = imageData
+    .filter((img) => wishlist.includes(img.key))
+    .map((img) => ({
+      ...img,
+      url: imagesMap[img.key],
+    }));
 
   return (
-    <>
-      <div className="icons-right ms-5">
-        {/* User icon */}
-        <div
-          className="icon-user"
-          onMouseEnter={() => setShowTooltip(true)}
-          onMouseLeave={() => setShowTooltip(false)}
-        >
-          <i className="fi fi-ss-user"></i>
+    <div className="container py-4">
+      <h3>My Wishlist</h3>
 
-          {showTooltip && (
-            <div className="tooltip-user-box">
-              <h4>Welcome</h4>
-              <p className="order">To access account and manage orders</p>
-              <button className="btn btn-outline-dark px-0 py-0">Signup/Login</button>
-              <p className="show">
-                My Winni
-                <br />
-                My Orders
-                <br />
-                My Address Book
-                <br />
-                My Wallet
-                <br />
-                My Reminder
-              </p>
+      {wishlistItems.length === 0 && <p>Your wishlist is empty</p>}
+
+      <div className="row g-3">
+        {wishlistItems.map((item) => (
+          <div key={item.key} className="col-6 col-md-3">
+            <div className="card p-2 text-center">
+              <img
+                src={item.url}
+                alt={item.alt}
+                style={{ height: "120px", objectFit: "cover" }}
+              />
+              <p>{item.alt}</p>
+              <button
+                className="btn btn-sm btn-danger"
+                onClick={() => toggleWishlist(item.key)}
+              >
+                Remove
+              </button>
             </div>
-          )}
-        </div>
-
-        {/* Wishlist icon */}
-        <div
-          className="wishlist"
-          onMouseEnter={() => setShowWishTooltip(true)}
-          onMouseLeave={() => setShowWishTooltip(false)}
-          style={{ position: "relative" }}
-          onClick={handleWishlistClick}
-        >
-          <div className="icon-heart me-5">
-            <i className="fi fi-ss-heart"></i>
-
-            {showWishTooltip && (
-              <div className="tooltip-user-box1">
-                <h6>Wishlist</h6>
-              </div>
-            )}
           </div>
-        </div>
-
-        {/* Cart icon */}
-        <div className="icon2">
-          <i className="fi fi-ss-shopping-cart"></i>
-          <span className="badge" />
-        </div>
+        ))}
       </div>
-    </>
+    </div>
   );
 }

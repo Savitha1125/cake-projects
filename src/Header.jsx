@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import Detail from "./Detail.jsx";
+import { useWishlist } from "./WishlistContext";
 import {
   FaSearch,
   FaMapMarkerAlt,
@@ -29,7 +30,6 @@ const currencies = [
 
 export default function Header() {
   const navigate = useNavigate();
-
   const [selectedCurrency, setSelectedCurrency] = useState("QAR");
   const [showCurrencyTooltip, setShowCurrencyTooltip] = useState(false);
   const [showPartnerTooltip, setShowPartnerTooltip] = useState(false);
@@ -39,7 +39,8 @@ export default function Header() {
   const [showWishlist, setShowWishlist] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
-
+  const { wishlist, toggleWishlist } = useWishlist(); 
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
   return (
     <>
       {/* ================= TOP LINK BAR ================= */}
@@ -224,26 +225,55 @@ export default function Header() {
           
           <div className="header-icons">
           {/* Hover User Tooltip */}
-            <div className="icon-user icon-wrapper"
-            onMouseEnter={() => setShowTooltip(true)}
-            onMouseLeave={() => setShowTooltip(false)}
-            style={{ position: "relative" }}>
-          <FaUser />
+              {/* Hover User Tooltip */}
+<div
+  className="icon-user icon-wrapper"
+  onMouseEnter={() => setShowTooltip(true)}
+  onMouseLeave={() => setShowTooltip(false)}
+  style={{ position: "relative" }}
+>
+  <FaUser />
 
-          {showTooltip && (
-          <div className="tooltip-user-box">
-          <h4>Welcome</h4>
-          <p className="order">To access account and manage orders</p>
-          <button className="btn btn-outline-dark px-2 py-1 tooltip-login-btn">Signup/Login</button>
-          <p className="show">
+  {showTooltip && (
+    <div className="tooltip-user-box">
+      <h4>Welcome</h4>
+      <p className="order">To access account and manage orders</p>
+
+      {/* Dynamic button based on login state */}
+      {!isLoggedIn ? (
+        <button
+          className="tooltip-login mt-2"
+          onClick={() => navigate("/login")}
+        >
+          Signup/Login
+        </button>
+      ) : (
+        <button
+          className="tooltip-login mt-2"
+          onClick={() => {
+            // Logout logic
+            localStorage.removeItem("isLoggedIn");
+            localStorage.removeItem("user"); // optional
+            navigate("/"); // redirect to home
+          }}
+        >
+          Logout
+        </button>
+      )}
+
+      {/* Show extra details only if logged in */}
+      {isLoggedIn && (
+        <p className="show">
           My Winni<br />
           My Orders<br />
           My Address Book<br />
           My Wallet<br />
-          </p>
-        </div>
-        )}
-        </div>
+        </p>
+      )}
+    </div>
+  )}
+</div>
+
 
               <div className="icon-wrapper me-2"
               onMouseEnter={() => setShowWishlist(true)}
@@ -254,7 +284,9 @@ export default function Header() {
                 <div className="tooltip-wishlist">Wishlist
                 </div>
               )}
-              <span className="badge icon-badge text-center">0</span>
+              <span className="badge icon-badge text-center">
+                 {wishlist.length}
+              </span>
             </div>
             <div className="icon-wrapper"
              onMouseEnter={() => setShowCart(true)}
@@ -262,7 +294,7 @@ export default function Header() {
               onClick={() => navigate("/Cart")}>
               <FaShoppingCart />
               {showCart && <div className="tooltip-cart">Cart</div>}
-              <span className="badge icon-badge text-center">0</span>
+              <span className="badge icon-badge text-center">{wishlist.length}</span>
             </div>
           </div>
         </div>

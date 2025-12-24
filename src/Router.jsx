@@ -18,6 +18,8 @@ import TextPage from "./Text-page";
 import Footer from "./Footer";
 import Help from "./Help";
 import Cart from "./Cart";
+import Wishlist from "./Wishlist";
+import Login from "./Login";
 
 export default function MainLayout() {
   const location = useLocation();
@@ -53,6 +55,8 @@ export default function MainLayout() {
         <Route path="/kids-cakes" element={<KidsCakes />} /> 
         <Route path="/next-page" element={<NextPage />} />
         <Route path="/cart" element={<Cart/>}/>
+        <Route path="/wishlist" element={<Wishlist/>}/>
+        <Route path="/login" element={<Login/>}/>
       </Routes>
     </>
   );

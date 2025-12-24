@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import img from "./assets/photo-cake.avif";
 import img1 from "./assets/pinata-cake.avif";
 import img2 from "./assets/truffle-cake.avif";
-import img3 from "./assets/kids-cake.avif";
+import img3 from "./assets/kids.avif";
 
 export default function Card() {
   return (

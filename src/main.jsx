@@ -4,10 +4,13 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import App from './App.jsx'
+import { WishlistProvider } from './WishlistContext'; 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <BrowserRouter>
-  <App/>
+   <WishlistProvider>
+      <App />
+    </WishlistProvider>
   </BrowserRouter>
 );

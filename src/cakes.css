@@ -155,7 +155,7 @@ body {
 }
 @media (max-width:576px) {
 .dropdown-icon1{
-   transform: translate(75px) !important;
+   transform: translate(49px) !important;
   }
 .breadcrumb-bar{
     position: relative;                
@@ -408,6 +408,32 @@ body {
   padding: 1px 6px;
   border-radius: 4px;
   width: 20%;
+}
+.wishlist-icon {
+  position: absolute;
+  top: 65%;
+  right: 12px;
+  height: 30px;
+  width: 30px;
+  background: white;
+  border-radius: 70%;
+  padding: 6px 8px;
+  font-size: 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 10;
+  cursor: pointer;
+}
+
+.wishlist-icon i {
+  transition: transform 0.2s ease;
+  position: relative;
+  right: 3px;
+  bottom: 2px;
+  color:rgb(236, 89, 155);
+}
+
+.wishlist-icon:hover i {
+  transform: scale(1.2);
 }
 
 
