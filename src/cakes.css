@@ -333,14 +333,25 @@ body {
   border-radius: 4px;
   z-index: 2;
 }
+.cake-card:hover .cake-img-wrap {
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
 
 .cake-img-wrap {
   min-width:260px !important;
   /* height: 220px;           */
   overflow: hidden;
-  transition: border 0.2s ease;
+  transition: border 0.2s ease, box-shadow 0.25s ease;
   border: none;
 }
+.cake-img-wrap:hover {
+  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  border-radius: 8px;
+}
+
 .cake-card:hover {
    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
@@ -392,6 +403,7 @@ body {
 .off {
   color: #2e9e2e;
   font-size: 12px;
+  transform: translate(-3px);
 }
 
 .rating-row {
@@ -408,6 +420,7 @@ body {
   padding: 1px 6px;
   border-radius: 4px;
   width: 20%;
+  transform: translate(-5px);
 }
 .wishlist-icon {
   position: absolute;
@@ -435,5 +448,7 @@ body {
 .wishlist-icon:hover i {
   transform: scale(1.2);
 }
-
+.review-text{
+  transform: translate(-10px);
+}
 

@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import Detail from "./Detail.jsx";
 import { useWishlist } from "./WishlistContext";
+import { useCart } from "./CartContext.jsx";
 import {
   FaSearch,
   FaMapMarkerAlt,
@@ -40,6 +41,7 @@ export default function Header() {
   const [showCart, setShowCart] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const { wishlist, toggleWishlist } = useWishlist(); 
+  const { cart } = useCart();
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
   return (
     <>
@@ -288,13 +290,19 @@ export default function Header() {
                  {wishlist.length}
               </span>
             </div>
+            
             <div className="icon-wrapper"
              onMouseEnter={() => setShowCart(true)}
               onMouseLeave={() => setShowCart(false)}
-              onClick={() => navigate("/Cart")}>
+              onClick={() => navigate("/Cart")}
+              style={{ cursor: "pointer", position: "relative" }}>
               <FaShoppingCart />
               {showCart && <div className="tooltip-cart">Cart</div>}
-              <span className="badge icon-badge text-center">{wishlist.length}</span>
+                {cart.length > 0 && (
+              <span className="badge icon-badge text-center">
+                {cart.length}
+              </span>
+              )}
             </div>
           </div>
         </div>

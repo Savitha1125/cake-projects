@@ -13,6 +13,11 @@ import choco from "./assets/images/choco.jpeg";
 import butterscotch from "./assets/butterscotch.jpg";
 import blackforest from "./assets/blackforest.webp";
 import pineapple from "./assets/pineapple.jpg";
+import vennila from "./assets/vennila.webp";
+import plum from "./assets/plum.webp";
+import rasamalai from "./assets/images/rasamalai.avif";
+import buttercake from "./assets/images/delicious-butter.avif";
+import fruitcake from "./assets/images/fruit-nut.webp"
 
 export default function Cakes() {
   const navigate = useNavigate();
@@ -23,7 +28,7 @@ export default function Cakes() {
   const [priceOption, setPriceOption] = useState("");
   const [sortOption, setSortOption] = useState("");
   
-const imagesMap = { choco, butterscotch, blackforest, pineapple };
+const imagesMap = { choco, butterscotch, blackforest, pineapple,vennila,plum,rasamalai,buttercake,fruitcake };
 const images = imageData.map((img) => ({
   key: img.key,
   url: imagesMap[img.key],
@@ -136,7 +141,8 @@ const images = imageData.map((img) => ({
     {images.map((item, i) => (
       <div className="col-12 col-sm-12 col-md-6 col-lg-3" key={i}>
         <Link to={`/cake/${item.key}`} className="text-decoration-none"></Link>
-        <div className="cake-card" style={{cursor:"pointer"}}>
+        <div className="cake-card" style={{cursor:"pointer"}}
+         onClick={() => navigate(`/cake/${item.key}`)}>
           <span className="badge-seller">Best Seller</span>
                <div
   className="wishlist-icon"
@@ -172,7 +178,7 @@ const images = imageData.map((img) => ({
               <span className="old-price">SGD 11.22</span>
               <span className="off">32% Off</span>
               <span className="rating">4.7 ★</span>
-              <small className="review-text">683 Reviews</small>
+              <small className="review-text">683 Review</small>
             </div>
           </div>
         </div>

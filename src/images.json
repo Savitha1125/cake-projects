@@ -2,5 +2,11 @@
   { "id": 1, "key": "choco", "alt": "Chocolate Cake" },
   { "id": 2, "key": "butterscotch", "alt": "Butterscotch Cake" },
   { "id": 3, "key": "blackforest", "alt": "Black Forest Cake" },
-  { "id": 4, "key": "pineapple", "alt": "Pineapple Cake" }
+  { "id": 4, "key": "pineapple", "alt": "Pineapple Cake" },
+  {"id":5,"key":"vennila","alt":"Vennila Cake"},
+  {"id":6,"key":"plum","alt":"Plum Cake"},
+  {"id":7,"key":"rasamalai","alt":"Rasamalai Cake"},
+  {"id":8,"key":"buttercake","alt":"Butter Cake"},
+  {"id":9,"key":"fruitcake","alt":"Fruit And Nut Cake"}
+
 ]
