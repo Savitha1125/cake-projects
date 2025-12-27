@@ -451,4 +451,11 @@ body {
 .review-text{
   transform: translate(-10px);
 }
-
+@media (max-width:576px) {
+  .cake-card{
+    transform: translate(15px);
+  }
+  .badge-seller{
+    transform: translate(-16px);
+  }
+}

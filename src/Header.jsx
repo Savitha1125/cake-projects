@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom"; 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import Detail from "./Detail.jsx";
@@ -31,6 +31,7 @@ const currencies = [
 
 export default function Header() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [selectedCurrency, setSelectedCurrency] = useState("QAR");
   const [showCurrencyTooltip, setShowCurrencyTooltip] = useState(false);
   const [showPartnerTooltip, setShowPartnerTooltip] = useState(false);
@@ -42,6 +43,7 @@ export default function Header() {
   const [isFocused, setIsFocused] = useState(false);
   const { wishlist, toggleWishlist } = useWishlist(); 
   const { cart } = useCart();
+  const isCartPage = location.pathname === "/cart"; 
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
   return (
     <>
@@ -291,19 +293,22 @@ export default function Header() {
               </span>
             </div>
             
-            <div className="icon-wrapper"
-             onMouseEnter={() => setShowCart(true)}
-              onMouseLeave={() => setShowCart(false)}
-              onClick={() => navigate("/Cart")}
-              style={{ cursor: "pointer", position: "relative" }}>
-              <FaShoppingCart />
-              {showCart && <div className="tooltip-cart">Cart</div>}
-                {cart.length > 0 && (
-              <span className="badge icon-badge text-center">
-                {cart.length}
-              </span>
-              )}
-            </div>
+            <div
+  className="icon-wrapper"
+  onMouseEnter={() => setShowCart(true)}
+  onMouseLeave={() => setShowCart(false)}
+  onClick={() => navigate("/Cart")}
+  style={{ cursor: "pointer", position: "relative" }}
+>
+  <FaShoppingCart />
+
+  {showCart && <div className="tooltip-cart">Cart</div>}
+
+  <span className="badge icon-badge text-center">
+    {cart.length}
+  </span>
+</div>
+
           </div>
         </div>
       </div>

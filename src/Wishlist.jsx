@@ -11,7 +11,11 @@ import butterscotch from "./assets/butterscotch.jpg";
 import blackforest from "./assets/blackforest.webp";
 import pineapple from "./assets/pineapple.jpg";
 import vennila from "./assets/vennila.webp";
-import plum from "./assets/images/plum.webp"
+import plum from "./assets/images/plum.webp";
+import rasamalai from "./assets/images/rasamalai.avif";
+import buttercake from "./assets/images/delicious-butter.avif";
+import fruitcake from "./assets/images/fruit-nut.webp"
+
 import { AiFillHeart } from "react-icons/ai";
 
 export default function Wishlist() {
@@ -20,7 +24,7 @@ export default function Wishlist() {
 
   if (!isLoggedIn) return <Navigate to="/login" replace />;
 
-  const imagesMap = { choco, butterscotch, blackforest, pineapple ,vennila,plum};
+  const imagesMap = { choco, butterscotch, blackforest, pineapple ,vennila,plum,rasamalai,buttercake,fruitcake };
 
   // Map wishlist keys to actual items with images
   const wishlistItems = wishlist
