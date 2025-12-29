@@ -1,6 +1,8 @@
 import { Routes, Route, useLocation } from "react-router-dom";
+import { useCart } from "./CartContext";
 import VendorForm from "./Vendor";
 import Franchise from "./Franchise";
+import Header from "./Header";
 import Carosual from "./Carosual"; 
 import Product from "./Product";
 import Cakes from "./Cakes";
@@ -23,10 +25,16 @@ import Login from "./Login";
 
 export default function MainLayout() {
   const location = useLocation();
-
+  const { cartItems } = useCart();
+  
+const isCartPage = location.pathname === "/cart";
+  const showHeader = !isCartPage || cartItems.length === 0;
   return (
     <>
-      {/* Homepage Only Components */}
+      {/* Header */}
+      {showHeader && <Header />}
+
+      {/* Homepage components */}
       {location.pathname === "/" && (
         <>
           <Carosual />
@@ -36,13 +44,12 @@ export default function MainLayout() {
           <BestSeller />
           <Flower />
           <TextPage />
-          <Footer />
-          <Help />
         </>
       )}
 
       {/* All Routes */}
       <Routes>
+        <Route path="/" element={null} /> {/* Homepage components already rendered above */}
         <Route path="/vendor" element={<VendorForm />} />
         <Route path="/franchise" element={<Franchise />} />
         <Route path="/carousel" element={<Carosual />} /> 
@@ -58,6 +65,9 @@ export default function MainLayout() {
         <Route path="/wishlist" element={<Wishlist/>}/>
         <Route path="/login" element={<Login/>}/>
       </Routes>
+
+      <Footer />
+       <Help />
     </>
   );
 }

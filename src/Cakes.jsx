@@ -164,6 +164,9 @@ const images = imageData.map((img) => ({
         : "bi-heart"
     }`}
   ></i>
+  <span className="wishlist-text">
+      {wishlist.includes(item.key) ? "Remove from Wishlist" : "Add to Wishlist"}
+    </span>
 </div>
 
           <div className="cake-img-wrap">

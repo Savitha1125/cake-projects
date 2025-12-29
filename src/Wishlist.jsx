@@ -3,7 +3,7 @@ import { useWishlist } from "./WishlistContext";
 import { Navigate } from "react-router-dom";
 import imageData from "./images.json";
 import Footer from "./Footer";
-import Help from "./Help"
+import Help from "./Help";
 import "./wishlist.css";
 import emptyImg from "./assets/your-wish-list-img.avif";
 import choco from "./assets/images/choco.jpeg";
@@ -14,8 +14,7 @@ import vennila from "./assets/vennila.webp";
 import plum from "./assets/images/plum.webp";
 import rasamalai from "./assets/images/rasamalai.avif";
 import buttercake from "./assets/images/delicious-butter.avif";
-import fruitcake from "./assets/images/fruit-nut.webp"
-
+import fruitcake from "./assets/images/fruit-nut.webp";
 import { AiFillHeart } from "react-icons/ai";
 
 export default function Wishlist() {
@@ -24,9 +23,8 @@ export default function Wishlist() {
 
   if (!isLoggedIn) return <Navigate to="/login" replace />;
 
-  const imagesMap = { choco, butterscotch, blackforest, pineapple ,vennila,plum,rasamalai,buttercake,fruitcake };
+  const imagesMap = { choco, butterscotch, blackforest, pineapple, vennila, plum, rasamalai, buttercake, fruitcake };
 
-  // Map wishlist keys to actual items with images
   const wishlistItems = wishlist
     .map((key) => {
       const img = imageData.find((item) => item.key === key);
@@ -34,19 +32,17 @@ export default function Wishlist() {
     })
     .filter(Boolean);
 
-  // Reverse order: last added first
   const descendingItems = [...wishlistItems].reverse();
 
-  // Empty wishlist
   if (descendingItems.length === 0) {
     return (
       <>
-      <div className="empty-wishlist-container">
-        <img src={emptyImg} alt="Empty Wishlist" className="empty" />
-      </div>
-     <Footer/>
-     <Help/>
-     </>
+        <div className="empty-wishlist-container">
+          <img src={emptyImg} alt="Empty Wishlist" className="empty" />
+        </div>
+        <Footer />
+        <Help />
+      </>
     );
   }
 
@@ -64,7 +60,10 @@ export default function Wishlist() {
                     className="heart-btn"
                     onClick={() => toggleWishlist(item.key)}
                   >
-                    <AiFillHeart color="red" size={24} />
+                    <AiFillHeart
+                      size={24}
+                      color={wishlist.includes(item.key) ? "red" : "#ccc"}
+                    />
                   </button>
                 </div>
                 <div className="cake-body">
@@ -82,7 +81,7 @@ export default function Wishlist() {
         </div>
       </div>
       <Footer />
-      <Help/>
+      <Help />
     </>
   );
 }

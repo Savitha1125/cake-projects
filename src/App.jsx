@@ -6,7 +6,6 @@ import Detail from "./Detail";
 function App() {
   return (
     <>
-      <Header/>
       <MainLayout/>
     </>
   );

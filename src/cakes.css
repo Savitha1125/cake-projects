@@ -444,6 +444,29 @@ body {
   bottom: 2px;
   color:rgb(236, 89, 155);
 }
+.wishlist-text {
+  display: none;                 /* hide by default */
+  position: absolute;
+  top: -28px;                    /* slightly above the heart icon */
+  right: 0;
+  background: #fff;              /* white background */
+  color: rgb(236, 89, 155);     /* pink text */
+  font-size: 15px;
+  font-weight: 500;
+  padding: 5px 6px;
+  border-radius: 14px;
+  white-space: nowrap;
+  z-index: 20;
+  pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: opacity 0.2s ease;
+  opacity: 0;
+}
+
+.wishlist-icon:hover .wishlist-text {
+  display: block;
+  opacity: 1;
+}
 
 .wishlist-icon:hover i {
   transform: scale(1.2);

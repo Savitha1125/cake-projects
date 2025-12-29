@@ -169,7 +169,15 @@ export default function CakeDetails() {
             <button
               className="add-cart"
               onClick={() => {
-                addToCart(cake); 
+               addToCart({
+  id: cake.key,                     // unique id
+  name: cake.alt,                  // use alt if JSON doesn't have name
+  price: 7.62,                     // your displayed price
+  image: imagesMap[cake.key],      // image object
+  qty: 1,                          
+  weight: "500 gm"                     
+});
+
                 navigate("/cart"); 
               }}
             >

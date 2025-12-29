@@ -1,44 +1,79 @@
-import React from 'react';
+import React from "react";
 import image from "./assets/images/main-image-without-button-new.avif";
-import Product from "./Product";
 import Footer from "./Footer";
 import Help from "./Help";
 import { useNavigate } from "react-router-dom";
-
+import { useCart } from "./CartContext";
+import "./cart.css";
 
 export default function Cart() {
   const navigate = useNavigate();
+  const { cartItems, increaseQty, decreaseQty, removeFromCart } = useCart();
 
   const handleContinueShopping = () => {
-    navigate("/");  
+    navigate("/");
   };
+
+  const totalPrice = cartItems.reduce(
+    (total, item) => total + item.price * item.qty,
+    0
+  );
+
   return (
-      <>
-     <div className="container py-2 d-flex justify-content-center">
-      <div className="position-relative w-50 mb-5">
-        <img src={image} alt="Cart" className="img-fluid" />
-        <button 
-          className="position-absolute top-50 start-50 translate-middle"
-          onClick={handleContinueShopping}
-          style={{
-            backgroundColor: " rgb(236, 89, 155)",
-            color: "white",
-            border: "none",
-            padding: "3px 20px",
-            borderRadius: "18px",
-            cursor: "pointer",
-            marginTop:"60px",
-            fontSize:"14px",
-            marginLeft:"14px"
-          }}
-        >
-          Continue Shopping
-        </button>
+    <>
+      {/* EMPTY CART */}
+      {cartItems.length === 0 ? (
+        <div className="container py-2 d-flex justify-content-center">
+          <div className="position-relative w-50 mb-5">
+            <img src={image} alt="Cart Empty" className="img-fluid cart-empty" />
+
+            <button
+              className="continue-shopping-btn position-absolute top-50 start-50 translate-middle"
+              onClick={handleContinueShopping}
+            >
+              Continue Shopping
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className="container py-3">
+  <p className="fw-bold">Shopping Cart({cartItems.reduce((total, item) => total + (item.qty || 1), 0)})</p>
+  
+  {cartItems.map((item) => (
+  <div key={item.id} className="cart-item d-flex align-items-start">
+    <img src={item.image} alt={item.name} className="item-img" />
+    <div className="item-info">
+      <h5>{item.name}</h5>
+      <p className="ms-5 weight">Weight: {item.weight}</p>
+      <p>Price: SGD {item.price}</p>
+      <div className="qty-controls">
+        <button onClick={() => decreaseQty(item.id)}>-</button>
+        <span>{item.qty}</span>
+        <button onClick={() => increaseQty(item.id)}>+</button>
       </div>
+      <button
+        onClick={() => removeFromCart(item.id)}
+        className="btn btn-danger btn-sm"
+      >
+        Remove
+      </button>
     </div>
-<Product/>
-<Footer/>
-<Help/>
+  </div>
+))}
+
+
+  {/* Total Price and Checkout */}
+  <div className="total-price mt-4">
+    <h4>Total Amount: SGD {totalPrice.toFixed(2)}</h4>
+    <button className="btn btn-success">
+      Continue To Checkout
+    </button>
+  </div>
+</div>
+
+      )}
+      <Footer />
+      <Help />
     </>
   );
 }

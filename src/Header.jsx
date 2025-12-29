@@ -42,12 +42,16 @@ export default function Header() {
   const [showCart, setShowCart] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const { wishlist, toggleWishlist } = useWishlist(); 
-  const { cart } = useCart();
-  const isCartPage = location.pathname === "/cart"; 
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+  const { cartItems = [] } = useCart();
+  const cartCount = cartItems.reduce(
+    (total, item) => total + (item.qty || 1),
+    0
+  );
   return (
     <>
       {/* ================= TOP LINK BAR ================= */}
+      
       <header className="top-links">
         <div className="container-fluid">
           <div className="row py-2 small d-flex justify-content-end">
@@ -303,9 +307,8 @@ export default function Header() {
   <FaShoppingCart />
 
   {showCart && <div className="tooltip-cart">Cart</div>}
-
   <span className="badge icon-badge text-center">
-    {cart.length}
+    {cartCount}
   </span>
 </div>
 
