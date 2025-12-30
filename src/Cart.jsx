@@ -1,10 +1,10 @@
 import React from "react";
 import image from "./assets/images/main-image-without-button-new.avif";
-import Footer from "./Footer";
-import Help from "./Help";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "./CartContext";
 import "./cart.css";
+import Footer from "./Footer";
+import Help from "./Help"
 
 export default function Cart() {
   const navigate = useNavigate();
@@ -21,6 +21,7 @@ export default function Cart() {
 
   return (
     <>
+    
       {/* EMPTY CART */}
       {cartItems.length === 0 ? (
         <div className="container py-2 d-flex justify-content-center">
@@ -36,8 +37,12 @@ export default function Cart() {
           </div>
         </div>
       ) : (
+        <div className="container py-3 text-center logo">
+        <img src="https://assets.winni.in/groot/2023/03/09/winni-logo/svgtopng-full-cp.png" 
+        alt="Winni Logo" className="logo-img" />
+      
         <div className="container py-3">
-  <p className="fw-bold">Shopping Cart({cartItems.reduce((total, item) => total + (item.qty || 1), 0)})</p>
+  <p className="fw-bold cart">Shopping Cart({cartItems.reduce((total, item) => total + (item.qty || 1), 0)})</p>
   
   {cartItems.map((item) => (
   <div key={item.id} className="cart-item d-flex align-items-start">
@@ -70,10 +75,10 @@ export default function Cart() {
     </button>
   </div>
 </div>
-
-      )}
-      <Footer />
-      <Help />
+</div>
+)}
+<Footer/>
+<Help/>
     </>
   );
 }

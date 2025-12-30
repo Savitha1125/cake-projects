@@ -44,6 +44,8 @@ const isCartPage = location.pathname === "/cart";
           <BestSeller />
           <Flower />
           <TextPage />
+          <Footer/>
+          <Help/>
         </>
       )}
 
@@ -65,9 +67,6 @@ const isCartPage = location.pathname === "/cart";
         <Route path="/wishlist" element={<Wishlist/>}/>
         <Route path="/login" element={<Login/>}/>
       </Routes>
-
-      <Footer />
-       <Help />
     </>
   );
 }

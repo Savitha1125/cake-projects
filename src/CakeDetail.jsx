@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useCart } from "./CartContext"; // Your cart context
+import { useCart } from "./CartContext"; 
+import { useWishlist } from "./WishlistContext";
 import imageData from "./images.json";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import "./cakedetail.css";
@@ -17,13 +18,23 @@ import buttercake from "./assets/images/delicious-butter.avif";
 import fruitcake from "./assets/images/fruit-nut.webp";
 
 export default function CakeDetails() {
+  const priceMap = {
+    "500 gm": 7.62,
+    "1 kg": 12.99,
+    "1.5 kg": 18.49,
+    "2 kg": 24.99,
+    "3 kg": 36.99,
+    "4 kg": 48.99,
+  };
+
   const { key } = useParams();
   const navigate = useNavigate();
   const { addToCart } = useCart();
+  const { addToWishlist, removeFromWishlist } = useWishlist(); // Added missing functions
 
   const [liked, setLiked] = useState(false);
-  const [wishlist, setWishlist] = useState([]);
   const [activeWeight, setActiveWeight] = useState("500 gm");
+  const [price, setPrice] = useState(priceMap["500 gm"]);
   const [message, setMessage] = useState("");
   const [pincode, setPincode] = useState("");
   const [error, setError] = useState("");
@@ -58,35 +69,42 @@ export default function CakeDetails() {
 
   const handleWishlistClick = () => {
     if (liked) {
-      setWishlist(wishlist.filter((item) => item.key !== cake.key));
+      removeFromWishlist(cake.key);
     } else {
-      setWishlist([...wishlist, cake]);
+      addToWishlist({
+        id: cake.key,
+        name: cake.alt,
+        price,
+        image: imagesMap[cake.key],
+        weight: activeWeight,
+      });
     }
     setLiked(!liked);
   };
 
   return (
-    <div className="container py-4">
-      <div className="row">
-        {/* Cake Image */}
-        <div className="col-md-6 icon-wrapper">
-          <img
-            src={imagesMap[cake.key]}
-            alt={cake.alt}
-            className="img-fluid w-75"
-          />
-          <span className="badge-seller">Best Seller</span>
+    <div className="container-fluid py-4">
+      <div className="row align-items-start">
+
+        {/* LEFT – Cake Image */}
+        <div className="col-12 col-md-5">
+          <div className="image-wrapper">
+            <img src={imagesMap[cake.key]} alt={cake.alt} />
+            <span className="badge-seller1">Best Seller</span>
+          </div>
         </div>
 
-        {/* Cake Details */}
-        <div className="col-md-6">
+        {/* RIGHT – Cake Details */}
+        <div className="col-12 col-md-6 cake-details">
           <h2>{cake.alt}</h2>
           <span className="rating">4.7 ★</span>
-          <small className="review-text">Rating & 683 Review</small>
+          <small className="review-text ms-2">Rating & 683 Reviews</small>
 
           {/* Price */}
           <div className="mb-2">
-            <span style={{ fontSize: "29px", fontWeight: "bold" }}>SGD 7.62</span>
+            <span style={{ fontSize: "29px", fontWeight: "bold" }}>
+              SGD {price.toFixed(2)}
+            </span>
             <span
               style={{
                 textDecoration: "line-through",
@@ -121,7 +139,10 @@ export default function CakeDetails() {
                 <button
                   key={weight}
                   className={activeWeight === weight ? "active" : ""}
-                  onClick={() => setActiveWeight(weight)}
+                  onClick={() => {
+                    setActiveWeight(weight);
+                    setPrice(priceMap[weight]);
+                  }}
                 >
                   {weight}
                 </button>
@@ -132,10 +153,10 @@ export default function CakeDetails() {
           {/* Options */}
           <div className="options">
             <label>
-              <input type="radio" /> Eggless
+              <input type="radio" name="option" /> Eggless
             </label>
             <label>
-              <input type="radio" /> Heart Shape
+              <input type="radio" name="option" /> Heart Shape
             </label>
           </div>
 
@@ -169,22 +190,23 @@ export default function CakeDetails() {
             <button
               className="add-cart"
               onClick={() => {
-               addToCart({
-  id: cake.key,                     // unique id
-  name: cake.alt,                  // use alt if JSON doesn't have name
-  price: 7.62,                     // your displayed price
-  image: imagesMap[cake.key],      // image object
-  qty: 1,                          
-  weight: "500 gm"                     
-});
-
-                navigate("/cart"); 
+                addToCart({
+                  id: cake.key,
+                  name: cake.alt,
+                  price: price,
+                  image: imagesMap[cake.key],
+                  qty: 1,
+                  weight: activeWeight,
+                  message,
+                });
+                navigate("/cart");
               }}
             >
               ADD TO CART
             </button>
           </div>
-            <h6>Available Offers</h6>
+
+          <h6>Available Offers</h6>
         </div>
       </div>
     </div>

@@ -1,11 +1,24 @@
 .image-wrapper {
   position: relative;
+  width: 100%;
+  height: 480px;        
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #fff;
+}
+.image-wrapper img {
+  width: 90%;
+  height: 100%;
+  object-fit: cover;      
+  object-position: center;
 }
 
-.badge-seller {
+.badge-seller1 {
   position: absolute;
   top: 0px;
-  left: 13px;
+  left: 29px;
   background: #2e9e2e;
   color: #fff;
   font-size: 12px;

@@ -5,29 +5,38 @@ const WishlistContext = createContext();
 export const WishlistProvider = ({ children }) => {
   const [wishlist, setWishlist] = useState([]);
 
-  // 🔁 Load from localStorage
+  // Load from localStorage
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem("wishlist")) || [];
     setWishlist(stored);
   }, []);
 
-  const toggleWishlist = (key) => {
-  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-  if (!isLoggedIn) return;
+  const addToWishlist = (cake) => {
+    setWishlist((prev) => {
+      const updated = [...prev, cake];
+      localStorage.setItem("wishlist", JSON.stringify(updated));
+      return updated;
+    });
+  };
 
-  setWishlist((prev) => {
-    const updated = prev.includes(key)
-      ? prev.filter((item) => item !== key)
-      : [...prev, key];
+  const removeFromWishlist = (id) => {
+    setWishlist((prev) => {
+      const updated = prev.filter((item) => item.id !== id);
+      localStorage.setItem("wishlist", JSON.stringify(updated));
+      return updated;
+    });
+  };
 
-    localStorage.setItem("wishlist", JSON.stringify(updated));
-    return updated;
-  });
-};
-
+  const toggleWishlist = (cake) => {
+    const exists = wishlist.some((item) => item.id === cake.id);
+    if (exists) removeFromWishlist(cake.id);
+    else addToWishlist(cake);
+  };
 
   return (
-    <WishlistContext.Provider value={{ wishlist, toggleWishlist }}>
+    <WishlistContext.Provider
+      value={{ wishlist, addToWishlist, removeFromWishlist, toggleWishlist }}
+    >
       {children}
     </WishlistContext.Provider>
   );

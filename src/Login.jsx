@@ -14,7 +14,7 @@ export default function Login() {
   const phoneRegex = /^[0-9]{10}$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  // ✅ Check if already logged in
+  //  Check if already logged in
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     if (isLoggedIn === "true") {
