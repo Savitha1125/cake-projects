@@ -16,6 +16,8 @@ import plum from "./assets/plum.webp";
 import rasamalai from "./assets/images/rasamalai.avif";
 import buttercake from "./assets/images/delicious-butter.avif";
 import fruitcake from "./assets/images/fruit-nut.webp";
+import Footer from "./Footer";
+import Help from "./Help";
 
 export default function CakeDetails() {
   const priceMap = {
@@ -83,6 +85,7 @@ export default function CakeDetails() {
   };
 
   return (
+    <>
     <div className="container-fluid py-4">
       <div className="row align-items-start">
 
@@ -205,10 +208,11 @@ export default function CakeDetails() {
               ADD TO CART
             </button>
           </div>
-
-          <h6>Available Offers</h6>
         </div>
       </div>
     </div>
+    <Footer/>
+    <Help/>
+    </>
   );
 }

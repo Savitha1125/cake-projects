@@ -22,12 +22,14 @@ import Help from "./Help";
 import Cart from "./Cart";
 import Wishlist from "./Wishlist";
 import Login from "./Login";
+import Checkout from "./Checkout";
 
 export default function MainLayout() {
   const location = useLocation();
   const { cartItems } = useCart();
-  
-const isCartPage = location.pathname === "/cart";
+  const isCheckoutPage=location.pathname==="/checkout";
+  const hideHeaderOncheckout=isCheckoutPage;
+  const isCartPage = location.pathname === "/cart";
   const showHeader = !isCartPage || cartItems.length === 0;
   return (
     <>
@@ -66,6 +68,7 @@ const isCartPage = location.pathname === "/cart";
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/wishlist" element={<Wishlist/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/checkout" element={<Checkout/>} />
       </Routes>
     </>
   );

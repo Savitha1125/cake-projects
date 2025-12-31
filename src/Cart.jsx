@@ -5,15 +5,17 @@ import { useCart } from "./CartContext";
 import "./cart.css";
 import Footer from "./Footer";
 import Help from "./Help";
+import { useState } from "react";
 
 export default function Cart() {
   const navigate = useNavigate();
   const { cartItems, increaseQty, decreaseQty, removeFromCart } = useCart();
-
+   const [showPopup, setShowPopup] = useState(false);
+   const [selectedItemId, setSelectedItemId] = useState(null);
   const handleContinueShopping = () => {
     navigate("/");
   };
-
+  
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.qty,
     0
@@ -75,7 +77,10 @@ export default function Cart() {
 
                     <button
                       className="remove-btn"
-                      onClick={() => removeFromCart(item.id)}
+                      onClick={() => {
+                        setSelectedItemId(item.id);
+                        setShowPopup(true);
+                      }}
                     >
                       Remove
                     </button>
@@ -83,20 +88,48 @@ export default function Cart() {
                 </div>
               ))}
             </div>
-
+              
             {/* RIGHT – SUMMARY */}
             <div className="cart-right">
               <h4>Total Amount</h4>
               <h3>SGD {totalPrice.toFixed(2)}</h3>
-              <button className="checkout-btn">
+              <button className="checkout-btn"
+               onClick={() => navigate("/login")}>
                 Continue To Checkout
               </button>
             </div>
           </div>
         </div>
       )}
+           {/* POPUP */}
+      {showPopup && (
+  <div className="popup-overlay">
+    <div className="popup-content">
+      <p>Are you sure you want to remove this item?</p>
 
-      <Footer className="footer-section "/>
+      <div className="popup-actions">
+        <button
+          className="btn btn-danger"
+          onClick={() => {
+            removeFromCart(selectedItemId); 
+            setShowPopup(false);
+          }}
+        >
+          Yes, Remove
+        </button>
+
+        <button
+          className="btn btn-secondary"
+          onClick={() => setShowPopup(false)}
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
+      <Footer/>
       <Help />
     </>
   );
