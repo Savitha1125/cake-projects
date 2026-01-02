@@ -124,9 +124,9 @@
   font-weight: 500;
 }
 
-.remove-btn {
+.remove-btn,.view-btn {
   background: none;
-  border: 1px solid #000;
+  border: 1px solid #75d590;
   padding: 4px 10px;
   font-size: 13px;
   cursor: pointer;

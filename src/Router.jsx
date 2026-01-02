@@ -23,14 +23,18 @@ import Cart from "./Cart";
 import Wishlist from "./Wishlist";
 import Login from "./Login";
 import Checkout from "./Checkout";
+import OrderReview from "./Order-review";
 
 export default function MainLayout() {
   const location = useLocation();
   const { cartItems } = useCart();
-  const isCheckoutPage=location.pathname==="/checkout";
-  const hideHeaderOncheckout=isCheckoutPage;
   const isCartPage = location.pathname === "/cart";
-  const showHeader = !isCartPage || cartItems.length === 0;
+  const isCheckoutPage = location.pathname === "/checkout";
+  const isreviewPage = location.pathname === "/order-review";
+
+  const showHeader =
+  (!isCartPage || cartItems.length === 0) && !isCheckoutPage && !isreviewPage;
+
   return (
     <>
       {/* Header */}
@@ -69,6 +73,7 @@ export default function MainLayout() {
         <Route path="/wishlist" element={<Wishlist/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/checkout" element={<Checkout/>} />
+        <Route path="/order-review" element={<OrderReview/>} />
       </Routes>
     </>
   );

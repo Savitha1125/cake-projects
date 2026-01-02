@@ -56,7 +56,11 @@ export default function Cart() {
           <div className="cart-layout">
             {/* LEFT – ITEMS */}
             <div className="cart-left">
-              {cartItems.map((item) => (
+              {cartItems
+              .slice()        // copy array
+              .reverse()      // descending order
+              .map((item) => (
+
                 <div key={item.id} className="cart-item">
                   <img
                     src={item.image}
@@ -75,8 +79,16 @@ export default function Cart() {
                       <button onClick={() => increaseQty(item.id)}>+</button>
                     </div>
 
+                    <div className="item-actions">
                     <button
-                      className="remove-btn"
+                    className="view-btn"
+                    onClick={() => navigate("/cakes")}
+                    >
+                    Go to Cakes
+                    </button>
+
+                    <button
+                      className="remove-btn ms-3"
                       onClick={() => {
                         setSelectedItemId(item.id);
                         setShowPopup(true);
@@ -84,6 +96,8 @@ export default function Cart() {
                     >
                       Remove
                     </button>
+                  </div>
+
                   </div>
                 </div>
               ))}
@@ -93,10 +107,21 @@ export default function Cart() {
             <div className="cart-right">
               <h4>Total Amount</h4>
               <h3>SGD {totalPrice.toFixed(2)}</h3>
-              <button className="checkout-btn"
-               onClick={() => navigate("/login")}>
-                Continue To Checkout
-              </button>
+              <button
+  className="checkout-btn"
+  onClick={() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+    if (isLoggedIn) {
+      navigate("/checkout");   // already login → checkout open
+    } else {
+      navigate("/login");      // not login → login page
+    }
+  }}
+>
+  Continue To Checkout
+</button>
+
             </div>
           </div>
         </div>
