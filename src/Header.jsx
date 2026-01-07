@@ -57,7 +57,7 @@ export default function Header() {
           <div className="row py-2 small d-flex justify-content-end">
             <div className="col-auto">
               <a href="#" className="text-decoration-none text-dark me-4">
-                Help |
+                Help|
               </a>
 
              {/* Currency Tooltip */}
@@ -66,7 +66,7 @@ export default function Header() {
             onMouseEnter={() => setShowCurrencyTooltip(true)}
             onMouseLeave={() => setShowCurrencyTooltip(false)}>
             <span className="text-dark me-4 currency-trigger">
-            Currency: <strong>{selectedCurrency}</strong> |
+            Currency: |<strong>{selectedCurrency}</strong>
             </span>
 
           {showCurrencyTooltip && (
@@ -85,7 +85,7 @@ export default function Header() {
               </div>
 
                 <a href="#" className="text-decoration-none text-dark me-4">
-                Corporate gifts |
+                Corporate gifts|
               </a>
               {/* Partner Dropdown */}
               <span

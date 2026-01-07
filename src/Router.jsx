@@ -24,6 +24,7 @@ import Wishlist from "./Wishlist";
 import Login from "./Login";
 import Checkout from "./Checkout";
 import OrderReview from "./Order-review";
+import Personalize from "./Personalize";
 
 export default function MainLayout() {
   const location = useLocation();
@@ -31,9 +32,10 @@ export default function MainLayout() {
   const isCartPage = location.pathname === "/cart";
   const isCheckoutPage = location.pathname === "/checkout";
   const isreviewPage = location.pathname === "/order-review";
+  const isPersonalizePage =location.pathname==="/personalize";
 
   const showHeader =
-  (!isCartPage || cartItems.length === 0) && !isCheckoutPage && !isreviewPage;
+  (!isCartPage || cartItems.length === 0) && !isCheckoutPage && !isreviewPage && !isPersonalizePage;
 
   return (
     <>
@@ -74,6 +76,7 @@ export default function MainLayout() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/checkout" element={<Checkout/>} />
         <Route path="/order-review" element={<OrderReview/>} />
+        <Route path="/personalize" element={<Personalize/>}/>
       </Routes>
     </>
   );

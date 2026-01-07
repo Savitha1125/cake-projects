@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./checkout.css";
+import { useCart } from "./CartContext";
 
 export default function Checkout() {
   const navigate = useNavigate();
+  const { cartItems } = useCart();
   const [address, setAddress] = useState(null);
   const [form, setForm] = useState({
     country: "",

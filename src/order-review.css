@@ -1,0 +1,134 @@
+/* ===== Desktop ===== */
+.review-page {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
+.shp-cart{
+      position: relative;
+      right: 17%;
+}
+.review-cart {
+  flex: 2;
+}
+
+.review-summary {
+  flex: 1;
+  position: relative;
+  right: 7%;
+}
+
+.review-cart-item {
+  display: flex;
+  gap: 1rem;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  right: 17%;
+}
+
+.review-cart-item img {
+  width: 100px;
+}
+
+.review-cart-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.review-address-box,
+.review-price-box {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.review-price-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+
+.review-price-row.total {
+  border-top: 1px solid #ccc;
+  padding-top: 0.5rem;
+}
+
+.review-continue-btn {
+  width: 70%;
+  background: green;
+  color: #fff;
+  padding: 0.8rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* POPUP */
+.review-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.review-popup-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.review-popup-actions button {
+  margin: 0 0.5rem;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .review-page {
+    flex-direction: column;
+    left: 0px;
+  }
+.review-cart{
+  position: relative;
+  left: 18% !important;
+  bottom: 50px;
+}
+  .review-cart-item {
+    flex-direction: column;
+    
+  }
+
+  .review-cart-item img {
+    width: 100%;
+    max-width: 150px;
+    
+  }
+.review-summary{
+  transform: translate(50px);
+  position: relative;
+  bottom: 40px;
+}
+  .review-continue-btn {
+    width: 100%;
+  }
+}
+@media (max-width:576px) {
+  .review-cart{
+  position: relative;
+  left: 18% !important;
+  bottom: 130px !important;
+}
+.review-summary{
+  transform: translate(20px);
+  position: relative;
+  bottom: 120px;
+}
+}

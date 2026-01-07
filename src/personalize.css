@@ -1,0 +1,164 @@
+/* ===== Container ===== */
+.personalize-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== Left Column ===== */
+.personalize-left {
+  flex: 2;
+  min-width: 300px;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  position: relative;
+  right: 10%
+}
+
+.personalize-left h3 {
+  margin-bottom: 1rem;
+}
+
+.personalize-left label {
+  display: block;
+  margin: 1rem 0 0.5rem;
+  font-weight: 500;
+}
+
+.personalize-left input,
+.personalize-left textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.95rem;
+}
+
+.personalize-left textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Occasion Buttons */
+.occasion-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.occasion-buttons button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #28a745;
+  background-color: #fff;
+  color: #28a745;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.occasion-buttons button.active,
+.occasion-buttons button:hover {
+  background-color: #28a745;
+  color: #fff;
+}
+
+/* Place Order Button */
+.payment-btn {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.payment-btn:hover {
+  background-color: #218838;
+}
+
+/* ===== Right Column ===== */
+.personalize-right {
+  flex: 1;
+  min-width: 250px;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  height: fit-content;
+}
+
+.personalize-right h4 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.price-row,
+.discount-row,
+.delivery-row,
+.price-total-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.discount-row .green,
+.delivery-row .green {
+  color: #28a745;
+  font-weight: 500;
+}
+
+.price-total-row {
+  border-top: 1px solid #ccc;
+  padding-top: 0.8rem;
+  font-weight: 600;
+}
+.input-error {
+  border: 1px solid red;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.85rem;
+  margin: 0.2rem 0 0.5rem 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .personalize-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .personalize-left,
+  .personalize-right {
+    width: 100%;
+    position: relative;
+    left: 0%;
+  }
+
+  .occasion-buttons {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width:576px) {
+  .personalize-left{
+    transform: translate(-5px);
+    position: relative;
+    bottom: 120px;
+  }
+  .personalize-right{
+    position: relative;
+    bottom: 120px;
+  }
+}

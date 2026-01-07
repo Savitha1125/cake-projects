@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
+import "./order-review.css";
+import { useNavigate } from "react-router-dom";
 
 export default function OrderReview() {
+  const navigate = useNavigate(); 
   const [delivery, setDelivery] = useState(null);
   const [cart, setCart] = useState([]);
+  const [showPopup, setShowPopup] = useState(false);
+  const [selectedItemId, setSelectedItemId] = useState(null);
 
   useEffect(() => {
     const savedDelivery = localStorage.getItem("deliveryAddress");
@@ -14,52 +19,114 @@ export default function OrderReview() {
 
   if (!delivery) return <p>No delivery info found.</p>;
 
-  // Calculate totals
-  const mrpTotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
-  const mrpDiscount = 9.01;
-  const deliveryCharge = 0;
-  const convenienceCharge = 0.13;
-  const totalAmount = mrpTotal - mrpDiscount + deliveryCharge + convenienceCharge;
+  const removeFromCart = (id) => {
+    const updatedCart = cart.filter((item) => item.id !== id);
+    setCart(updatedCart);
+    localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+  };
 
   return (
-    <div style={{ display: "flex", gap: "2rem", padding: "2rem" }}>
-      {/* Left: Delivery Details */}
-      <div style={{ flex: 1, border: "1px solid #ccc", padding: "1rem" }}>
-        <h3>Delivery Details</h3>
-        <p><strong>Mobile:</strong> {delivery.mobile}</p>
-        <p><strong>Name:</strong> {delivery.name}</p>
-        <p><strong>Address:</strong> {delivery.address}</p>
-        <p><strong>City:</strong> {delivery.city}</p>
-        <p><strong>Pincode:</strong> {delivery.pincode}</p>
-        <p><strong>Country:</strong> {delivery.country}</p>
+    <div className="review-page">
+      {/* LOGO */}
+      <div className="logo">
+        <img
+          src="https://assets.winni.in/groot/2023/03/09/winni-logo/svgtopng-full-cp.png"
+          alt="Winni Logo"
+          className="logo-img"
+        />
       </div>
 
-      {/* Right: Order Summary */}
-      <div style={{ flex: 1, border: "1px solid #ccc", padding: "1rem" }}>
-        <h3>Order Summary</h3>
+      {/* LEFT – CART ITEMS */}
+      <div className="review-cart">
+        <h3 className="shp-cart">Shopping Cart</h3>
+
+        {cart.length === 0 && <p>Your cart is empty.</p>}
+
         {cart.map((item) => (
-          <div key={item.id} style={{ display: "flex", marginBottom: "1rem" }}>
-            <img
-              src={item.image || "/images/placeholder.png"} // fallback image
-              alt={item.name}
-              style={{ width: "80px", marginRight: "1rem" }}
-            />
-            <div>
-              <p>{item.name}</p>
-              <p>Qty: {item.qty}</p>
-              <p>Price: SGD {item.price.toFixed(2)}</p>
+          <div key={item.id} className="review-cart-item">
+            <img src={item.image} alt={item.name} />
+
+            <div className="review-cart-info">
+              <p className="review-item-name">{item.name}</p>
+              <p className="review-item-delivery">Estimated Delivery: Today</p>
+
+              <button
+                className="review-remove-btn"
+                onClick={() => {
+                  setSelectedItemId(item.id);
+                  setShowPopup(true);
+                }}
+              >
+                Remove
+              </button>
             </div>
           </div>
         ))}
-
-        <hr />
-        <p>MRP Total: SGD {mrpTotal.toFixed(2)}</p>
-        <p>MRP Discount: - SGD {mrpDiscount.toFixed(2)}</p>
-        <p>Delivery Charge: {deliveryCharge === 0 ? "FREE" : `SGD ${deliveryCharge.toFixed(2)}`}</p>
-        <p>Convenience Charge: SGD {convenienceCharge.toFixed(2)}</p>
-        <hr />
-        <p><strong>Total Amount: SGD {totalAmount.toFixed(2)}</strong></p>
       </div>
+
+      {/* RIGHT – ADDRESS + PRICE */}
+      <div className="review-summary">
+        <div className="review-address-box">
+          <h4>Delivery Address</h4>
+          <p><strong>{delivery.name}</strong></p>
+          <p>{delivery.address}</p>
+          <p>{delivery.city} - {delivery.pincode}</p>
+          <p>Mobile: {delivery.mobile}</p>
+        </div>
+
+        <div className="review-price-box">
+          <h4>Price Details</h4>
+          <div className="review-price-row">
+            <span>MRP Total</span>
+            <span>SGD 59.73</span>
+          </div>
+          <div className="review-price-row">
+            <span>Discount</span>
+            <span>- SGD 9.01</span>
+          </div>
+          <div className="review-price-row">
+            <span>Delivery</span>
+            <span>FREE</span>
+          </div>
+          <div className="review-price-row total">
+            <strong>Total</strong>
+            <strong>SGD 50.85</strong>
+          </div>
+        </div>
+
+        <button
+          className="review-continue-btn"
+          onClick={() => navigate("/personalize")}
+        >
+          Continue
+        </button>
+      </div>
+
+      {/* REMOVE CONFIRM POPUP */}
+      {showPopup && (
+        <div className="review-popup-overlay">
+          <div className="review-popup-content">
+            <p>Are you sure you want to remove this item?</p>
+            <div className="review-popup-actions">
+              <button
+                className="btn btn-danger"
+                onClick={() => {
+                  removeFromCart(selectedItemId);
+                  setShowPopup(false);
+                }}
+              >
+                Yes, Remove
+              </button>
+              <button
+                className="btn btn-secondary"
+                onClick={() => setShowPopup(false)}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

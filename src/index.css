@@ -36,12 +36,25 @@ body {
 .pencil{
   font-size: 26px !important;
 }
-.top-links {
-    font-size: 11px;
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap; 
-    white-space: nowrap;
+.top-links .row {
+    justify-content: flex-start !important; /* align items to start */
+    gap: 2px;
+    white-space: nowrap; /* smaller gap between items */
+  }
+
+  .top-links .col-auto a,
+  .top-links .col-auto span {
+    margin-right: 0px !important; 
+    font-size: 10px; 
+  }
+
+  .top-links .tooltip-box {
+    left: 0 !important; /* align tooltip correctly on small screens */
+    width: auto; /* don't force wide tooltips */
+  }
+
+  .top-links .currency-trigger {
+    margin-right: 5px !important; /* smaller spacing */
   }
 }
 

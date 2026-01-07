@@ -70,6 +70,8 @@
   padding: 3px 8px;
   border-radius: 6px;
   font-weight: bold;
+  width: 30% !important;
+  transform: translate(-16px);
 }
 /* Reviews style small and grey */
 .rating i {
@@ -81,6 +83,8 @@
   color: #7a7a7a;
   text-decoration: line-through;
   font-size: 11px;
+  position: relative;
+  right: 10px;
 }
 
 .new-price {
@@ -88,6 +92,7 @@
   font-weight: 700;
   font-size: 12px;
   white-space: wrap;
+ 
 }
 .rating span {
   font-size: 12px;
@@ -101,6 +106,7 @@
   background-color: #c3eea9; 
   border-radius: 3px;
   padding: 5px;
+  transform: translate(-15px);
 }
 .cake-cards {
   min-width: 300px;     
