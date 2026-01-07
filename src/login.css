@@ -28,3 +28,8 @@
 .ctn-btn:hover {
     background-color: rgb(227, 13, 104); /* slightly darker */
 }
+@media (max-width: 576px) {
+  .input-group{
+    width: 110%;
+  }
+}

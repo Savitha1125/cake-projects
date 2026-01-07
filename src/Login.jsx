@@ -64,7 +64,7 @@ export default function Login() {
       return;
     }
 
-    // ✅ Any 6-digit number logs in
+    //  Any 6-digit number logs in
     localStorage.setItem("isLoggedIn", "true");
     navigate(-1); // back to previous page
   };

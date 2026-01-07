@@ -8,9 +8,6 @@
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   gap: 13px; 
-  text-align: center;
-  justify-items: center;
-  align-items: center;
 }
 
 .product-item {
@@ -38,22 +35,19 @@
   margin-top: 8px;
   text-transform: capitalize;
 }
-
-/*  Laptop — 4 per row */
-@media (max-width: 992px) {
-  .product-section{
-    position: relative;
-    right: 30px !important;
-  }
-  .product-inline {
-    grid-template-columns: repeat(8, 1fr);
-    gap: 12px;
-  }
+/* LAPTOP: 992px - 1199px */
+@media (min-width: 992px) and (max-width: 1199px) {
   .product-img {
-    width: 50px;
+    min-width: 100px; /* smaller so 8 fit perfectly */
     height: 100px;
   }
+
+  .product-inline {
+    grid-template-columns: repeat(8, 1fr); /* ensure 8 items per row */
+    gap: 13px; /* same gap */
+  }
 }
+
 /*  Tablet — 2 per row */
 @media (max-width: 768px) {
   .product-inline {
@@ -75,7 +69,7 @@
 }
 
 /*  Mobile — still 2 per row (not 1) */
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .product-inline {
     grid-template-columns: repeat(2, 1fr);
     gap: 6px;
@@ -84,13 +78,15 @@
     width: 50px;
     height: 119px;
     object-fit: cover;
-    position: relative;
-    left: 17% !important;
   }
   .product-item p {
     font-size: 16px;
     position: relative;
-    left: 4%;
+    left: 39%;
+  }
+  .product-section{
+    position: relative;
+    right: 65px
   }
 }
 

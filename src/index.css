@@ -45,7 +45,7 @@ body {
   .top-links .col-auto a,
   .top-links .col-auto span {
     margin-right: 0px !important; 
-    font-size: 10px; 
+    font-size: 12px; 
   }
 
   .top-links .tooltip-box {
@@ -391,10 +391,14 @@ body {
 }
 
 /* Tooltip */
+.position-relative {
+  overflow: visible;
+}
 .tooltip-box {
   position: absolute;
   top: 120%;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 9999;
   background: #fff;
   padding: 8px 12px;
@@ -404,16 +408,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  white-space: normal;
 }
-.position-relative {
-  overflow: visible;
-}
-
-
-.tooltip-box div:hover {
+.tooltip-item:hover {
   color: rgb(236, 89, 155);
   cursor: pointer;
 }
+
 /* ================== Tooltip Suggestions ================== */
 .search-tooltip {
   position: absolute;

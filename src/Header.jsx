@@ -57,35 +57,41 @@ export default function Header() {
           <div className="row py-2 small d-flex justify-content-end">
             <div className="col-auto">
               <a href="#" className="text-decoration-none text-dark me-4">
-                Help|
+                Help |
               </a>
 
              {/* Currency Tooltip */}
             <div
-            className="position-relative d-inline-block"
-            onMouseEnter={() => setShowCurrencyTooltip(true)}
-            onMouseLeave={() => setShowCurrencyTooltip(false)}>
-            <span className="text-dark me-4 currency-trigger">
-            Currency: |<strong>{selectedCurrency}</strong>
-            </span>
+              className="position-relative d-inline-block"
+              onMouseEnter={() => setShowCurrencyTooltip(true)}
+              onMouseLeave={() => setShowCurrencyTooltip(false)}
+            >
+              <span className="text-dark me-4 currency-trigger">
+                Currency: <strong>{selectedCurrency}</strong> |
+              </span>
 
-          {showCurrencyTooltip && (
-          <div className="tooltip-box">
-          {currencies.map((cur) => (
+              {showCurrencyTooltip && (
                 <div
-                  key={cur.code}
-                  onClick={() => setSelectedCurrency(cur.code)}
-                  className="tooltip-item"
-                  >
-                  {cur.code} - {cur.name}
+                  className="tooltip-box"
+                  onMouseEnter={() => setShowCurrencyTooltip(true)}
+                  onMouseLeave={() => setShowCurrencyTooltip(false)}
+                >
+                  {currencies.map((cur) => (
+                    <div
+                      key={cur.code}
+                      onClick={() => setSelectedCurrency(cur.code)}
+                      className="tooltip-item"
+                    >
+                      {cur.code} - {cur.name}
+                    </div>
+                  ))}
                 </div>
-                    ))}
-                </div>
-                )}
-              </div>
+              )}
+            </div>
+
 
                 <a href="#" className="text-decoration-none text-dark me-4">
-                Corporate gifts|
+                Corporate gifts |
               </a>
               {/* Partner Dropdown */}
               <span
