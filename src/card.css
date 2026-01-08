@@ -1,24 +1,44 @@
-.cake-card {
-  min-width: 315px;     
-  border: 1px solid #ccc; 
-  border-radius: 15px;  
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;           /* gap between cards */
 }
-.text{
-  text-align: center !important;
+
+.card-custom {
+  width: 24%;           /* slightly slimmer than 25% */
+  margin: auto;
 }
-.cake-img {
+
+.card-img-top {
   width: 100%;
-  height: 250px;     
-  object-fit: cover; 
-  gap:20px 
+  height: auto;        /* big image */
+  object-fit: cover;
+  border-radius: 0.5rem 0.5rem 0 0;
 }
-.card-title { 
-margin-bottom: 0.25rem; 
-} 
-.card-text { 
-margin-bottom: 0;
-font-size: 14px;
+
+/* Tablet – less than 992px */
+@media (max-width: 991px) {
+  .card-custom {
+    width: 49%;         /* 2 cards per row */
+    min-width: 295px !important;   
+    transform: translate(-4px);
+  }
 }
+
+/* Mobile – less than 576px */
+@media (max-width: 576px) {
+  .card-custom {
+    width: 100%;    
+    min-width: 280px !important;  
+    transform: translate(-5px);   /* 1 card per row */
+  }
+
+  .card-img-top {
+    height: auto;      /* smaller images on mobile */
+  }
+}
+
 @media  (max-width:576px) {
   .button{
     position: relative;
@@ -35,31 +55,6 @@ font-size: 14px;
     position: relative;
     bottom: 10px;
   }
-   .cake-card {
-    width: 97% !important;
-    min-width: auto;
-    margin-left: 5px;
-  } 
 }
-@media (min-width: 769px) and (max-width: 1200px) {
 
-  .best-container .row {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    padding-left: 20px;       
-    padding-right: 50px !important;      
-    scrollbar-width: none;
-  }
-
-  .best-container .row::-webkit-scrollbar {
-    display: none;
-  }
-
-  .cake-card {
-    flex: 0 0 auto;
-    min-width: 230px !important;     /* better size for 1024px */
-    margin-right: 30px !important;   /* GAP between cards */
-    border-radius: 15px;
-  }
-}
+ 

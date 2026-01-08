@@ -259,11 +259,6 @@
   height: auto !important;
   object-fit: cover;
 }
-@media (min-width: 1024px) and (max-width: 1366px) {
-  .delivery-container{
-    display: none;
-  }
-  }
 @media (max-width: 768px) {
   .menu-left .menu-item,
   .menu-left .menu-items,

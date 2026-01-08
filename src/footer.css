@@ -125,7 +125,7 @@
   }
 
  .link ul li {
-  margin-left: -2%;
+  margin-left: -1%;
   margin-bottom: 2px;
   position: relative;
   bottom: 60px !important;
@@ -282,15 +282,15 @@
     font-size: 16px;
     margin: 0 !important;
     position: relative;
-    left: 0 !important;
+    left: 15px !important;
   }
 
   .google-app {
     height: 36px;
-    width: auto;
+    width: 140px;
     position: relative;
     bottom: 0 !important;
-    left: 0 !important;
+    left: 10px !important;
     right: 0 !important;
     top: 0 !important;
   }
@@ -313,15 +313,17 @@
 
   /* Reserve text full width */
   .reserve {
-    margin-left: 0 !important;
+    margin-left: 14px !important;
     margin-bottom: 6px !important;
     width: 100%;
+    font-size: 14px;
   }
 
   /* Social icons spacing */
   .social-icons {
     margin-top: 8px;
     gap: 10px;
+    margin-right: 24px;
   }
 }
 @media (min-width: 577px) and (max-width: 992px) {
