@@ -403,7 +403,7 @@ body {
 .off {
   color: #2e9e2e;
   font-size: 12px;
-  transform: translate(-3px);
+  transform: translate(-9px);
 }
 
 .rating-row {
@@ -420,7 +420,7 @@ body {
   padding: 1px 6px;
   border-radius: 4px;
   width: 20%;
-  transform: translate(-5px);
+  transform: translate(-7px) !important;
 }
 .wishlist-icon {
   position: absolute;
@@ -478,7 +478,7 @@ body {
   .cake-card{
     transform: translate(15px);
   }
-  .badge-seller{
-    transform: translate(-16px);
+  .off{
+    transform: translate(-13px);
   }
 }

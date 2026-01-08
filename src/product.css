@@ -59,11 +59,11 @@
     height: 130px;
     object-fit: cover;
     position: relative; 
-    left: 60px;
+    left: 20px;
   }
   .product-item p{
     position: relative;
-    left:55px;
+    left:15px;
     font-size: 17px;
   }
 }

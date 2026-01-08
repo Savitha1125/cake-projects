@@ -158,7 +158,7 @@ export default function Cakes() {
                   <div className="price-row">
                     <span className="new-price">SGD 7.62</span>
                     <span className="old-price">SGD 11.22</span>
-                    <span className="off">32% Off</span>
+                    <span className="off">32%</span>
                     <span className="rating">4.7 ★</span>
                     <small className="review-text">683 Review</small>
                   </div>
