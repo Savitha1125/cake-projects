@@ -485,9 +485,10 @@ body {
 }
 @media (min-width: 992px) {
   .cake-card {
-    width: calc(119% - 15px);
+    width: calc(119% - 19px);
   }
   .cake-img-wrap img {
-    min-width: 300px;           /* bigger images on desktop */
+    min-width: 300px; 
+    object-fit: cover;          /* bigger images on desktop */
   }
 }
