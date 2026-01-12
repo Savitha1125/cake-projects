@@ -18,7 +18,9 @@ import plum from "./assets/plum.webp";
 import rasamalai from "./assets/images/rasamalai.avif";
 import buttercake from "./assets/images/delicious-butter.avif";
 import fruitcake from "./assets/images/fruit-nut.webp";
-
+import rosecake from "./assets/images/rose-cake.avif";
+import blackforestcake from "./assets/images/black-forest yummy.webp";
+import redvelvet from "./assets/images/red-velvet.avif"
 export default function Cakes() {
   const navigate = useNavigate();
   const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
@@ -27,7 +29,7 @@ export default function Cakes() {
   const [priceOption, setPriceOption] = useState("");
   const [sortOption, setSortOption] = useState("");
 
-  const imagesMap = { choco, butterscotch, blackforest, pineapple, vennila, plum, rasamalai, buttercake, fruitcake };
+  const imagesMap = { choco, butterscotch, blackforest, pineapple, vennila, plum, rasamalai, buttercake, fruitcake,rosecake,blackforestcake,redvelvet };
 
   const images = imageData.map((img) => ({
     key: img.key,

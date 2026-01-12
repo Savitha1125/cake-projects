@@ -314,14 +314,6 @@ body {
   box-shadow: none !important;
 }
 
-.cake-card {
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-  /* transition: border 0.2s ease, box-shadow 0.2s ease; */
-  border: none !important;
-}
-
 .badge-seller {
   position: absolute;
   top: 0px;
@@ -339,26 +331,35 @@ body {
   border-radius: 8px;
 }
 
-.cake-img-wrap {
-  min-width:260px !important;
-  /* height: 220px;           */
-  overflow: hidden;
-  transition: border 0.2s ease, box-shadow 0.25s ease;
-  border: none;
-}
-.cake-img-wrap:hover {
-  background: #ffffff;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-  border-radius: 8px;
-}
-
 .cake-card:hover {
    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
-.cake-img-wrap img {
+/* CAKE CARD WRAPPER */
+.cake-card {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;           /* full width of parent */
+  transition: transform 0.2s ease;
+}
+
+/* IMAGE WRAPPER */
+.cake-img-wrap {
   width: 100%;
-  height: 100%;
-  object-fit: cover;    
+  height: auto;           /* allow natural height */
+  overflow: hidden;
+}
+
+.cake-img-wrap img {
+  width: 100%;            /* fill the wrapper */
+  height: auto;           /* maintain aspect ratio */
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.cake-img-wrap:hover img {
+  transform: scale(1.05); /* optional hover zoom */
 }
 
 .cake-body {
@@ -480,5 +481,13 @@ body {
   }
   .off{
     transform: translate(-13px);
+  }
+}
+@media (min-width: 992px) {
+  .cake-card {
+    width: calc(119% - 15px);
+  }
+  .cake-img-wrap img {
+    min-width: 300px;           /* bigger images on desktop */
   }
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import img from "./assets/kid-cake.avif";
@@ -15,15 +15,20 @@ import "./Containerone.css";
 
 export default function ContainerOne() {
   const navigate = useNavigate();
-  const [isFlipped, setIsFlipped] = useState(false);
+   const [flip, setFlip] = useState(false);
 
-  const handleClick = () => {
-  setIsFlipped(true);      
-  setTimeout(() => {
-    navigate("/next-page"); 
-    setIsFlipped(false);   
-  }, 1200);
-};
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFlip(true); // start animation
+
+      // remove class after animation ends
+      setTimeout(() => {
+        setFlip(false);
+      }, 1300); // animation duration little extra
+    }, 4000); // ⭐ every 15 sec
+
+    return () => clearInterval(interval);
+  }, []);
 return (
     <>
       <div className="containerone">
@@ -47,17 +52,13 @@ return (
       </div>
 
       {/* Cash Image */}
-       <div
+        <div
       className="container next-section"
       style={{ textAlign: "center", marginTop: "50px" }}
     >
-      <img
-        src={img8}
-        alt="Cash"
-        className={`cash cssanimation ca__fx-flipX ${isFlipped ? "active" : ""}`}
-        onClick={handleClick}
-        style={{ cursor: "pointer" }}
-      />
+      <div className={`flip-wrapper ${flip ? "auto-flip" : ""}`}>
+        <img src={img8} alt="Cash" className="cash" />
+      </div>
     </div>
     </>
   );

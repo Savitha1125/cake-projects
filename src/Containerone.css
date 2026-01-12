@@ -187,27 +187,31 @@
   width: 101% !important;
 }
 .next-section {
-  perspective: 800px;
+  perspective: 1000px;
 }
 
-.cssanimation {
+.flip-wrapper {
   display: inline-block;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
 }
 
-.ca__fx-flipX.active {
-  animation: flipX 1.2s linear;
+.cash {
+  display: block
 }
 
-@keyframes flipX {
-  0% {
+/* one-time flip */
+.auto-flip {
+  animation: flipOnce 3.2s infinite;
+}
+
+@keyframes flipOnce {
+  from {
     transform: rotateX(0deg);
   }
-  100% {
-    transform: rotateX(360deg);
+  to {
+    transform: rotateX(180deg); /* top → bottom */
   }
 }
+
 
 @media(max-width:576px) {
   .container .cash{

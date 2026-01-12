@@ -1,36 +1,49 @@
 .pointer {
   cursor: pointer;
 }
+
 .help-bar-bg {
   width: 100%;
-  background-color: #e6e6e6; 
+  background-color: #e6e6e6;
 }
-.help{
-  margin-left: 47px;
+
+/* Desktop only spacing */
+@media (min-width: 577px) {
+  .help {
+    margin-left: 47px;
+  }
 }
-@media (max-width:576px) {
-.help-bar-bg{
-    width: 100vw !important;  
-    padding: 10px 0 !important;
-    background-color: #e6e6e6;  
+
+/* 📱 Mobile fix */
+@media (max-width: 576px) {
+  .help-bar-bg {
+    padding: 10px 0;
+  }
+
+  .help-bar-bg .row > div {
+    justify-content: center;   /* center icon + text */
+    margin-bottom: 10px;
+  }
+
+  .help {
+    margin-left: 0;            /* ❗ reset desktop margin */
+    right: 0;
+    position: static;          /* ❗ remove relative */
+  }
 }
-.help{
- position: relative;
- right:50px
-}
-}
+
+/* Footer text */
 .footer-line {
-  margin: 0 auto;          
-  max-width:90%;          
-  white-space: normal;    
-  overflow-wrap: break-word;
-  text-align: center;  
-  font-size: 15px;   
+  margin: 0 auto;
+  max-width: 90%;
+  text-align: center;
+  font-size: 15px;
 }
+
 @media (max-width: 576px) {
   .footer-line {
-    max-width: 80%;      /* width reduce */
-    font-size: 13px;     /* smaller font */
+    max-width: 80%;
+    font-size: 13px;
     line-height: 1.4;
   }
 }

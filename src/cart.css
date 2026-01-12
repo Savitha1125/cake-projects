@@ -228,6 +228,29 @@
 .weight{
  transform: translate(140px);
 }
+@media (min-width: 400px) and (max-width: 480px) {
+  .cart-left {
+    transform: translateX(-40px);
+  }
+
+  .cart-right {
+    transform: translateX(-300px) !important;
+  }
+
+  .continue-shopping-btn {
+    position: relative;
+    left: 140px !important;
+    width: 80% !important;
+  }
+}
+@media (min-width: 360px) and (max-width: 399px) {
+  .continue-shopping-btn {
+    position: relative;
+    left: 114px !important;
+    width: 80% !important;
+  }
+}
+
 @media (max-width:576px) {
   .logo-img{
     position: relative;

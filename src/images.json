@@ -7,6 +7,8 @@
   {"id":6,"key":"plum","alt":"Plum Cake"},
   {"id":7,"key":"rasamalai","alt":"Rasamalai Cake"},
   {"id":8,"key":"buttercake","alt":"Butter Cake"},
-  {"id":9,"key":"fruitcake","alt":"Fruit And Nut Cake"}
-
+  {"id":9,"key":"fruitcake","alt":"Fruit And Nut Cake"},
+  {"id":10,"key":"rosecake","alt":"Heavenly Rose Cake"},
+  {"id":11,"key":"blackforestcake","alt":"Amazing Black Forest Cake"},
+  {"id":12,"key":"redvelvet","alt":"Frosting Red Velvet Cake"}
 ]

@@ -263,6 +263,18 @@
   right: 145%;  
   width:auto 
 }
+@media (min-width: 400px) and (max-width: 480px) {
+  .link ul li{
+    position: relative;
+    left: 50px;
+  }
+}
+@media (min-width: 360px) and (max-width: 399px) {
+   .link ul li{
+    position: relative;
+    left: 28px;
+  }
+}
 @media(max-width: 576px) {
   /* Footer right section (h5 + apps) */
   .footer-right {
@@ -346,7 +358,7 @@
     height: 34px !important;           /* adjust size if needed */
     width: auto;
     top:5px;
-    left:5px
+    left:-15px
   }
 }
 @media (min-width: 1024px) and (max-width: 1366px) {
