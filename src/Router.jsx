@@ -6,6 +6,7 @@ import Header from "./Header";
 import Carosual from "./Carosual"; 
 import Product from "./Product";
 import Cakes from "./Cakes";
+import Flowers from "./Flowers";
 import CakeDetail from "./CakeDetail";
 import Card from "./Card";
 import PhotoCakes from "./PhotoCakes";
@@ -65,6 +66,7 @@ export default function MainLayout() {
         <Route path="/carousel" element={<Carosual />} /> 
         <Route path="/product" element={<Product />} />
         <Route path="/cakes" element={<Cakes />} />
+        <Route path="/flowers" element={<Flowers />} />
         <Route path="/cake/:key" element={<CakeDetail />} />
         <Route path="/photo-cakes" element={<PhotoCakes />} />
         <Route path="/pinata-cakes" element={<PinataCakes />} />

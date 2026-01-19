@@ -100,7 +100,7 @@ export default function CakeDetails() {
         {/* RIGHT – Cake Details */}
         <div className="col-12 col-md-6 cake-details">
           <h2>{cake.alt}</h2>
-          <span className="rating">4.7 ★</span>
+          <span className="rate">4.7 ★</span>
           <small className="review-text ms-2">Rating & 683 Reviews</small>
 
           {/* Price */}

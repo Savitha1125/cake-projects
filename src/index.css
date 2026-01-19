@@ -26,7 +26,9 @@ body {
 body {
   padding-top: 100px !important;
 } 
-
+.pencil{
+  font-size: 26px;
+}
 /* Hide top links on small mobiles */
 @media(max-width: 576px) {
     /* .top-links { display: none !important; } */

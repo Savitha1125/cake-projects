@@ -10,15 +10,14 @@
 }
 .image-wrapper img {
   width: 90%;
-  height: 100%;
-  object-fit: cover;      
+  height: 100%;      
   object-position: center;
 }
 
 .badge-seller1 {
   position: absolute;
-  top: 0px;
-  left: 28px;
+  top: 0px !important;
+  left: -37px;
   background: #2e9e2e;
   color: #fff;
   font-size: 12px;
@@ -26,7 +25,7 @@
   border-radius: 4px;
   z-index: 2;
 }
-.rating {
+.rate {
   background: #2e9e2e;
   color: #fff;
   font-size: 12px;
@@ -161,10 +160,78 @@
   }
   .badge-seller1{
     width: 30%;
-    transform: translate(-30px);
+    transform: translate(-10px) !important;
     top: 9px;
   }
   .cake-details{
     transform: translate(10px);
+  }
+}
+@media (max-width:768px) {
+  .image-wrapper{
+    width: 100%;
+    min-width: 350px !important;
+    position: relative;
+    left: 20px;
+  }
+  .cake-details{
+    transform: translate(60px) !important;
+    margin-top: 20px !important;
+  }
+  .badge-seller1{
+    margin-top: 30px !important;
+    position: absolute;
+    left: -91px;
+  }
+}
+/* Laptop only (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .badge-seller1 {
+    position: relative;
+    left: -23%;
+
+  }
+}
+
+/* Desktop (1200px and above) */
+@media (min-width: 1200px) {
+  .badge-seller1 {
+    margin-top: 0px;
+    position: relative;
+    left: -15%;
+    width: 15%;
+  }
+}
+@media (min-width: 320px) and (max-width: 424px) {
+  .badge-seller1 {
+    position: absolute;
+    top: -92px !important;
+    transform: translate(110px) !important;
+  }
+  .image-wrapper{
+    transform: translate(-50px) !important;
+  }
+  .cake-details{
+    transform: translate(10px) !important;
+  }
+}
+@media (min-width:375px) {
+  .badge-seller1 {
+    position: absolute;
+    top: -24px;
+    transform: translate(109px) !important;
+  }
+   .image-wrapper{
+    transform: translate(-20px);
+  }
+  .cake-details{
+    transform: translate(16px);
+  }
+}
+@media (min-width: 425px) and (max-width: 767px) {
+  .badge-seller1 {
+    position: relative;
+    top: -100px !important;
+    transform: translate(-204px) !important;
   }
 }

@@ -9,8 +9,8 @@ import imageData from "./images.json";
 import { useNavigate } from "react-router-dom";
 import { useWishlist } from "./WishlistContext";
 
-import choco from "./assets/images/choco.jpeg";
-import butterscotch from "./assets/butterscotch.jpg";
+import whiteflower from "./assets/white flower.avif";
+import RedRose from "./assets/images/red-rose.jpeg";
 import blackforest from "./assets/blackforest.webp";
 import pineapple from "./assets/pineapple.jpg";
 import vennila from "./assets/vennila.webp";
@@ -21,7 +21,7 @@ import fruitcake from "./assets/images/fruit-nut.webp";
 import rosecake from "./assets/images/rose-cake.avif";
 import blackforestcake from "./assets/images/black-forest yummy.webp";
 import redvelvet from "./assets/images/red-velvet.avif"
-export default function Cakes() {
+export default function Flowers() {
   const navigate = useNavigate();
   const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
   const [showPopup, setShowPopup] = useState(false);
@@ -29,7 +29,7 @@ export default function Cakes() {
   const [priceOption, setPriceOption] = useState("");
   const [sortOption, setSortOption] = useState("");
 
-  const imagesMap = { choco, butterscotch, blackforest, pineapple, vennila, plum, rasamalai, buttercake, fruitcake,rosecake,blackforestcake,redvelvet };
+  const imagesMap = { whiteflower, RedRose, blackforest, pineapple, vennila, plum, rasamalai, buttercake, fruitcake,rosecake,blackforestcake,redvelvet };
 
   const images = imageData.map((img) => ({
     key: img.key,
@@ -60,11 +60,11 @@ export default function Cakes() {
     <>
       {/* TITLE + BREADCRUMB */}
       <div className="container py-3">
-        <h5 className="fw-normal cake-title">Online Cake Delivery</h5>
+        <h5 className="fw-normal cake-title">Flower Delivery</h5>
         <div className="breadcrumb-bar">
           <span className="home">Home</span>
           <span className="mx-1">{">"}</span>
-          <span className="cakes">Cakes</span>
+          <span className="cakes">Flowers and Bouquets</span>
         </div>
       </div>
 
@@ -73,7 +73,7 @@ export default function Cakes() {
         <div className="container">
           <div className="row align-items-center py-2 filter-row filter-row-desktop">
             <div className="col-lg-auto cakes-count">
-              Cakes <span className="fw-normal">(397 items)</span>
+              Flowers and Bouquets <span className="fw-normal">(351 items)</span>
             </div>
             <div className="col-lg-auto delivery d-flex align-items-center position-relative" onClick={() => setShowPopup(true)}>
               <i className="bi bi-calendar-event me-2"></i>
@@ -173,3 +173,5 @@ export default function Cakes() {
     </>
   );
 }
+
+

@@ -25,7 +25,7 @@ export default function ContainerOne() {
       setTimeout(() => {
         setFlip(false);
       }, 1300); // animation duration little extra
-    }, 4000); // ⭐ every 15 sec
+    }, 4000); //  every 15 sec
 
     return () => clearInterval(interval);
   }, []);
@@ -56,9 +56,12 @@ return (
       className="container next-section"
       style={{ textAlign: "center", marginTop: "50px" }}
     >
-      <div className={`flip-wrapper ${flip ? "auto-flip" : ""}`}>
-        <img src={img8} alt="Cash" className="cash" />
-      </div>
+      <div
+    className={`flip-wrapper ${flip ? "auto-flip" : ""}`}
+    onClick={() => navigate("/next-page")} style={{cursor:"pointer"}}
+  >
+    <img src={img8} alt="Cash" className="cash" />
+  </div>
     </div>
     </>
   );
