@@ -68,8 +68,8 @@
 .image-block.choco {
   transform: translateY(370px); 
   position: absolute;
-  left: 60px !important;
-  width: 29%;
+  left: 107px !important;
+  width: 27%;
 }
 
 @media (min-width: 481px) and (max-width: 1024px){
